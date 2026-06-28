@@ -1,0 +1,54 @@
+{
+  "status": "available",
+  "source": "src/clustering_outputs/clustering_model_comparison.csv",
+  "reason": "",
+  "suggestedScriptToRun": "",
+  "rows": 4,
+  "columns": [
+    "Model",
+    "Clusters",
+    "Noise_Count",
+    "Noise_%",
+    "Silhouette_Score",
+    "Davies_Bouldin_Score",
+    "Calinski_Harabasz_Score"
+  ],
+  "data": [
+    {
+      "Model": "DBSCAN",
+      "Clusters": "4",
+      "Noise_Count": "623",
+      "Noise_%": "22.42620590352772",
+      "Silhouette_Score": "0.3668928407373143",
+      "Davies_Bouldin_Score": "1.1806724264685473",
+      "Calinski_Harabasz_Score": "457.6550480837011"
+    },
+    {
+      "Model": "GaussianMixture",
+      "Clusters": "4",
+      "Noise_Count": "0",
+      "Noise_%": "0.0",
+      "Silhouette_Score": "0.21471171093216795",
+      "Davies_Bouldin_Score": "2.0076994752757105",
+      "Calinski_Harabasz_Score": "585.3915074229772"
+    },
+    {
+      "Model": "Agglomerative",
+      "Clusters": "4",
+      "Noise_Count": "0",
+      "Noise_%": "0.0",
+      "Silhouette_Score": "0.199701556736947",
+      "Davies_Bouldin_Score": "2.0062988923482044",
+      "Calinski_Harabasz_Score": "585.1483000711652"
+    },
+    {
+      "Model": "KMeans",
+      "Clusters": "4",
+      "Noise_Count": "0",
+      "Noise_%": "0.0",
+      "Silhouette_Score": "0.19581988558036226",
+      "Davies_Bouldin_Score": "1.708888430712773",
+      "Calinski_Harabasz_Score": "662.1104301758448"
+    }
+  ]
+}

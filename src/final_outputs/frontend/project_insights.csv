@@ -1,0 +1,7 @@
+section,insight,businessMeaning
+CLV Prediction,The calibrated XGBoost Tweedie CLV model is the strongest predictive component of the project.,The business can prioritize customers by expected future value instead of treating all retained customers equally.
+CLV Prediction,The top predicted CLV customers captured a disproportionate share of actual future revenue.,"Revenue is concentrated among a small group of high-value customers, making targeted campaigns more efficient."
+Customer Segmentation,KMeans produced four interpretable customer groups.,"The customer base can be separated into loyal high-value customers, regular mid-value customers, inactive customers, and new/one-time customers."
+Customer Segmentation,The high-value segment contributes far more revenue than its customer share.,Retention campaigns should prioritize the high-value loyalist segment.
+Revenue Forecasting,Weekly revenue forecasting was possible but limited by the short and noisy time series.,Forecasts should be used as short-term directional estimates rather than exact production-grade revenue projections.
+Revenue Forecasting,"SARIMA performed best on RMSE and WAPE, while the XGBoost lag model was competitive on aggregate revenue error.",Statistical seasonality captured the short-term revenue pattern better than most simple smoothing models.

@@ -1,0 +1,13 @@
+{
+  "mode": "fallback",
+  "reason": "Playwright is not installed in this dashboard package. Static path audit plus build verification were used; dashboard/QA_CHECKLIST.md records the manual visual checklist.",
+  "routes": [
+    "Overview",
+    "Data & Pipeline",
+    "Customer Value",
+    "Customer Segments",
+    "Revenue Forecast",
+    "Model Review & Appendix"
+  ],
+  "screenshotsCreated": false
+}

@@ -1,0 +1,40 @@
+{
+  "overview": {
+    "kpiCards": "final_outputs/frontend/project_kpi_cards.json",
+    "insights": "final_outputs/frontend/project_insights.json",
+    "masterSummary": "final_outputs/frontend/project_master_summary.json"
+  },
+  "clv": {
+    "modelComparison": "final_outputs/data/clv_model_comparison.csv",
+    "liftTable": "final_outputs/data/clv_lift_table.csv",
+    "decileCalibration": "final_outputs/data/clv_predicted_decile_calibration.csv",
+    "plots": {
+      "actualVsPredicted": "final_outputs/plots/clv_actual_vs_predicted.png",
+      "liftCurve": "final_outputs/plots/clv_lift_curve.png",
+      "liftVsRandom": "final_outputs/plots/clv_lift_vs_random.png",
+      "zeroSpenderDistribution": "final_outputs/plots/clv_zero_spender_distribution.png"
+    }
+  },
+  "segmentation": {
+    "segmentCards": "final_outputs/frontend/segment_cards_json.json",
+    "clusterProfiles": "final_outputs/data/kmeans_cluster_profiles.csv",
+    "clusteredCustomers": "final_outputs/data/clustered_customers.csv",
+    "plots": {
+      "pca": "final_outputs/plots/cluster_pca.png",
+      "customerVsRevenueShare": "final_outputs/plots/cluster_customer_vs_revenue_share.png",
+      "retentionVsZeroSpend": "final_outputs/plots/cluster_retention_vs_zero_spend.png",
+      "profileHeatmap": "final_outputs/plots/cluster_profile_heatmap.png"
+    }
+  },
+  "forecasting": {
+    "modelComparison": "final_outputs/data/forecast_model_comparison.csv",
+    "weeklyForecastResults": "final_outputs/data/weekly_forecast_results.csv",
+    "futureForecast": "final_outputs/data/future_12_week_forecast.csv",
+    "plots": {
+      "weeklyRevenueTrend": "final_outputs/plots/weekly_revenue_trend.png",
+      "monthlyRevenueTrend": "final_outputs/plots/monthly_revenue_trend.png",
+      "bestForecast": "final_outputs/plots/best_forecast.png",
+      "futureForecast": "final_outputs/plots/future_forecast.png"
+    }
+  }
+}

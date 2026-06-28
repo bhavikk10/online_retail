@@ -1,0 +1,4 @@
+Module,Final Method,Main Metric 1,Value 1,Main Metric 2,Value 2,Main Insight
+CLV Prediction,XGBoost_Tweedie,RMSE,1976.2743940239072,R2,0.8329799126925654,Customer-level future spend can be predicted well enough for revenue prioritization.
+Customer Segmentation,"KMeans, k = 4",High-value customer share,22.67818574514039,High-value future revenue share,65.35117894663114,A small high-value segment contributes a large share of future revenue.
+Revenue Forecasting,SARIMA,WAPE,18.29097738659396,RMSE,57057.60978973488,"Forecasting is useful as short-term directional revenue planning, not production-grade long-term forecasting."

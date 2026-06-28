@@ -1,0 +1,62 @@
+[
+  {
+    "section": "CLV Prediction",
+    "title": "Final CLV Model",
+    "value": "XGBoost_Tweedie",
+    "description": "Selected model for predicting customer future spend."
+  },
+  {
+    "section": "CLV Prediction",
+    "title": "CLV R\u00b2",
+    "value": 0.833,
+    "description": "Explained variance for customer future spend prediction."
+  },
+  {
+    "section": "CLV Prediction",
+    "title": "CLV RMSE",
+    "value": 1976.27,
+    "description": "Average large-error scale for customer spend prediction."
+  },
+  {
+    "section": "CLV Prediction",
+    "title": "Top 10% Revenue Capture",
+    "value": "57.1%",
+    "description": "Share of actual future revenue captured by the top predicted CLV customers."
+  },
+  {
+    "section": "Customer Segmentation",
+    "title": "Final Segmentation Model",
+    "value": "KMeans, k = 4",
+    "description": "Selected for balanced, interpretable, and frontend-friendly segments."
+  },
+  {
+    "section": "Customer Segmentation",
+    "title": "High-Value Segment Revenue Share",
+    "value": "65.35%",
+    "description": "Future revenue share contributed by the strongest customer segment."
+  },
+  {
+    "section": "Customer Segmentation",
+    "title": "High-Value Segment Customer Share",
+    "value": "22.68%",
+    "description": "Customer share represented by the strongest segment."
+  },
+  {
+    "section": "Revenue Forecasting",
+    "title": "Best Forecast Model",
+    "value": "SARIMA",
+    "description": "Best model on the 12-week test horizon."
+  },
+  {
+    "section": "Revenue Forecasting",
+    "title": "Forecast WAPE",
+    "value": "18.29%",
+    "description": "Weighted absolute percentage error for weekly revenue forecasting."
+  },
+  {
+    "section": "Revenue Forecasting",
+    "title": "Weekly Observations",
+    "value": 106,
+    "description": "Number of weekly time-series observations used."
+  }
+]

@@ -1,0 +1,1 @@
+export default function minBy(array, iteratee) { return (array || []).reduce((best, item) => (best == null || Number(value(item, iteratee)) < Number(value(best, iteratee)) ? item : best), undefined); } function value(item, iteratee) { return typeof iteratee === "function" ? iteratee(item) : item?.[iteratee]; }

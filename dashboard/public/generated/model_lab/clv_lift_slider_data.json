@@ -1,0 +1,51 @@
+{
+  "status": "available",
+  "source": "src/final_outputs/data/clv_lift_table.csv",
+  "reason": "",
+  "suggestedScriptToRun": "",
+  "rows": 5,
+  "columns": [
+    "TopCustomer_%",
+    "CustomerCount",
+    "ActualRevenueCaptured",
+    "RevenueCapture_%",
+    "LiftVsRandom"
+  ],
+  "data": [
+    {
+      "TopCustomer_%": "5.0",
+      "CustomerCount": "27",
+      "ActualRevenueCaptured": "238827.45",
+      "RevenueCapture_%": "47.88051527707072",
+      "LiftVsRandom": "9.576103055414144"
+    },
+    {
+      "TopCustomer_%": "10.0",
+      "CustomerCount": "55",
+      "ActualRevenueCaptured": "284827.57",
+      "RevenueCapture_%": "57.10269408611084",
+      "LiftVsRandom": "5.710269408611084"
+    },
+    {
+      "TopCustomer_%": "20.0",
+      "CustomerCount": "111",
+      "ActualRevenueCaptured": "362787.6299999999",
+      "RevenueCapture_%": "72.7322536021185",
+      "LiftVsRandom": "3.6366126801059253"
+    },
+    {
+      "TopCustomer_%": "30.0",
+      "CustomerCount": "166",
+      "ActualRevenueCaptured": "400071.71",
+      "RevenueCapture_%": "80.20702654815771",
+      "LiftVsRandom": "2.6735675516052573"
+    },
+    {
+      "TopCustomer_%": "50.0",
+      "CustomerCount": "278",
+      "ActualRevenueCaptured": "450938.25",
+      "RevenueCapture_%": "90.40483314686205",
+      "LiftVsRandom": "1.808096662937241"
+    }
+  ]
+}

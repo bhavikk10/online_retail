@@ -74,11 +74,10 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 # FEATURES NEEDING LOG TRANSFORMATION  
 # Highly right-skewed behavioral features
-log_features = ['Frequency','Monetary','AvgBasketValue','SpendLast30Days','UniqueProducts']
+log_features = ['Frequency', 'Monetary', 'AvgBasketValue', 'UniqueProducts', 'SpendLast30Days', 'SpendLast90Days', 'SpendPrior90Days', 'RevenuePerDay', 'AvgSpendPerProduct', 'ProductDiversityRate']
 
 # FEATURES NEEDING NORMAL SCALING ONLY   
-scale_features = ['AvgQuantity','Recency','LifetimeDays','PurchaseRate','AvgGapDays','PurchasesLast30Days','CancellationRate','ReturnRate']
-
+scale_features = ['AvgQuantity','Recency', 'LifetimeDays', 'PurchaseRate','AvgGapDays','StdGapDays','PurchasesLast30Days','PurchasesLast90Days','ReturnRate', 'IsNewCustomer','RecencyFrequency','SpendTrendRatio','FrequencyLast90DaysRatio']
 
 # PIPELINE FOR LOG-TRANSFORMED FEATURES   
 log_pipeline = Pipeline([
@@ -100,27 +99,34 @@ scale_pipeline = Pipeline([
 # COMBINING PREPROCESSING PIPELINES   
 preprocessor = ColumnTransformer([
     ('log', log_pipeline, log_features),
-    ('scale', scale_pipeline, scale_features)])
+    ('scale', scale_pipeline, scale_features)],
+    remainder='drop')
 
 
 # DEFINING MODELS   
-models = {'LogisticRegression': LogisticRegression(),'KNN': KNeighborsClassifier(),'DecisionTree': DecisionTreeClassifier(),    
-    'SVC': SVC(probability=True), 'RandomForest': RandomForestClassifier(),'XGBoost': XGBClassifier(eval_metric='logloss')}
-
+scale_pos_weight = ( (y_train == 0).sum() / (y_train == 1).sum() )
+models = {'LogisticRegression': LogisticRegression(class_weight='balanced', max_iter=5000),
+          'KNN': KNeighborsClassifier(),
+          'DecisionTree': DecisionTreeClassifier(class_weight='balanced'),    
+          'SVC': SVC(probability=True,class_weight='balanced'), 
+          'RandomForest': RandomForestClassifier(class_weight='balanced'),
+          'XGBoost': XGBClassifier(eval_metric='logloss', scale_pos_weight=1, random_state=42)}
+#scale_pos_weight = ((y_train == 0).sum() / (y_train == 1).sum())
    
 # DEFINING RANDOM SEARCH PARAMETER GRIDS   
 param_grids = {
     'LogisticRegression': {'model__C': [0.01, 0.1, 1, 10], 'model__penalty': ['l2']},
-    'KNN': {'model__n_neighbors': [3, 5, 7, 11], 'model__weights': ['uniform', 'distance']},
-    'DecisionTree': {'model__max_depth': [3, 5, 10, 20], 'model__min_samples_split': [2, 5, 10]},
-    'SVC': {'model__C': [0.1, 1, 10], 'model__kernel': ['rbf', 'linear']},
-    'RandomForest': {'model__n_estimators': [100, 200, 500], 'model__max_depth': [5, 10, 20], 'model__min_samples_split': [2, 5]},
-    'XGBoost': {'model__n_estimators': [100, 200, 500], 'model__max_depth': [3, 5, 7], 'model__learning_rate': [0.01, 0.05, 0.1], 'model__subsample': [0.8, 1.0]}
-}
+    'KNN': {'model__n_neighbors': [3, 5, 7, 11, 15, 20], 'model__weights': ['uniform', 'distance']},
+    'DecisionTree': {'model__max_depth': [3, 5, 10, 20, 50], 'model__min_samples_split': [2, 5, 10]},
+    'SVC': {'model__C': [0.01,0.1,1,5,10,50], 'model__kernel': ['rbf','linear'], 'model__gamma': ['scale',0.01,0.05,0.1,0.5,0.75,1,1.5]},
+    'RandomForest': {'model__n_estimators':[100,200,500,1000], 'model__max_depth':[3,5,10,20,None], 'model__min_samples_split':[2,5,10,20,30], 'model__min_samples_leaf':[1,2,4,8,12,18], 'model__max_features':['sqrt','log2']},
+    'XGBoost': {'model__n_estimators':[100,200,500,1000], 'model__max_depth':[3,4,5,6,8], 'model__learning_rate':[0.01,0.03,0.05,0.1], 'model__subsample':[0.6,0.8,1.0], 'model__colsample_bytree':[0.6,0.8,1.0], 'model__min_child_weight':[1,3,5]}
+    }
 
    
 # STORING MODEL RESULTS   
 results = []
+trained_models = {}
 
 # TRAINING AND EVALUATING MODELS   
 for model_name, model in models.items():
@@ -131,19 +137,39 @@ for model_name, model in models.items():
     
     # RANDOMIZED HYPERPARAMETER SEARCH
     random_search = RandomizedSearchCV(estimator=pipeline, param_distributions=param_grids[model_name],
-        n_iter=10, cv=5, scoring='f1', random_state=42, n_jobs=-1)
+        n_iter=120, cv=5, scoring='roc_auc', random_state=42, n_jobs=-1)
 
     # TRAINING MODEL
     random_search.fit(X_train, y_train)
 
     # BEST MODEL AFTER SEARCH
     best_model = random_search.best_estimator_
+    trained_models[model_name] = best_model
 
     # PREDICTING TEST LABELS
     y_pred = best_model.predict(X_test)
 
     # PREDICTING CLASS PROBABILITIES
     y_prob = best_model.predict_proba(X_test)[:, 1]
+
+    #Exp
+    # thresholds = np.arange(0.1,0.9,0.01)
+
+    # best_thr = 0.5
+    # best_f1 = 0
+
+    # for thr in thresholds:
+    #     pred = (y_prob >= thr).astype(int)
+
+    #     score = f1_score(y_test,pred)
+
+    #     if score > best_f1:
+    #         best_f1 = score
+    #         best_thr = thr
+
+    # print(best_thr,best_f1)
+
+    # y_pred = (y_prob >= best_thr).astype(int)
 
     # CALCULATING EVALUATION METRICS
     accuracy = accuracy_score(y_test, y_pred)

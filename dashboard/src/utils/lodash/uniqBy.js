@@ -1,0 +1,1 @@
+export default function uniqBy(array, iteratee) { const seen = new Set(); return (array || []).filter((item) => { const key = typeof iteratee === "function" ? iteratee(item) : item?.[iteratee]; if (seen.has(key)) return false; seen.add(key); return true; }); }

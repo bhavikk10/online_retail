@@ -1,0 +1,1 @@
+export default function sortBy(array, iteratee) { return [...(array || [])].sort((a, b) => String(value(a, iteratee)).localeCompare(String(value(b, iteratee)), undefined, { numeric: true })); } function value(item, iteratee) { return typeof iteratee === "function" ? iteratee(item) : item?.[iteratee]; }

@@ -1,0 +1,379 @@
+ONLINE RETAIL II CUSTOMER ANALYTICS PROJECT — INSIGHTS, OBSERVATIONS, FAILURES, AND FRONTEND STORY BANK
+
+This project is not just a model-building exercise. The useful way to present it is as a customer analytics system built around one central business question: which customers are likely to return, which customers are likely to generate revenue, how should they be segmented, and whether future revenue can be estimated at an aggregate level.
+
+The strongest parts of the project are customer-level modelling: retention prediction, CLV prediction, and segmentation. The time-series section is useful, but it should be presented as a supporting module rather than the main achievement. The reason is simple: the customer-level dataset had thousands of customers and rich behavioural features, while the time-series module had only 106 weekly observations and 25 monthly observations. That difference matters a lot.
+
+The project therefore has a natural structure:
+
+1. Clean the transaction data properly.
+2. Convert raw invoices into customer-level behavioural features.
+3. Predict whether customers return.
+4. Predict how much they spend in the future.
+5. Segment customers into business-actionable groups.
+6. Explore short-term revenue forecasting with caution.
+7. Present the results in a dashboard that emphasizes business usefulness, not just model scores.
+
+DATASET AND PREPROCESSING OBSERVATIONS
+
+The cleaned purchase dataset contained 777,575 valid purchase rows after filtering out returns, cancellations, non-product charges, invalid prices, invalid quantities, and missing customer records. The usable transaction period ran from 1 December 2009 to 9 December 2011. Total valid purchase revenue after cleaning was approximately 17.24 million.
+
+A major early decision was to preserve transaction flags before filtering. Cancellations, returns, and non-product invoice lines were not simply treated as random dirt. They were important transaction types. For feature generation, genuine purchase behaviour was separated from non-purchase behaviour, but return and cancellation patterns were still useful for customer-level behavioural features.
+
+The non-product codes removed from genuine purchases included items like POST, DOT, BANK CHARGES, AMAZONFEE, MANUAL, and CRUK. Removing them was important because these are not ordinary customer product purchases. If included, they would distort spend, frequency, product variety, and customer value calculations.
+
+The final customer-level modelling dataset used a cutoff date of 9 September 2011, with a 90-day future prediction window and a 180-day active customer window. This produced 2,778 customer rows and 26 columns. Out of these customers, 1,707 had future spend greater than zero in the next 90 days, while 1,071 had zero future spend. That means the retained or future-spending customer share was 61.45%, and the zero-future-spend share was 38.55%.
+
+The average future spend over the next 90 days was 899.50. This average is useful but also somewhat misleading, because future spend is heavily skewed. A few very high-value customers contribute disproportionately to revenue. This became clear later in the CLV diagnostics.
+
+An important bug was discovered in the dataset builder: it printed the number of customers with future spend greater than zero as 2,778, which was wrong. The correct number was 1,707. The issue was only in the printed summary, not the actual corrected RetentionLabel logic. This kind of bug is worth mentioning internally because it shows why summary validation matters. A model can run successfully while a reporting line still misleads the interpretation.
+
+WHY THE 90-DAY PREDICTION WINDOW MADE SENSE
+
+The 90-day prediction window was not chosen randomly. Earlier customer gap analysis showed that many customers do not repurchase immediately. A 30-day window would be too strict and would label many healthy but slower-returning customers as inactive. A 90-day window captures more realistic repeat purchase behaviour.
+
+The inter-purchase gap analysis showed that the median gap was around 24 days, the mean gap was around 51 days, and the 90th percentile gap was around 135 days. This tells us customer behaviour is uneven. Some customers return quickly, while many return after much longer gaps. A 90-day window sits in a reasonable middle ground: it is long enough to observe repeat buying, but not so long that the target becomes vague.
+
+The 180-day active window was also sensible. If very old customers were included, the model would be forced to learn from stale behaviour. The active window focuses the modelling population on customers with reasonably recent pre-cutoff history.
+
+FEATURE ENGINEERING INSIGHTS
+
+The project’s modelling strength came mainly from feature engineering, not from blindly throwing models at the data. The features captured customer behaviour from several angles:
+
+* Frequency captured how often a customer purchased.
+* Monetary captured total historical spend.
+* Recency captured how recently the customer bought.
+* AvgBasketValue captured typical purchase size.
+* AvgQuantity captured the typical item quantity per invoice.
+* UniqueProducts captured the breadth of products purchased.
+* LifetimeDays captured the customer’s observed relationship length.
+* PurchaseRate normalized purchase frequency over lifetime.
+* AvgGapDays captured purchase rhythm.
+* StdGapDays captured consistency or irregularity in repurchase timing.
+* PurchasesLast30Days and SpendLast30Days captured very recent behaviour.
+* PurchasesLast90Days and SpendLast90Days captured medium-term activity.
+* SpendPrior90Days and PurchasesPrior90Days enabled momentum comparison.
+* SpendTrendRatio captured whether recent spending increased or dropped.
+* FrequencyLast90DaysRatio captured recent frequency momentum.
+* ReturnRate captured return behaviour.
+
+One particularly important feature was AvgGapDays. Missing AvgGapDays does not mean the customer has a zero-day gap. It usually means there was no repeat purchase history. Filling it with 999 was a practical modelling choice, but later clustering improved by also adding AvgGapDaysMissing. This distinction matters. A single-purchase customer is not simply a customer with a large numerical gap; they belong to a different behavioural category.
+
+Another important observation was that product variety mattered. UniqueProducts, or a better frontend name such as Product Variety Score, repeatedly appeared as a strong behavioural signal. Customers who explored more products tended to show stronger engagement than customers who made isolated purchases.
+
+SpendTrendRatio was interesting because its linear correlation was not very strong, but it still appeared useful in model interpretation. This suggests the signal may be nonlinear: recent spend momentum matters, but not in a simple one-directional way.
+
+RETENTION CLASSIFICATION OBSERVATIONS
+
+The retention classification task asked a simple question: will the customer spend anything in the next 90 days?
+
+The positive class was not rare. Around 61.45% of customers had future spend, while 38.55% had zero spend. This means the task was not a heavily imbalanced classification problem, but it was still noisy because customer purchase timing is irregular.
+
+The classification models performed moderately well, not perfectly. Logistic Regression and KNN were surprisingly competitive, which suggests the engineered features already contained a strong behavioural signal. XGBoost gave one of the best practical balances, especially for recall-oriented retention targeting.
+
+Earlier results showed Logistic Regression around 0.6745 accuracy, 0.7069 precision, 0.8041 recall, 0.7524 F1, and 0.7579 ROC AUC. This is not bad for a retail retention task. The high recall means the model was good at catching many customers who would return, though at the cost of false positives.
+
+KNN achieved similar performance, with around 0.6871 accuracy and 0.7590 F1. This suggests customers with similar behavioural profiles often had similar retention outcomes.
+
+Random Forest had a different personality. It tended to be more conservative, with higher precision but lower recall. That means it was better when the goal was to avoid wasting campaigns, but worse when the goal was to catch as many likely returners as possible.
+
+The later two-stage classifier achieved around 0.6871 accuracy, 0.6953 precision, 0.8743 recall, 0.7746 F1, 0.7711 ROC AUC, and 0.8588 PR AUC. The recall was very high, but the confusion matrix showed many false positives. This is useful for retention marketing, but it creates problems when used inside a two-stage CLV model because false positives receive positive expected spend.
+
+A key conclusion from classification is that retention prediction is useful, but it is not enough by itself. A customer who returns and spends 50 is very different from a customer who returns and spends 5,000. That is why the project naturally moved from retention classification to CLV prediction.
+
+CLV MODELLING OBSERVATIONS
+
+The CLV task was the strongest part of the project. It predicted FutureSpend90Days, the customer’s future spend over the next 90 days.
+
+This target had two difficult properties:
+
+1. A large zero-spend group.
+2. A heavily right-skewed positive-spend distribution.
+
+This made the CLV problem harder than ordinary regression. Many customers spent zero, while a small number of customers spent extremely large amounts. A normal regression model can struggle with this because it tries to average out very different customer behaviours.
+
+The first direct regression approach used log1p transformation on FutureSpend90Days. This made sense because the target was heavily skewed. Ridge regression performed surprisingly well under this setup. That was an important finding. It showed that after strong feature engineering and log transformation, much of the relationship between behaviour and future value became approximately linear.
+
+However, the final best model was calibrated XGBoost Tweedie. Tweedie was a better conceptual fit because it is suitable for zero-inflated, non-negative, right-skewed targets. This matches customer future spend: many zeros, many moderate values, and a few large values.
+
+The final calibrated XGBoost Tweedie model achieved approximately:
+
+* RMSE: 1,976.27
+* MAE: 529.88
+* R²: 0.8330
+* Revenue Error: 11.27%
+* Spearman rank correlation: 0.5234
+* Top 10% predicted customers captured 57.10% of actual future revenue
+
+This is a very strong result for the project. It means the model was not only predicting individual spend reasonably well, but also ranking customers in a business-useful way.
+
+The ranking result is particularly important. Even if exact rupee/pound-level predictions are imperfect, the model can still be valuable if it identifies which customers are most worth prioritizing. Capturing 57.10% of future revenue in the top 10% predicted customers is a strong business insight.
+
+The calibrated model slightly improved aggregate revenue prediction. Calibration did not completely change the model, but it corrected total predicted revenue closer to actual revenue. The calibration factor was small, around 1.0116, which suggests the model was already fairly well calibrated.
+
+WHY DIRECT TWEEDIE BEAT TWO-STAGE CLV
+
+A two-stage CLV model seemed theoretically attractive:
+
+Stage 1: predict whether the customer will buy.
+Stage 2: predict spend conditional on buying.
+Final CLV: probability of buying multiplied by expected spend if buying.
+
+This is a clean theory, but it did not beat the direct Tweedie model. The two-stage Tweedie model achieved around 3,113.84 RMSE and 0.5854 R² after calibration. That was clearly weaker than the direct calibrated XGBoost Tweedie.
+
+The main reason is error compounding. If the classifier makes false positive or false negative mistakes, the regression stage inherits those mistakes. The two-stage model also has less data for the positive-spend regression stage because it trains only on customers who actually spent in the future. The direct Tweedie model learns the zero and positive spend behaviour together.
+
+The two-stage experiment was still valuable. It showed that an elegant modelling structure is not automatically better. In this dataset, direct distribution-aware regression was more effective than separating purchase probability and conditional spend.
+
+CLV DIAGNOSTIC OBSERVATIONS
+
+The residual diagnostics revealed the model’s strengths and weaknesses.
+
+The model performed well for ranking and average prediction, but it still struggled with extreme high-value customers. The largest underpredicted customer had actual future spend of around 108,089.25 and predicted future spend of around 68,185.01. That single customer created a residual of nearly 39,904.24. This explains why RMSE remained high even when the overall model was good.
+
+The top actual-value decile was the hardest region. The model underpredicted whales. This is expected in retail CLV modelling because extreme customers are rare and difficult to learn from. The model becomes cautious and pulls extreme predictions closer to the average.
+
+The model also assigned some predicted revenue to actual zero-spenders. The zero-spender diagnostics showed that actual zero-spenders still received an average predicted CLV of around 309.93 and a median predicted CLV of around 228.20. Total predicted revenue assigned to zero-spenders was around 66,324.23, around 14.99% of predicted revenue.
+
+This is not necessarily a failure. It reflects probabilistic uncertainty. Some customers look behaviourally similar to future spenders but happen not to purchase in the next 90 days. A model cannot perfectly know timing. This is also why RMSLE and WMAPE may look less flattering.
+
+The CLV lift table was one of the best business outputs. The top 5% predicted customers captured around 47.88% of future revenue, while the top 10% captured around 57.10%. This is a powerful dashboard insight: marketing spend can be concentrated on a small group with large expected revenue impact.
+
+DEVIANCE R² FAILURE / LESSON
+
+Tweedie deviance R² was tested later and came out negative. This looked worrying at first, but it did not invalidate the model. The reason was that the model selection had been optimized around RMSE, not Tweedie deviance. A model can be strong on RMSE, MAE, R², ranking, and revenue lift while still not minimizing distribution-specific deviance better than a mean baseline.
+
+This is an important modelling lesson. Metrics are not interchangeable. The final model was selected for business-oriented prediction accuracy and revenue ranking, not for being the best theoretical Tweedie distribution fit.
+
+The correct way to present this is not to hide it, but to frame it as a diagnostic limitation. The model is useful for customer prioritization, but it is not a perfect probabilistic model of the full spend distribution.
+
+CUSTOMER SEGMENTATION OBSERVATIONS
+
+Customer segmentation was performed after CLV because segmentation gives the business a simpler way to understand the customer base. Instead of only predicting each customer’s value, clustering groups customers into interpretable behavioural categories.
+
+The final segmentation model was KMeans with 4 clusters.
+
+The final segments were:
+
+1. High-Value Loyalists
+2. Regular Mid-Value Customers
+3. At-Risk Inactive Customers
+4. New / One-Time Customers
+
+The strongest segmentation insight was that High-Value Loyalists made up only 22.68% of customers but contributed 65.35% of future revenue. This aligns strongly with the CLV lift result, where the top predicted customers captured a disproportionate share of future revenue. Both models tell the same business story: revenue is highly concentrated.
+
+Cluster 1, High-Value Loyalists, had around 630 customers. Their average recency was around 15.66 days, average frequency was around 21.70, average historical monetary value was around 12,542.67, average future spend was around 2,592.06, and retention rate was around 86.98%. This is the best customer group. These customers are recent, frequent, high-spending, and likely to return.
+
+Cluster 0, Regular Mid-Value Customers, had around 1,031 customers. This was the largest group, making up around 37.11% of customers. They had moderate purchase frequency, moderate monetary value, and a retention rate around 62.46%. They contributed around 18.51% of future revenue. This is the broad middle of the business and is ideal for cross-sell, bundles, and recommendation campaigns.
+
+Cluster 3, At-Risk Inactive Customers, had around 697 customers. Their average recency was around 127 days, which is high. They had some purchase history, but their inactivity made them risky. Their retention rate was around 52.22%, and they contributed around 10.65% of future revenue. These customers are suitable for win-back campaigns.
+
+Cluster 2, New / One-Time Customers, had around 420 customers. Their average frequency was only around 1.07, and their zero future spend rate was around 64.05%. They represented around 15.12% of customers but only 5.48% of future revenue. These customers need onboarding and low-cost nurture campaigns rather than expensive retention offers.
+
+WHY DBSCAN WAS NOT SELECTED
+
+DBSCAN initially looked impressive because it produced a very high silhouette score in one run. However, it marked 97.52% of customers as noise. That means it was not really segmenting the customer base. It was finding a few tiny dense pockets and rejecting almost everyone else.
+
+After improving the DBSCAN selection logic, the noise rate became lower, around 22.43%, but that still meant 623 customers were left as noise. That is not ideal for a frontend customer segmentation system. A dashboard cannot easily explain to business users why hundreds of customers are “noise.”
+
+Therefore DBSCAN was useful as a diagnostic or outlier detector, but not as the final segmentation method.
+
+Gaussian Mixture had slightly better silhouette than KMeans in the second run, but KMeans was preferred because it produced cleaner, easier-to-explain segments and no unassigned customers. Interpretability mattered more than a small metric difference.
+
+WHY K = 4 WAS CHOSEN EVEN THOUGH K = 2 HAD HIGHER SILHOUETTE
+
+The KMeans k-search showed that k = 2 had the highest silhouette score. But k = 2 would likely split customers into only two broad groups: good customers and weak customers. That is not very useful for business action.
+
+K = 4 gave a more meaningful segmentation structure. It separated loyal high-value customers, regular customers, inactive customers, and one-time customers. This is more useful for campaign design. A slightly lower silhouette score is acceptable when the business interpretability improves.
+
+This is a good example where the best metric is not automatically the best product decision.
+
+TIME-SERIES FORECASTING OBSERVATIONS
+
+The time-series module used the same cleaned transaction dataset, but not the customer-level CLV features. Instead, valid purchases were aggregated into weekly and monthly revenue series.
+
+The weekly series had 106 observations, while the monthly series had only 25 observations. This is the most important limitation of the time-series module. Twenty-five monthly points are too few for serious forecasting. Monthly data is useful for trend visualization, not reliable modelling.
+
+Weekly forecasting was more reasonable because 106 observations give more training points. The model used a 12-week test horizon, roughly matching a 3-month forecasting period.
+
+The target was weekly revenue. Models tested included:
+
+* Naive baseline
+* Moving average baselines
+* Simple Exponential Smoothing
+* Holt trend model
+* Holt-Winters seasonal models
+* ARIMA
+* SARIMA
+* Random Forest lag model
+* XGBoost lag model
+
+The final best model was SARIMA, with:
+
+* RMSE: 57,057.61
+* MAE: 48,227.71
+* WAPE: 18.29%
+* sMAPE: 19.89%
+* Revenue Error: 12.77%
+* Best order: (1, 1, 0)
+* Best seasonal order: (1, 1, 0, 4)
+
+The naive baseline had:
+
+* RMSE: 76,669.12
+* MAE: 59,468.71
+* WAPE: 22.55%
+* Revenue Error: 21.09%
+
+This means SARIMA did beat naive. The improvement was meaningful but not spectacular. RMSE improved by about 25.6%, WAPE improved by about 18.9%, and revenue error improved by about 39.4%.
+
+However, most tested models performed worse than naive. This is not something to hide. It tells us the series is noisy, short, and difficult to forecast. In forecasting, naive is often a strong baseline, especially when the data is limited.
+
+XGBoost lag was competitive. It had RMSE around 73,746.82, WAPE around 19.25%, and revenue error around 11.59%. It did not beat SARIMA on RMSE or MAE, but it had slightly better aggregate revenue error. This means XGBoost was better at estimating total revenue over the test window, while SARIMA was better at week-by-week accuracy.
+
+The correct conclusion is that the time-series module should be included, but not oversold. It should be presented as exploratory short-term weekly revenue forecasting. The monthly trend chart should be shown as business context, not as a serious monthly forecasting model.
+
+A good frontend caveat would be: “Forecasting is based on 106 weekly observations and should be interpreted as a short-term directional estimate rather than a production-grade revenue projection.”
+
+INTERESTING PROJECT-WIDE PATTERNS
+
+A repeated pattern throughout the project was revenue concentration. CLV lift showed that the top predicted customers captured a large share of actual future revenue. Clustering showed that the High-Value Loyalists segment was a small share of customers but generated most future revenue. These independent results reinforce each other.
+
+Another repeated pattern was that recency and rhythm mattered more than simple total spend alone. Monetary value was useful, but purchase timing, purchase gap, recent activity, and product variety were often more informative. A customer who spent a lot once is not necessarily loyal. A customer who buys recently, repeatedly, and across product types is more valuable.
+
+Another important pattern was that simpler models sometimes performed surprisingly well. Logistic Regression was strong for retention. Ridge regression was strong in early log-CLV modelling. Naive was a difficult baseline in time series. This is a useful lesson: model complexity only helps when the data supports it.
+
+The project also showed why business metrics matter. For CLV, RMSE and R² were useful, but revenue capture and decile lift were more directly meaningful. For time series, R² was negative even for the best model, but WAPE, RMSE improvement over naive, and revenue error gave a clearer picture.
+
+FAILURES AND CORRECTIONS DURING THE PROJECT
+
+Several issues were discovered and corrected:
+
+1. The dataset builder printed the wrong positive future-spend count.
+2. AvgGapDays needed careful treatment because missing gap means single-purchase history.
+3. Early clustering allowed DBSCAN to look better than it really was because noise percentage was ignored.
+4. DBSCAN’s high silhouette was misleading when almost all customers were labelled as noise.
+5. Segment names needed correction because automatic naming initially mislabelled some behavioural groups.
+6. Two-stage CLV seemed theoretically strong but performed worse than direct Tweedie.
+7. Tweedie deviance R² came out negative, showing a mismatch between distribution-fit metrics and the RMSE-optimized business objective.
+8. Time-series forecasting initially crashed because statsmodels forecasts carried their own index, causing pandas index alignment and NaN forecast columns.
+9. Most time-series models performed worse than naive, proving the time series is limited and noisy.
+10. The project repeatedly showed that validation and interpretation are as important as training models.
+
+These failures are not weaknesses if presented correctly. They show actual modelling judgement. A polished but dishonest project would hide these. A stronger project explains what was tried, what failed, and why the final choices were made.
+
+FRONTEND STORYLINE
+
+The frontend should not be designed as a random collection of charts. It should tell a business story.
+
+Suggested dashboard flow:
+
+1. Overview
+2. Customer Value Prediction
+3. Customer Segmentation
+4. Retention Behaviour
+5. Revenue Forecasting
+6. Business Recommendations
+7. Model Notes and Limitations
+
+The overview page should immediately show the strongest project-wide results:
+
+* Total valid purchase revenue: around 17.24 million
+* Customer modelling dataset: 2,778 active customers
+* Future spenders: 1,707
+* Zero future spend customers: 1,071
+* Final CLV model: Calibrated XGBoost Tweedie
+* CLV R²: around 0.833
+* Top 10% predicted customers captured 57.10% future revenue
+* Final segmentation model: KMeans with 4 clusters
+* High-Value Loyalists: 22.68% customers, 65.35% future revenue
+* Best forecasting model: SARIMA
+* Forecast WAPE: around 18.29%
+
+The CLV page should focus on prediction and prioritization. Best charts:
+
+* Actual vs predicted CLV
+* Log actual vs log predicted CLV
+* Revenue capture / lift curve
+* Predicted decile calibration
+* Zero-spender predicted CLV distribution
+
+The segmentation page should focus on customer groups. Best charts:
+
+* Customer share vs future revenue share by segment
+* PCA segment visualization
+* Retention vs zero-spend rate by segment
+* Average future spend by segment
+* Segment profile heatmap
+
+The time-series page should be more cautious. Best charts:
+
+* Monthly revenue trend
+* Weekly revenue trend
+* Actual vs SARIMA forecast
+* Forecast model comparison
+* Future 12-week forecast
+
+The frontend should include plain-language explanations under charts. The goal is not only to show metrics but to explain what the business should do.
+
+FRONTEND RECOMMENDATION CARDS
+
+High-Value Loyalists:
+These customers are recent, frequent, high-spending, and highly likely to return. They should receive loyalty rewards, early access offers, premium support, and personalized campaigns. Losing them would have a disproportionate revenue impact.
+
+Regular Mid-Value Customers:
+This is the largest customer group. They have moderate purchase behaviour and reasonable future revenue potential. They are suitable for cross-sell, bundles, product recommendations, and gradual upgrade campaigns.
+
+At-Risk Inactive Customers:
+These customers have purchased before but have not bought recently. They should be targeted with win-back campaigns, limited-time discounts, and reminders. However, campaign spending should be controlled because their return probability is weaker.
+
+New / One-Time Customers:
+These customers have limited history and low repeat behaviour. They should receive onboarding, first-repeat-purchase offers, and low-cost nurture campaigns. They should not receive expensive retention campaigns until they show stronger engagement.
+
+FINAL REPORT POSITIONING
+
+The project should be positioned as a customer analytics and revenue intelligence system, not just a machine learning comparison exercise.
+
+The strongest claim is:
+
+“The project successfully transformed transaction-level retail data into customer-level intelligence by predicting retention, estimating future customer value, segmenting customers into actionable groups, and exploring short-term revenue forecasting.”
+
+The second strongest claim is:
+
+“The calibrated XGBoost Tweedie CLV model and KMeans segmentation produced consistent business conclusions: future revenue is concentrated among a small group of high-value customers.”
+
+The time-series claim should be more careful:
+
+“Weekly revenue forecasting was explored using classical and machine-learning approaches. SARIMA outperformed the naive baseline, but the limited two-year dataset and noisy retail revenue pattern make the forecast suitable for short-term directional planning rather than production-grade forecasting.”
+
+LIMITATIONS
+
+The dataset covers only about two years. This limits long-term forecasting and seasonal modelling.
+
+The monthly time series has only 25 observations, which is too small for serious monthly forecasting.
+
+The CLV target is highly skewed, and extreme high-value customers remain difficult to predict accurately.
+
+Some actual zero-spend customers receive positive predicted CLV because they are behaviourally similar to future spenders but did not purchase within the 90-day window.
+
+Rolling-window validation was not performed in the final version. A single cutoff was used for the main CLV experiment due to project scope and dataset length. Future work can test model stability across multiple cutoff dates.
+
+Customer-level demographics or marketing channel data were not available. The project uses only transaction behaviour.
+
+Business costs were not included. The model identifies high-value customers, but campaign profitability would require marketing cost and margin data.
+
+FUTURE WORK
+
+Future improvements could include rolling-window validation across multiple cutoff dates, profit-based CLV instead of revenue-based CLV, campaign response modelling, customer churn survival analysis, more robust probabilistic CLV methods, and integration with a real-time dashboard.
+
+If more data were available, the time-series module could be improved with longer seasonal histories, holiday/event features, and better exogenous variables.
+
+If marketing data were available, the system could move from predicting value to recommending actions based on expected uplift.
+
+FINAL OVERALL CONCLUSION
+
+The project’s best contribution is not that every model worked perfectly. The best contribution is that it developed a realistic customer analytics pipeline from raw transaction records to business decisions.
+
+The final CLV model identifies which customers are worth prioritizing. The segmentation model explains what types of customers exist. The retention model gives a binary view of repeat behaviour. The time-series module provides directional revenue planning but is correctly treated with caution.
+
+The overall business message is clear: revenue is concentrated, customer behaviour is uneven, and a small group of loyal high-value customers drives a large share of future revenue. A business using this system would not market equally to everyone. It would protect high-value loyalists, grow mid-value customers, reactivate inactive customers carefully, and nurture one-time customers at low cost.

@@ -1,0 +1,141 @@
+{
+  "status": "healthy",
+  "missingFiles": [],
+  "emptyFiles": [],
+  "rerunSuggestions": [],
+  "shapStatus": {
+    "status": "generated",
+    "retention": {
+      "status": "generated",
+      "source": "src/final_outputs/data/clustered_customers.csv",
+      "modelSource": "Rebuilt retention classifier model from saved customer-level artifact; no synthetic data used.",
+      "sampleRowsExplained": 695,
+      "topFeatures": [
+        {
+          "Feature": "UniqueProducts",
+          "MeanAbsSHAP": 0.2998727262020111
+        },
+        {
+          "Feature": "SpendLast90Days",
+          "MeanAbsSHAP": 0.2378796935081482
+        },
+        {
+          "Feature": "RecencyFrequency",
+          "MeanAbsSHAP": 0.15878628194332123
+        },
+        {
+          "Feature": "AvgQuantity",
+          "MeanAbsSHAP": 0.13040071725845337
+        },
+        {
+          "Feature": "AvgGapDays",
+          "MeanAbsSHAP": 0.12005089223384857
+        },
+        {
+          "Feature": "Recency",
+          "MeanAbsSHAP": 0.11312778294086456
+        },
+        {
+          "Feature": "StdGapDays",
+          "MeanAbsSHAP": 0.11085185408592224
+        },
+        {
+          "Feature": "ReturnRate",
+          "MeanAbsSHAP": 0.10875557363033295
+        },
+        {
+          "Feature": "AvgBasketValue",
+          "MeanAbsSHAP": 0.10828515142202377
+        },
+        {
+          "Feature": "Monetary",
+          "MeanAbsSHAP": 0.09639480710029602
+        }
+      ],
+      "outputs": [
+        "src/shap_plots/01_retention_shap_summary_beeswarm.png",
+        "src/shap_plots/02_retention_shap_summary_bar.png",
+        "src/shap_outputs/retention_shap_feature_importance.csv",
+        "src/shap_plots/04_retention_waterfall_example.png"
+      ]
+    },
+    "clv": {
+      "status": "generated",
+      "source": "src/final_outputs/data/clustered_customers.csv",
+      "modelSource": "Rebuilt CLV Tweedie regressor model from saved customer-level artifact; no synthetic data used.",
+      "sampleRowsExplained": 695,
+      "topFeatures": [
+        {
+          "Feature": "Monetary",
+          "MeanAbsSHAP": 0.4770984351634979
+        },
+        {
+          "Feature": "RecencyFrequency",
+          "MeanAbsSHAP": 0.20494402945041656
+        },
+        {
+          "Feature": "RevenuePerDay",
+          "MeanAbsSHAP": 0.14732763171195984
+        },
+        {
+          "Feature": "SpendLast90Days",
+          "MeanAbsSHAP": 0.1291550248861313
+        },
+        {
+          "Feature": "SpendPrior90Days",
+          "MeanAbsSHAP": 0.10937909781932831
+        },
+        {
+          "Feature": "AvgGapDays",
+          "MeanAbsSHAP": 0.08217126131057739
+        },
+        {
+          "Feature": "AvgBasketValue",
+          "MeanAbsSHAP": 0.07512766867876053
+        },
+        {
+          "Feature": "StdGapDays",
+          "MeanAbsSHAP": 0.0746273323893547
+        },
+        {
+          "Feature": "Frequency",
+          "MeanAbsSHAP": 0.070664182305336
+        },
+        {
+          "Feature": "Recency",
+          "MeanAbsSHAP": 0.058946721255779266
+        }
+      ],
+      "outputs": [
+        "src/shap_plots/01_clv_shap_summary_beeswarm.png",
+        "src/shap_plots/02_clv_shap_summary_bar.png",
+        "src/shap_outputs/clv_shap_feature_importance.csv",
+        "src/shap_plots/04_clv_waterfall_example.png"
+      ]
+    },
+    "notes": [
+      "Generated from saved customer-level artifact, not fabricated.",
+      "Models were rebuilt from existing engineered features because reusable final model objects were not saved."
+    ],
+    "generatedAt": "2026-06-26T07:39:00.027708+00:00"
+  },
+  "generatedAt": "2026-06-27T04:26:42.175454+00:00",
+  "copied": [
+    "assets -> dashboard/public/assets",
+    "src/final_outputs -> dashboard/public/final_outputs",
+    "src/clustering_frontend_data -> dashboard/public/raw_outputs/clustering_frontend_data",
+    "src/clustering_frontend_plots -> dashboard/public/raw_outputs/clustering_frontend_plots",
+    "src/clustering_plots -> dashboard/public/raw_outputs/clustering_plots",
+    "src/clv_diagnostic_tables -> dashboard/public/raw_outputs/clv_diagnostic_tables",
+    "src/clv_diagnostic_plots -> dashboard/public/raw_outputs/clv_diagnostic_plots",
+    "src/time_series_outputs -> dashboard/public/raw_outputs/time_series_outputs",
+    "src/time_series_plots -> dashboard/public/raw_outputs/time_series_plots",
+    "src/shap_outputs -> dashboard/public/raw_outputs/shap_outputs",
+    "src/shap_plots -> dashboard/public/raw_outputs/shap_plots"
+  ],
+  "notes": [
+    "No synthetic model results were created.",
+    "Model Lab sliders/selectors use precomputed artifacts only.",
+    "SHAP status is read from src/shap_outputs/shap_status.json and may be generated, partial, or skipped depending on available artifacts."
+  ]
+}

@@ -149,13 +149,42 @@ def build_retention_dataset(df, cutoff_date='2011-09-09', prediction_days=90, ac
     # would otherwise create divide-by-zero errors
     customer_features['LifetimeDays'] = (customer_features['LifetimeDays'].replace(0, 1))
 
+    # FLAGGING RECENTLY ACQUIRED CUSTOMERS
+    # New customers often behave differently from mature customers
+    customer_features['IsNewCustomer'] = (
+        customer_features['LifetimeDays'] <= 60
+    ).astype(int)
   
     # DERIVING PURCHASE VELOCITY FEATURE
     # Measures: average order frequency per lifetime day
     # Captures long-term customer engagement intensity
     customer_features['PurchaseRate'] = (customer_features['Frequency']/customer_features['LifetimeDays'])
 
-  
+    # DERIVING RECENCY-FREQUENCY INTERACTION
+    # Combines freshness and loyalty into one signal
+    customer_features['RecencyFrequency'] = (customer_features['Recency'] / customer_features['Frequency'])
+
+    # DERIVING REVENUE INTENSITY FEATURE
+    # Measures average spending generated per day
+    customer_features['RevenuePerDay'] = (
+        customer_features['Monetary'] /
+        customer_features['LifetimeDays']
+    )
+
+    # DERIVING PRODUCT SPEND INTENSITY FEATURE
+    # Measures average spend per unique product purchased
+    customer_features['AvgSpendPerProduct'] = (
+        customer_features['Monetary'] /
+        customer_features['UniqueProducts']
+    )
+
+    # DERIVING PRODUCT DIVERSITY FEATURE
+    # Measures product variety purchased per order
+    customer_features['ProductDiversityRate'] = (
+        customer_features['UniqueProducts'] /
+        customer_features['Frequency']
+    )
+
     # CREATING PREVIOUS PURCHASE TIMESTAMPS
     # Previous invoice timestamps are needed
     # for inter-purchase gap calculations
@@ -171,19 +200,32 @@ def build_retention_dataset(df, cutoff_date='2011-09-09', prediction_days=90, ac
     # DERIVING AVERAGE INTER-PURCHASE GAP
     # Customers with lower average gaps
     # often show stronger retention tendencies
-    avg_gap = (
+    # DERIVING INTER-PURCHASE GAP STATISTICS
+    gap_features = (
         invoice_df
-        .groupby('Customer_ID')['GapDays']
-        .mean()
+        .groupby('Customer_ID')
+        .agg(
+            AvgGapDays=('GapDays', 'mean'),
+            StdGapDays=('GapDays', 'std')
+        )
         .reset_index()
-        .rename(columns={
-            'GapDays': 'AvgGapDays'
-        })
     )
 
-  
-    # MERGING GAP FEATURES INTO MAIN DATASET
-    customer_features = customer_features.merge(avg_gap, on='Customer_ID', how='left')
+
+    # MERGING GAP FEATURES
+    customer_features = customer_features.merge(
+        gap_features,
+        on='Customer_ID',
+        how='left'
+    )
+
+
+    # SINGLE-PURCHASE CUSTOMERS HAVE NO GAP VARIANCE
+    customer_features['StdGapDays'] = (
+        customer_features['StdGapDays']
+        .fillna(0)
+    )
+
 
   
     # DEFINING RECENT 30-DAY ACTIVITY WINDOW
@@ -223,7 +265,117 @@ def build_retention_dataset(df, cutoff_date='2011-09-09', prediction_days=90, ac
     # should receive zeros instead of NaNs
     customer_features[['PurchasesLast30Days', 'SpendLast30Days']] = customer_features[['PurchasesLast30Days', 'SpendLast30Days']].fillna(0)
 
-  
+
+
+    # NEW
+    # DEFINING RECENT 90-DAY ACTIVITY WINDOW
+    # Captures medium-term customer engagement before cutoff
+    last_90_start = (
+        cutoff_date -
+        pd.Timedelta(days=90)
+    )
+
+
+    # EXTRACTING LAST 90-DAY CUSTOMER ACTIVITY
+    last_90_df = history_df[
+        history_df['InvoiceDate'] >= last_90_start
+    ]
+
+    # CREATING MEDIUM-TERM MOMENTUM FEATURES
+    recent_90_features = (
+        last_90_df
+        .groupby('Customer_ID')
+        .agg(
+            PurchasesLast90Days=('Invoice', 'nunique'),
+            SpendLast90Days=('TransactionValue', 'sum')
+        )
+        .reset_index()
+    )
+
+    # MERGING MEDIUM-TERM MOMENTUM FEATURES
+    customer_features = customer_features.merge(
+        recent_90_features,
+        on='Customer_ID',
+        how='left'
+    )
+
+    # FILLING MISSING VALUES
+    customer_features[
+        ['PurchasesLast90Days', 'SpendLast90Days']
+    ] = customer_features[
+        ['PurchasesLast90Days', 'SpendLast90Days']
+    ].fillna(0)
+
+
+
+    # DEFINING PRIOR 90-DAY WINDOW
+    # Window from cutoff-180 to cutoff-90
+    prior_90_start = (
+        cutoff_date -
+        pd.Timedelta(days=180)
+    )
+
+    prior_90_end = (
+        cutoff_date -
+        pd.Timedelta(days=90)
+    )
+
+    # EXTRACTING PRIOR WINDOW ACTIVITY
+    prior_90_df = history_df[
+        (history_df['InvoiceDate'] >= prior_90_start) &
+        (history_df['InvoiceDate'] < prior_90_end)
+    ]
+
+    # CALCULATING PRIOR WINDOW ACTIVITY
+    prior_90_features = (
+        prior_90_df
+        .groupby('Customer_ID')
+        .agg(
+            SpendPrior90Days=('TransactionValue', 'sum'),
+            PurchasesPrior90Days=('Invoice', 'nunique')
+        )
+        .reset_index()
+    )
+
+    # MERGING PRIOR WINDOW FEATURES
+    customer_features = customer_features.merge(
+        prior_90_features,
+        on='Customer_ID',
+        how='left'
+    )
+
+    customer_features[
+        ['SpendPrior90Days','PurchasesPrior90Days']
+    ] = customer_features[
+        ['SpendPrior90Days','PurchasesPrior90Days']
+    ].fillna(0)
+
+
+
+    # DERIVING SPENDING MOMENTUM FEATURE
+    # Ratio > 1 means accelerating spend
+    # Ratio < 1 means declining spend
+    customer_features['SpendTrendRatio'] = (
+        customer_features['SpendLast90Days'] /
+        (
+            customer_features['SpendPrior90Days']
+            + 1
+        )
+    )
+
+
+    # DERIVING PURCHASE MOMENTUM FEATURE
+    # Ratio > 1 means increasing purchase frequency
+    # Ratio < 1 means declining purchase frequency
+    customer_features['FrequencyLast90DaysRatio'] = (
+        customer_features['PurchasesLast90Days'] /
+        (
+            customer_features['PurchasesPrior90Days']
+            + 1
+        )
+    )
+
+
     # COLLECTING HISTORICAL RETURN/CANCELLATION DATA
     # Behavioral instability signals
     # may help predict retention
@@ -244,13 +396,14 @@ def build_retention_dataset(df, cutoff_date='2011-09-09', prediction_days=90, ac
         ).reset_index())
 
   
-    # DERIVING CANCELLATION RATE
+    '''# DERIVING CANCELLATION RATE
     # Measures: proportion of customer cancellations
     cancellation_features['CancellationRate'] = (cancellation_features['CancelledTransactions']/cancellation_features['TotalTransactions'])
-
+    '''
   
     # DERIVING RETURN RATE
     # Measures: proportion of customer returns
+    # Found out that cancellation rate and return rate are same, correlation = 1.0
     cancellation_features['ReturnRate'] = (cancellation_features['ReturnedTransactions']/cancellation_features['TotalTransactions'])
 
   
@@ -258,7 +411,6 @@ def build_retention_dataset(df, cutoff_date='2011-09-09', prediction_days=90, ac
     customer_features = customer_features.merge(cancellation_features[
             [
                 'Customer_ID',
-                'CancellationRate',
                 'ReturnRate'
             ]
         ],

@@ -1,0 +1,156 @@
+{
+  "status": "ok",
+  "source": "src/final_outputs/data/monthly_revenue_series.csv",
+  "description": "Monthly revenue series used for trend context.",
+  "rowsShown": 20,
+  "totalRowsAvailable": 25,
+  "columns": [
+    "Date",
+    "Revenue",
+    "OrderCount",
+    "UniqueCustomers",
+    "AvgOrderValue"
+  ],
+  "records": [
+    {
+      "Date": "2009-12-01",
+      "Revenue": 680586.01,
+      "OrderCount": 1508,
+      "UniqueCustomers": 953,
+      "AvgOrderValue": 451.3169827586207
+    },
+    {
+      "Date": "2010-01-01",
+      "Revenue": 553112.672,
+      "OrderCount": 1006,
+      "UniqueCustomers": 720,
+      "AvgOrderValue": 549.8137892644136
+    },
+    {
+      "Date": "2010-02-01",
+      "Revenue": 501823.956,
+      "OrderCount": 1099,
+      "UniqueCustomers": 772,
+      "AvgOrderValue": 456.6187042766151
+    },
+    {
+      "Date": "2010-03-01",
+      "Revenue": 693654.871,
+      "OrderCount": 1521,
+      "UniqueCustomers": 1055,
+      "AvgOrderValue": 456.05185470085473
+    },
+    {
+      "Date": "2010-04-01",
+      "Revenue": 588219.002,
+      "OrderCount": 1324,
+      "UniqueCustomers": 940,
+      "AvgOrderValue": 444.274170694864
+    },
+    {
+      "Date": "2010-05-01",
+      "Revenue": 594602.38,
+      "OrderCount": 1372,
+      "UniqueCustomers": 965,
+      "AvgOrderValue": 433.38365889212827
+    },
+    {
+      "Date": "2010-06-01",
+      "Revenue": 632775.93,
+      "OrderCount": 1489,
+      "UniqueCustomers": 1040,
+      "AvgOrderValue": 424.9670449966421
+    },
+    {
+      "Date": "2010-07-01",
+      "Revenue": 586840.67,
+      "OrderCount": 1373,
+      "UniqueCustomers": 927,
+      "AvgOrderValue": 427.4149089584851
+    },
+    {
+      "Date": "2010-08-01",
+      "Revenue": 599425.72,
+      "OrderCount": 1286,
+      "UniqueCustomers": 911,
+      "AvgOrderValue": 466.1164230171073
+    },
+    {
+      "Date": "2010-09-01",
+      "Revenue": 824599.951,
+      "OrderCount": 1680,
+      "UniqueCustomers": 1142,
+      "AvgOrderValue": 490.83330416666666
+    },
+    {
+      "Date": "2010-10-01",
+      "Revenue": 1026508.01,
+      "OrderCount": 2125,
+      "UniqueCustomers": 1496,
+      "AvgOrderValue": 483.0625929411765
+    },
+    {
+      "Date": "2010-11-01",
+      "Revenue": 1158317.122,
+      "OrderCount": 2577,
+      "UniqueCustomers": 1607,
+      "AvgOrderValue": 449.4827792006209
+    },
+    {
+      "Date": "2010-12-01",
+      "Revenue": 565977.73,
+      "OrderCount": 1397,
+      "UniqueCustomers": 884,
+      "AvgOrderValue": 405.13795991410166
+    },
+    {
+      "Date": "2011-01-01",
+      "Revenue": 562977.31,
+      "OrderCount": 985,
+      "UniqueCustomers": 741,
+      "AvgOrderValue": 571.5505685279188
+    },
+    {
+      "Date": "2011-02-01",
+      "Revenue": 442918.92,
+      "OrderCount": 996,
+      "UniqueCustomers": 758,
+      "AvgOrderValue": 444.6977108433735
+    },
+    {
+      "Date": "2011-03-01",
+      "Revenue": 588756.76,
+      "OrderCount": 1318,
+      "UniqueCustomers": 974,
+      "AvgOrderValue": 446.7046737481032
+    },
+    {
+      "Date": "2011-04-01",
+      "Revenue": 464949.381,
+      "OrderCount": 1146,
+      "UniqueCustomers": 854,
+      "AvgOrderValue": 405.7149921465968
+    },
+    {
+      "Date": "2011-05-01",
+      "Revenue": 663981.4,
+      "OrderCount": 1551,
+      "UniqueCustomers": 1055,
+      "AvgOrderValue": 428.0989039329465
+    },
+    {
+      "Date": "2011-06-01",
+      "Revenue": 654536.03,
+      "OrderCount": 1391,
+      "UniqueCustomers": 991,
+      "AvgOrderValue": 470.55070452911576
+    },
+    {
+      "Date": "2011-07-01",
+      "Revenue": 593651.561,
+      "OrderCount": 1327,
+      "UniqueCustomers": 948,
+      "AvgOrderValue": 447.36364807837225
+    }
+  ]
+}

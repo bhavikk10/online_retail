@@ -1,0 +1,222 @@
+{
+  "status": "ok",
+  "source": "data/online_retail_II.xlsx",
+  "description": "First rows from the first Online Retail II workbook sheet.",
+  "sheetNames": [
+    "Year 2009-2010",
+    "Year 2010-2011"
+  ],
+  "rowsShown": 20,
+  "columns": [
+    "Invoice",
+    "StockCode",
+    "Description",
+    "Quantity",
+    "InvoiceDate",
+    "Price",
+    "Customer ID",
+    "Country"
+  ],
+  "records": [
+    {
+      "Invoice": 489434,
+      "StockCode": 85048,
+      "Description": "15CM CHRISTMAS GLASS BALL 20 LIGHTS",
+      "Quantity": 12,
+      "InvoiceDate": "2009-12-01T07:45:00",
+      "Price": 6.95,
+      "Customer ID": 13085,
+      "Country": "United Kingdom"
+    },
+    {
+      "Invoice": 489434,
+      "StockCode": "79323P",
+      "Description": "PINK CHERRY LIGHTS",
+      "Quantity": 12,
+      "InvoiceDate": "2009-12-01T07:45:00",
+      "Price": 6.75,
+      "Customer ID": 13085,
+      "Country": "United Kingdom"
+    },
+    {
+      "Invoice": 489434,
+      "StockCode": "79323W",
+      "Description": " WHITE CHERRY LIGHTS",
+      "Quantity": 12,
+      "InvoiceDate": "2009-12-01T07:45:00",
+      "Price": 6.75,
+      "Customer ID": 13085,
+      "Country": "United Kingdom"
+    },
+    {
+      "Invoice": 489434,
+      "StockCode": 22041,
+      "Description": "RECORD FRAME 7\" SINGLE SIZE ",
+      "Quantity": 48,
+      "InvoiceDate": "2009-12-01T07:45:00",
+      "Price": 2.1,
+      "Customer ID": 13085,
+      "Country": "United Kingdom"
+    },
+    {
+      "Invoice": 489434,
+      "StockCode": 21232,
+      "Description": "STRAWBERRY CERAMIC TRINKET BOX",
+      "Quantity": 24,
+      "InvoiceDate": "2009-12-01T07:45:00",
+      "Price": 1.25,
+      "Customer ID": 13085,
+      "Country": "United Kingdom"
+    },
+    {
+      "Invoice": 489434,
+      "StockCode": 22064,
+      "Description": "PINK DOUGHNUT TRINKET POT ",
+      "Quantity": 24,
+      "InvoiceDate": "2009-12-01T07:45:00",
+      "Price": 1.65,
+      "Customer ID": 13085,
+      "Country": "United Kingdom"
+    },
+    {
+      "Invoice": 489434,
+      "StockCode": 21871,
+      "Description": "SAVE THE PLANET MUG",
+      "Quantity": 24,
+      "InvoiceDate": "2009-12-01T07:45:00",
+      "Price": 1.25,
+      "Customer ID": 13085,
+      "Country": "United Kingdom"
+    },
+    {
+      "Invoice": 489434,
+      "StockCode": 21523,
+      "Description": "FANCY FONT HOME SWEET HOME DOORMAT",
+      "Quantity": 10,
+      "InvoiceDate": "2009-12-01T07:45:00",
+      "Price": 5.95,
+      "Customer ID": 13085,
+      "Country": "United Kingdom"
+    },
+    {
+      "Invoice": 489435,
+      "StockCode": 22350,
+      "Description": "CAT BOWL ",
+      "Quantity": 12,
+      "InvoiceDate": "2009-12-01T07:46:00",
+      "Price": 2.55,
+      "Customer ID": 13085,
+      "Country": "United Kingdom"
+    },
+    {
+      "Invoice": 489435,
+      "StockCode": 22349,
+      "Description": "DOG BOWL , CHASING BALL DESIGN",
+      "Quantity": 12,
+      "InvoiceDate": "2009-12-01T07:46:00",
+      "Price": 3.75,
+      "Customer ID": 13085,
+      "Country": "United Kingdom"
+    },
+    {
+      "Invoice": 489435,
+      "StockCode": 22195,
+      "Description": "HEART MEASURING SPOONS LARGE",
+      "Quantity": 24,
+      "InvoiceDate": "2009-12-01T07:46:00",
+      "Price": 1.65,
+      "Customer ID": 13085,
+      "Country": "United Kingdom"
+    },
+    {
+      "Invoice": 489435,
+      "StockCode": 22353,
+      "Description": "LUNCHBOX WITH CUTLERY FAIRY CAKES ",
+      "Quantity": 12,
+      "InvoiceDate": "2009-12-01T07:46:00",
+      "Price": 2.55,
+      "Customer ID": 13085,
+      "Country": "United Kingdom"
+    },
+    {
+      "Invoice": 489436,
+      "StockCode": "48173C",
+      "Description": "DOOR MAT BLACK FLOCK ",
+      "Quantity": 10,
+      "InvoiceDate": "2009-12-01T09:06:00",
+      "Price": 5.95,
+      "Customer ID": 13078,
+      "Country": "United Kingdom"
+    },
+    {
+      "Invoice": 489436,
+      "StockCode": 21755,
+      "Description": "LOVE BUILDING BLOCK WORD",
+      "Quantity": 18,
+      "InvoiceDate": "2009-12-01T09:06:00",
+      "Price": 5.45,
+      "Customer ID": 13078,
+      "Country": "United Kingdom"
+    },
+    {
+      "Invoice": 489436,
+      "StockCode": 21754,
+      "Description": "HOME BUILDING BLOCK WORD",
+      "Quantity": 3,
+      "InvoiceDate": "2009-12-01T09:06:00",
+      "Price": 5.95,
+      "Customer ID": 13078,
+      "Country": "United Kingdom"
+    },
+    {
+      "Invoice": 489436,
+      "StockCode": 84879,
+      "Description": "ASSORTED COLOUR BIRD ORNAMENT",
+      "Quantity": 16,
+      "InvoiceDate": "2009-12-01T09:06:00",
+      "Price": 1.69,
+      "Customer ID": 13078,
+      "Country": "United Kingdom"
+    },
+    {
+      "Invoice": 489436,
+      "StockCode": 22119,
+      "Description": " PEACE WOODEN BLOCK LETTERS",
+      "Quantity": 3,
+      "InvoiceDate": "2009-12-01T09:06:00",
+      "Price": 6.95,
+      "Customer ID": 13078,
+      "Country": "United Kingdom"
+    },
+    {
+      "Invoice": 489436,
+      "StockCode": 22142,
+      "Description": "CHRISTMAS CRAFT WHITE FAIRY ",
+      "Quantity": 12,
+      "InvoiceDate": "2009-12-01T09:06:00",
+      "Price": 1.45,
+      "Customer ID": 13078,
+      "Country": "United Kingdom"
+    },
+    {
+      "Invoice": 489436,
+      "StockCode": 22296,
+      "Description": "HEART IVORY TRELLIS LARGE",
+      "Quantity": 12,
+      "InvoiceDate": "2009-12-01T09:06:00",
+      "Price": 1.65,
+      "Customer ID": 13078,
+      "Country": "United Kingdom"
+    },
+    {
+      "Invoice": 489436,
+      "StockCode": 22295,
+      "Description": "HEART FILIGREE DOVE LARGE",
+      "Quantity": 12,
+      "InvoiceDate": "2009-12-01T09:06:00",
+      "Price": 1.65,
+      "Customer ID": 13078,
+      "Country": "United Kingdom"
+    }
+  ]
+}

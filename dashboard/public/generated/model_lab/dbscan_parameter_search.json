@@ -1,0 +1,339 @@
+{
+  "status": "available",
+  "source": "src/clustering_outputs/dbscan_parameter_search_results.csv",
+  "reason": "",
+  "suggestedScriptToRun": "",
+  "rows": 32,
+  "columns": [
+    "eps",
+    "min_samples",
+    "Clusters",
+    "Noise_Count",
+    "Noise_%",
+    "Silhouette_Score",
+    "Davies_Bouldin_Score",
+    "Calinski_Harabasz_Score"
+  ],
+  "data": [
+    {
+      "eps": "2.0",
+      "min_samples": "5",
+      "Clusters": "7",
+      "Noise_Count": "342",
+      "Noise_%": "12.311015118790497",
+      "Silhouette_Score": "0.11670190307737065",
+      "Davies_Bouldin_Score": "1.2278335414567816",
+      "Calinski_Harabasz_Score": "241.7895772448384"
+    },
+    {
+      "eps": "2.0",
+      "min_samples": "10",
+      "Clusters": "8",
+      "Noise_Count": "416",
+      "Noise_%": "14.974802015838733",
+      "Silhouette_Score": "0.1530041687180278",
+      "Davies_Bouldin_Score": "1.2452561120883119",
+      "Calinski_Harabasz_Score": "215.12148252929921"
+    },
+    {
+      "eps": "1.8",
+      "min_samples": "5",
+      "Clusters": "11",
+      "Noise_Count": "463",
+      "Noise_%": "16.666666666666664",
+      "Silhouette_Score": "0.15791308825458983",
+      "Davies_Bouldin_Score": "1.246900007245479",
+      "Calinski_Harabasz_Score": "277.8193351110077"
+    },
+    {
+      "eps": "2.0",
+      "min_samples": "15",
+      "Clusters": "5",
+      "Noise_Count": "516",
+      "Noise_%": "18.57451403887689",
+      "Silhouette_Score": "0.20018932734291855",
+      "Davies_Bouldin_Score": "1.2973184789556718",
+      "Calinski_Harabasz_Score": "359.7219887533562"
+    },
+    {
+      "eps": "2.0",
+      "min_samples": "20",
+      "Clusters": "4",
+      "Noise_Count": "623",
+      "Noise_%": "22.42620590352772",
+      "Silhouette_Score": "0.3668928407373143",
+      "Davies_Bouldin_Score": "1.1806724264685473",
+      "Calinski_Harabasz_Score": "457.6550480837011"
+    },
+    {
+      "eps": "1.8",
+      "min_samples": "10",
+      "Clusters": "7",
+      "Noise_Count": "637",
+      "Noise_%": "22.93016558675306",
+      "Silhouette_Score": "0.20747327580431615",
+      "Davies_Bouldin_Score": "1.3257880702784146",
+      "Calinski_Harabasz_Score": "461.8652788349095"
+    },
+    {
+      "eps": "1.6",
+      "min_samples": "5",
+      "Clusters": "14",
+      "Noise_Count": "657",
+      "Noise_%": "23.65010799136069",
+      "Silhouette_Score": "0.16616534987185885",
+      "Davies_Bouldin_Score": "1.2069403904355898",
+      "Calinski_Harabasz_Score": "301.8726332052253"
+    },
+    {
+      "eps": "1.8",
+      "min_samples": "15",
+      "Clusters": "6",
+      "Noise_Count": "726",
+      "Noise_%": "26.13390928725702",
+      "Silhouette_Score": "0.22933484498282625",
+      "Davies_Bouldin_Score": "1.2664957799633223",
+      "Calinski_Harabasz_Score": "539.3607220313168"
+    },
+    {
+      "eps": "1.8",
+      "min_samples": "20",
+      "Clusters": "5",
+      "Noise_Count": "813",
+      "Noise_%": "29.265658747300215",
+      "Silhouette_Score": "0.28923381988453994",
+      "Davies_Bouldin_Score": "1.2775187073473693",
+      "Calinski_Harabasz_Score": "673.5619939060681"
+    },
+    {
+      "eps": "1.6",
+      "min_samples": "10",
+      "Clusters": "8",
+      "Noise_Count": "843",
+      "Noise_%": "30.345572354211665",
+      "Silhouette_Score": "0.23953464032812405",
+      "Davies_Bouldin_Score": "1.344215683701473",
+      "Calinski_Harabasz_Score": "535.2199451246141"
+    },
+    {
+      "eps": "1.4",
+      "min_samples": "5",
+      "Clusters": "16",
+      "Noise_Count": "917",
+      "Noise_%": "33.0093592512599",
+      "Silhouette_Score": "0.1356561651352423",
+      "Davies_Bouldin_Score": "1.0827657405515467",
+      "Calinski_Harabasz_Score": "264.79638391505506"
+    },
+    {
+      "eps": "1.6",
+      "min_samples": "15",
+      "Clusters": "6",
+      "Noise_Count": "965",
+      "Noise_%": "34.73722102231822",
+      "Silhouette_Score": "0.26426075320592674",
+      "Davies_Bouldin_Score": "1.4124850528313146",
+      "Calinski_Harabasz_Score": "736.249378250902"
+    },
+    {
+      "eps": "1.6",
+      "min_samples": "20",
+      "Clusters": "6",
+      "Noise_Count": "1068",
+      "Noise_%": "38.44492440604751",
+      "Silhouette_Score": "0.27441586188297157",
+      "Davies_Bouldin_Score": "1.3550000023956075",
+      "Calinski_Harabasz_Score": "746.6780763866429"
+    },
+    {
+      "eps": "1.4",
+      "min_samples": "10",
+      "Clusters": "9",
+      "Noise_Count": "1157",
+      "Noise_%": "41.648668106551476",
+      "Silhouette_Score": "0.2284956437689708",
+      "Davies_Bouldin_Score": "1.2113067278691565",
+      "Calinski_Harabasz_Score": "479.5428933926413"
+    },
+    {
+      "eps": "1.2",
+      "min_samples": "5",
+      "Clusters": "20",
+      "Noise_Count": "1280",
+      "Noise_%": "46.07631389488841",
+      "Silhouette_Score": "0.03758302214125894",
+      "Davies_Bouldin_Score": "1.1207033399112938",
+      "Calinski_Harabasz_Score": "207.4069724255055"
+    },
+    {
+      "eps": "1.4",
+      "min_samples": "15",
+      "Clusters": "6",
+      "Noise_Count": "1421",
+      "Noise_%": "51.151907847372215",
+      "Silhouette_Score": "0.31192295169636625",
+      "Davies_Bouldin_Score": "1.2691503058127664",
+      "Calinski_Harabasz_Score": "825.6651387071896"
+    },
+    {
+      "eps": "1.4",
+      "min_samples": "20",
+      "Clusters": "8",
+      "Noise_Count": "1622",
+      "Noise_%": "58.3873290136789",
+      "Silhouette_Score": "0.2823819096910511",
+      "Davies_Bouldin_Score": "1.2107171896407452",
+      "Calinski_Harabasz_Score": "653.3201109668155"
+    },
+    {
+      "eps": "1.2",
+      "min_samples": "10",
+      "Clusters": "11",
+      "Noise_Count": "1782",
+      "Noise_%": "64.14686825053995",
+      "Silhouette_Score": "0.2601548335987176",
+      "Davies_Bouldin_Score": "1.0683029945782727",
+      "Calinski_Harabasz_Score": "479.4211530244276"
+    },
+    {
+      "eps": "1.0",
+      "min_samples": "5",
+      "Clusters": "28",
+      "Noise_Count": "1924",
+      "Noise_%": "69.25845932325414",
+      "Silhouette_Score": "0.21567732058184283",
+      "Davies_Bouldin_Score": "0.9776524765176833",
+      "Calinski_Harabasz_Score": "206.45146882755748"
+    },
+    {
+      "eps": "1.2",
+      "min_samples": "15",
+      "Clusters": "6",
+      "Noise_Count": "2035",
+      "Noise_%": "73.2541396688265",
+      "Silhouette_Score": "0.39778363080368023",
+      "Davies_Bouldin_Score": "1.032051791397538",
+      "Calinski_Harabasz_Score": "900.09356699517"
+    },
+    {
+      "eps": "1.2",
+      "min_samples": "20",
+      "Clusters": "6",
+      "Noise_Count": "2169",
+      "Noise_%": "78.07775377969762",
+      "Silhouette_Score": "0.42600041327286065",
+      "Davies_Bouldin_Score": "0.9737113859792598",
+      "Calinski_Harabasz_Score": "902.7682135112957"
+    },
+    {
+      "eps": "1.0",
+      "min_samples": "10",
+      "Clusters": "9",
+      "Noise_Count": "2314",
+      "Noise_%": "83.29733621310295",
+      "Silhouette_Score": "0.4081756651115222",
+      "Davies_Bouldin_Score": "1.1047773246157906",
+      "Calinski_Harabasz_Score": "568.8207567308842"
+    },
+    {
+      "eps": "0.8",
+      "min_samples": "5",
+      "Clusters": "13",
+      "Noise_Count": "2456",
+      "Noise_%": "88.40892728581713",
+      "Silhouette_Score": "0.3652188267805335",
+      "Davies_Bouldin_Score": "0.820802862661529",
+      "Calinski_Harabasz_Score": "248.5818522245017"
+    },
+    {
+      "eps": "1.0",
+      "min_samples": "15",
+      "Clusters": "6",
+      "Noise_Count": "2481",
+      "Noise_%": "89.30885529157668",
+      "Silhouette_Score": "0.5295474135953004",
+      "Davies_Bouldin_Score": "0.7654045992737051",
+      "Calinski_Harabasz_Score": "714.9227316106577"
+    },
+    {
+      "eps": "1.0",
+      "min_samples": "20",
+      "Clusters": "3",
+      "Noise_Count": "2633",
+      "Noise_%": "94.78041756659468",
+      "Silhouette_Score": "0.7231945315401995",
+      "Davies_Bouldin_Score": "0.3372376367215879",
+      "Calinski_Harabasz_Score": "956.2615063261494"
+    },
+    {
+      "eps": "0.8",
+      "min_samples": "10",
+      "Clusters": "3",
+      "Noise_Count": "2637",
+      "Noise_%": "94.9244060475162",
+      "Silhouette_Score": "0.5425411095126008",
+      "Davies_Bouldin_Score": "0.739304171312316",
+      "Calinski_Harabasz_Score": "201.45179281965014"
+    },
+    {
+      "eps": "0.6",
+      "min_samples": "5",
+      "Clusters": "5",
+      "Noise_Count": "2648",
+      "Noise_%": "95.3203743700504",
+      "Silhouette_Score": "0.5258902915779905",
+      "Davies_Bouldin_Score": "0.6054117565876614",
+      "Calinski_Harabasz_Score": "129.62910587390357"
+    },
+    {
+      "eps": "0.8",
+      "min_samples": "15",
+      "Clusters": "2",
+      "Noise_Count": "2691",
+      "Noise_%": "96.8682505399568",
+      "Silhouette_Score": "0.7135637439024847",
+      "Davies_Bouldin_Score": "0.3450368974885619",
+      "Calinski_Harabasz_Score": "227.23661861012977"
+    },
+    {
+      "eps": "0.6",
+      "min_samples": "10",
+      "Clusters": "2",
+      "Noise_Count": "2721",
+      "Noise_%": "97.94816414686825",
+      "Silhouette_Score": "0.3438413915004033",
+      "Davies_Bouldin_Score": "0.73997058557894",
+      "Calinski_Harabasz_Score": "28.646439457653724"
+    },
+    {
+      "eps": "0.8",
+      "min_samples": "20",
+      "Clusters": "1",
+      "Noise_Count": "2728",
+      "Noise_%": "98.20014398848093",
+      "Silhouette_Score": "",
+      "Davies_Bouldin_Score": "",
+      "Calinski_Harabasz_Score": ""
+    },
+    {
+      "eps": "0.6",
+      "min_samples": "15",
+      "Clusters": "1",
+      "Noise_Count": "2763",
+      "Noise_%": "99.46004319654428",
+      "Silhouette_Score": "",
+      "Davies_Bouldin_Score": "",
+      "Calinski_Harabasz_Score": ""
+    },
+    {
+      "eps": "0.6",
+      "min_samples": "20",
+      "Clusters": "0",
+      "Noise_Count": "2778",
+      "Noise_%": "100.0",
+      "Silhouette_Score": "",
+      "Davies_Bouldin_Score": "",
+      "Calinski_Harabasz_Score": ""
+    }
+  ]
+}

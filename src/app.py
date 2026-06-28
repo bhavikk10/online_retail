@@ -1,288 +1,539 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 import plotly.graph_objects as go
 import plotly.express as px
+import pickle
+import os
 
-# Configuration
+# -------------------------------------------------------------
+# 1. PAGE CONFIG & PREMIUM GLASSMORPHISM CSS
+# -------------------------------------------------------------
 st.set_page_config(
-    page_title="Online Retail Analytics",
-    page_icon="🛍️",
+    page_title="Nexus Retail Analytics",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for specific colors and fixing table text visibility
+# Premium Midnight Glassmorphism CSS (Emojis removed)
 custom_css = """
 <style>
-    /* Primary Headings */
+    /* Global App Background */
+    .stApp {
+        background-color: #0B0F19;
+        color: #E2E8F0;
+        font-family: 'Inter', 'Segoe UI', sans-serif;
+    }
+    
+    /* Hide Streamlit elements */
+    header {visibility: hidden;}
+    footer {visibility: hidden;}
+    
+    /* Typography Overrides */
     h1, h2, h3, h4, h5 {
-        color: #2D3748 !important;
-        font-family: 'Inter', sans-serif;
+        color: #F8FAFC !important;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+    }
+    h1 {
+        background: -webkit-linear-gradient(45deg, #06B6D4, #8B5CF6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 3rem !important;
     }
     
-    /* Secondary Colors (Deep Amber) */
-    .st-emotion-cache-16idsys p {
-        color: #744210 !important;
-        font-weight: 600;
-    }
-    
-    hr {
-        border-color: #744210 !important;
-    }
-
-    /* Table Styling */
-    th {
-        background-color: #744210 !important;
-        color: white !important;
-        font-weight: bold !important;
-    }
-    
-    /* Fix text visibility in table rows */
-    td {
-        color: #2D3748 !important;
-        font-weight: 500 !important;
-    }
-    
-    tr:nth-child(even) {
-        background-color: #FFFBEB !important;
-    }
-    
-    tr:nth-child(odd) {
-        background-color: #FFFFFF !important;
-    }
-    
-    /* Metric Card Styling */
-    div[data-testid="metric-container"] {
-        background-color: #FFFFFF;
-        border: 1px solid #E2E8F0;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    }
-    
-    div[data-testid="metric-container"] > div {
-        color: #744210;
-    }
-    
-    /* Text readability inside dark mode */
+    /* Markdown text */
     .stMarkdown p, .stMarkdown li {
-        font-size: 1.05rem;
-        line-height: 1.6;
+        color: #CBD5E1;
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+    
+    /* Sidebar Styling */
+    section[data-testid="stSidebar"] {
+        background-color: #0F172A;
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    /* Glassmorphism Metric Containers */
+    div[data-testid="metric-container"] {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 1.5rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    div[data-testid="metric-container"]:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 40px rgba(6, 182, 212, 0.15);
+        border-color: rgba(6, 182, 212, 0.3);
+    }
+    div[data-testid="metric-container"] > div {
+        color: #06B6D4 !important;
+        font-size: 2.2rem !important;
+    }
+    div[data-testid="metric-container"] label {
+        color: #94A3B8 !important;
+        font-size: 1rem !important;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    /* Custom DataFrame/Table Styling */
+    .dataframe th {
+        background-color: #1E293B !important;
+        color: #38BDF8 !important;
+        border-bottom: 2px solid #06B6D4 !important;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+    }
+    .dataframe td {
+        background-color: #0F172A !important;
+        color: #F8FAFC !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    }
+    .dataframe tr:hover td {
+        background-color: #1E293B !important;
+        color: #06B6D4 !important;
+    }
+    
+    /* Expander Glassmorphism */
+    .streamlit-expanderHeader {
+        background: rgba(30, 41, 59, 0.5) !important;
+        border-radius: 8px !important;
+        color: #38BDF8 !important;
     }
 </style>
 """
 st.markdown(custom_css, unsafe_allow_html=True)
 
-# Sidebar Navigation
-st.sidebar.title("Navigation")
-page = st.sidebar.radio(
-    "Go to",
-    ["Overview & Preprocessing", "Customer Behavior", "Customer Segmentation", "Retention Prediction"]
-)
+# -------------------------------------------------------------
+# 2. DATA LOADING & STATE
+# -------------------------------------------------------------
+@st.cache_data
+def load_cached_results():
+    clust_data, class_data, eda = None, None, None
+    if os.path.exists('clustering_data.pkl'):
+        with open('clustering_data.pkl', 'rb') as f:
+            clust_data = pickle.load(f)
+    if os.path.exists('classification_cv_results.pkl'):
+        with open('classification_cv_results.pkl', 'rb') as f:
+            class_data = pickle.load(f)
+    if os.path.exists('eda_data.pkl'):
+        with open('eda_data.pkl', 'rb') as f:
+            eda = pickle.load(f)
+    return clust_data, class_data, eda
 
+clustering_data, classification_results, eda_data = load_cached_results()
+
+# -------------------------------------------------------------
+# 3. SIDEBAR NAVIGATION
+# -------------------------------------------------------------
+st.sidebar.markdown("# Nexus Engine")
 st.sidebar.markdown("---")
-st.sidebar.markdown("**Insights Source:** Pre-computed metrics from `preprocessingtest.ipynb`")
-st.sidebar.markdown("**Data Source:** UCI Online Retail II Dataset")
+page = st.sidebar.radio(
+    "Navigation Console",
+    [
+        "Documentation & Architecture",
+        "Preprocessing & Data Funnels",
+        "Customer Behavior Trends",
+        "Customer Segmentation (3D)",
+        "Retention Prediction (Hyperparams)"
+    ]
+)
+st.sidebar.markdown("---")
+st.sidebar.caption("System Status: ONLINE")
+st.sidebar.caption("Engine: Streamlit / Plotly / Scikit-Learn")
+st.sidebar.caption("Data Source: UCI Online Retail II")
 
-if page == "Overview & Preprocessing":
-    st.title("Data Overview & Preprocessing")
-    st.markdown("### Cleaning & Formatting the Dataset (`preprocessing.py`)")
-    
+# -------------------------------------------------------------
+# 4. PAGES
+# -------------------------------------------------------------
+
+if page == "Documentation & Architecture":
+    st.title("Codebase Architecture & Documentation")
     st.markdown("""
-    The foundation of our entire data science pipeline relies on an extremely rigorous data cleaning process. The original UCI Online Retail II dataset contained raw, unformatted transactional logs spanning from 2009 to 2011. Without proper processing, analytical models would train on noise, resulting in poor predictive performance.
-    
-    **To prepare this data for machine learning, our `preprocessing.py` script performed the following extensive steps:**
-    
-    1. **Handling Missing Values:** We identified and removed **243,007 rows** that completely lacked a `Customer_ID`. Transactions without a known customer ID cannot be attributed to a user profile, making them useless for behavioral modeling or cohort analysis.
-    2. **Deduplication:** We removed **26,479 exactly duplicated rows**. These duplicates were likely artifacts of system logging errors or multiple submissions at checkout.
-    3. **Price Correction:** We filtered out **70 transactions** where the unit price was listed as zero or negative, which were likely system tests or corrupted data points.
-    4. **Feature Engineering (Flags):** Instead of deleting anomalies outright, we created specific boolean flags to isolate them. We flagged invoices starting with 'C' as cancellations (`IsCancelled = True`), and negative quantities as returns (`IsReturn = True`). Furthermore, non-product operational codes like 'POSTAGE', 'BANK CHARGES', and 'AMAZONFEE' were separated so our models focus solely on product interactions.
-    5. **Standardization & Typing:** Dates were properly cast to pandas datetime objects to enable time-series calculations. String attributes like `StockCode` and `Country` were stripped of trailing whitespaces and standardized to ensure consistency across the dataset.
+    This section serves as the definitive architecture guide for the Nexus Retail Analytics Engine. It details exactly what the data was at the start, how we engineered features, and what machine learning models we deployed.
     """)
     
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.metric("Initial Records", "1,067,371")
-        st.metric("Missing Customer IDs", "243,007")
-    with col2:
-        st.metric("Final Cleaned Records", "797,815")
-        st.metric("Duplicate Rows Removed", "26,479")
-    with col3:
-        st.metric("Unique Customers", "5,939")
-        st.metric("Unique Invoices", "44,870")
+    st.markdown("### 1. State at Start: The Raw Data")
+    st.markdown("""
+    The original UCI Online Retail II dataset contained **1,067,371 rows** of raw transactional logs spanning from 2009 to 2011. 
+    It included 8 raw features: `Invoice` (Transaction ID), `StockCode` (Product ID), `Description` (Text name), `Quantity` (Items bought), `InvoiceDate` (Timestamp), `Price` (Unit price), `Customer_ID` (User ID), and `Country` (Origin).
+    This data was extremely messy: missing user profiles, massive outlier returns, system logging errors, and test transactions.
+    """)
 
-    st.markdown("### Transaction Adjustments")
-    st.markdown("By parsing invoice prefixes and negative quantities, we accurately identified cancelled and returned orders. These are flagged in our dataset to ensure they don't artificially inflate revenue calculations, customer lifetime value, or engagement metrics downstream.")
-    c1, c2 = st.columns(2)
-    with c1:
-        st.metric("Cancelled Transactions", "18,390")
-    with c2:
-        st.metric("Return Transactions", "18,390")
+    st.markdown("### 2. Preprocessing & Cleaning Pipeline (`preprocessing.py`)")
+    with st.expander("View Preprocessing Steps", expanded=True):
+        st.markdown("""
+        **Data Validation:** 
+        - Dropped 243,007 rows with missing `Customer_ID`.
+        - Dropped 26,479 duplicate rows.
+        - Dropped 70 rows with negative or zero `Price`.
         
-    st.info("Date Range of Cleaned Dataset: **2009-12-01 07:45:00** to **2011-12-09 12:50:00**")
-
-
-elif page == "Customer Behavior":
-    st.title("Customer Behavior Analysis")
-    st.markdown("### Purchase Patterns and Retention Rates (`behavior.py`)")
-    
-    st.markdown("""
-    To understand how our customers shop, the `behavior.py` module aggregates the cleaned transaction logs into a condensed, highly informative **invoice-level dataset**. 
-    
-    **How we derived these insights:**
-    - We exclude cancelled, returned, and non-product transactions. We only want to analyze successful, revenue-generating behavior.
-    - We calculate **Inter-purchase Gaps** by sorting each customer's invoices chronologically and calculating the exact timedelta (in days) between consecutive orders using the pandas `shift()` operation.
-    - The **Repeat Customer Rate** is calculated by aggregating the number of unique invoices per customer, and identifying the percentage of total unique customers who have an invoice count strictly greater than 1.
-    """)
-    
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.metric("Repeat Customer Rate", "72.26%")
-    with col2:
-        st.metric("Median Inter-purchase Gap", "24.0 Days")
-    with col3:
-        st.metric("Mean Inter-purchase Gap", "51.4 Days")
+        **Logical Flagging (Instead of Deletion):**
+        - Generated `IsCancelled`: Boolean flag if `Invoice` starts with 'C'.
+        - Generated `IsReturn`: Boolean flag if `Quantity` <= 0.
+        - Generated `IsNonProduct`: Boolean flag if `StockCode` matches known operational codes ('POST', 'BANK CHARGES', etc.).
         
-    st.markdown("---")
-    st.markdown("### Return Windows")
+        **Formatting:**
+        - Standardized string casing for `Country` and `StockCode`.
+        - Casted timestamps to exact pandas `datetime64`.
+        """)
+        
+    st.markdown("### 3. Feature Derivation & Engineering (`classf_dataset.py`)")
+    with st.expander("View Derived Features", expanded=True):
+        st.markdown("""
+        To perform machine learning, we had to compress 800,000+ transactional logs into a structured, customer-level matrix. We derived 13 advanced mathematical features per user:
+        
+        **RFM Core:**
+        - `Recency`: Days since the customer's last purchase.
+        - `Frequency`: Total number of unique orders placed.
+        - `Monetary`: Total cumulative spend.
+        
+        **Behavioral Velocity & Economics:**
+        - `AvgBasketValue`: Average spend per order.
+        - `AvgQuantity`: Average physical items purchased per order.
+        - `UniqueProducts`: Total distinct items purchased.
+        - `LifetimeDays`: Duration in days between a customer's first and latest purchase.
+        - `PurchaseRate`: Orders placed per lifetime day (`Frequency / LifetimeDays`).
+        - `AvgGapDays`: Average days elapsed between consecutive orders.
+        - `PurchasesLast30Days`: Number of orders in the trailing 30 days before cutoff.
+        - `SpendLast30Days`: Capital spent in the trailing 30 days.
+        
+        **Instability Flags:**
+        - `CancellationRate`: Percentage of a user's total orders that were cancelled.
+        - `ReturnRate`: Percentage of a user's total orders that were returned.
+        """)
+        
+    st.markdown("### 4. Post-Processing & Machine Learning")
+    with st.expander("View Machine Learning Pipeline"):
+        st.markdown("""
+        **Unsupervised Clustering (`clustering.py`):**
+        - We utilized Log1P transformation to normalize skewed economic metrics, followed by a StandardScaler.
+        - PCA reduced the dimensionality to 3 axes for topological analysis.
+        - Models deployed: KMeans, Agglomerative Clustering, DBSCAN, Gaussian Mixture Models.
+        
+        **Supervised Classification (`classf_pipeline.py`):**
+        - We simulated a historical cutoff at `2011-09-09`. The target label `RetentionLabel` was set to `1` if the customer made a purchase in the future 90 days, else `0`.
+        - We built an advanced `sklearn` Pipeline using a `ColumnTransformer` to handle scaled and log-transformed data dynamically.
+        - **Models Run:** Logistic Regression, Support Vector Machines (SVC), K-Nearest Neighbors, Decision Trees, Random Forests, and XGBoost.
+        - **Tuning:** All models underwent rigorous `GridSearchCV` over predefined parameter spaces, optimizing for the `F1` score using 5-Fold Cross Validation.
+        """)
+
+elif page == "Preprocessing & Data Funnels":
+    st.title("Data Preprocessing & Feature Trends")
     st.markdown("""
-    The data reveals that **if a customer is going to return, they are highly likely to do so quickly.** We measured the percentage of returning customers who make their next purchase within specific timeframes. 
-    A median gap of 24 days suggests a natural monthly purchasing cycle for active buyers, and a significant drop-off in likelihood of return after 90 days. This clearly indicates that any targeted marketing campaigns should be triggered *before* a user reaches the 60 to 90 day inactivity threshold.
+    Raw data is inherently noisy. Below is the visualization of our anomaly detection funnel, followed by exhaustive trend analysis of the original 8 dataset features, and finally the distribution and correlation of our custom derived ML features.
     """)
     
-    # Simple Bar Chart for Return Windows
-    return_data = pd.DataFrame({
-        "Timeframe": ["Within 30 Days", "Within 60 Days", "Within 75 Days", "Within 90 Days"],
-        "Return Rate (%)": [55.86, 74.70, 79.57, 83.26]
-    })
-    
-    fig = px.bar(
-        return_data, 
-        x="Timeframe", 
-        y="Return Rate (%)", 
-        text="Return Rate (%)",
-        color_discrete_sequence=["#744210"],
-        title="Probability of Return Purchase Over Time"
+    # Funnel Chart
+    st.markdown("### Phase 1: Data Validation Funnel")
+    funnel_data = dict(
+        number=[1067371, 824364, 797885, 797815],
+        stage=["Raw Data", "Valid Customer IDs", "Deduplicated", "Price Validated"]
     )
-    fig.update_traces(textposition='outside')
-    fig.update_layout(plot_bgcolor='rgba(0,0,0,0)', yaxis_range=[0,100])
-    st.plotly_chart(fig, use_container_width=True)
-
-
-elif page == "Customer Segmentation":
-    st.title("Customer Segmentation (Clustering)")
-    st.markdown("### Unsupervised Learning on Customer Behavior (`clustering.py`)")
+    fig_funnel = go.Figure(go.Funnel(
+        y = funnel_data["stage"],
+        x = funnel_data["number"],
+        textinfo = "value+percent initial",
+        marker = {"color": ["#8B5CF6", "#6366F1", "#0EA5E9", "#10B981"]}
+    ))
+    fig_funnel.update_layout(
+        paper_bgcolor='rgba(0,0,0,0)', 
+        plot_bgcolor='rgba(0,0,0,0)',
+        font=dict(color='#E2E8F0', size=14)
+    )
+    st.plotly_chart(fig_funnel, use_container_width=True)
     
-    st.markdown("""
-    Instead of treating all customers identically, we employ advanced unsupervised machine learning to discover natural, mathematically distinct groupings within our user base. This is the exact purpose of the `clustering.py` script.
-    
-    **Detailed Pipeline Methodology:**
-    1. **Feature Extraction:** First, we aggregate the raw data to the customer level. We extract standard RFM features (Recency, Frequency, Monetary value) alongside advanced behavioral metrics like `AvgGapDays` (how often they shop) and `SpendLast30Days` (recent momentum).
-    2. **Scaling & Transformation:**
-       - **Log Transformation:** Financial metrics (Monetary, AvgBasketValue, SpendLast30Days) are highly right-skewed (a few whales spend vastly more than average users). We apply `np.log1p` to these features to compress the long tail, ensuring the clustering algorithm isn't overwhelmed by extreme outliers.
-       - **Standard Scaling:** After log transformation, all features (including linear features like Recency) are normalized using Scikit-Learn's `StandardScaler` so that every variable has a mean of 0 and a standard deviation of 1. This prevents variables with larger magnitudes from dominating distance calculations.
-    3. **Dimensionality Reduction:** We pass the scaled data through PCA (Principal Component Analysis) to reduce noise and multicollinearity before feeding it into the clustering models.
-    4. **Clustering Models:** We evaluate 4 different algorithms to group customers into 4 distinct segments (KMeans, Agglomerative, DBSCAN, and Gaussian Mixture Models).
-    
-    **Evaluating the Clusters:**
-    - **Silhouette Score:** Measures how similar an object is to its own cluster compared to other clusters (values range from -1 to 1). A higher score indicates dense, well-separated clusters.
-    - **Davies-Bouldin Score:** Evaluates the average 'similarity' ratio of each cluster with its most similar cluster. Lower values indicate better separation.
-    """)
-    
-    # Hardcoded Clustering Data
-    cluster_results = pd.DataFrame({
-        "Model": ["KMeans", "Agglomerative", "DBSCAN", "GaussianMixture"],
-        "Clusters": [4, 4, 4, 4],
-        "Silhouette Score": [0.3244, 0.3204, 0.4409, 0.2747],
-        "Davies Bouldin Score": [1.1163, 1.1298, 0.8368, 1.4684],
-        "Calinski Harabasz Score": [1597.69, 1523.85, 885.65, 1289.03]
-    })
-    
-    st.table(cluster_results)
-    
-    st.markdown("### Cluster Distribution Summary")
-    st.markdown("""
-    Below we visualize how the algorithms distribute our 5,900+ customers into the 4 learned segments. 
-    - **KMeans** provides a relatively balanced and intuitive segmentation, naturally grouping users into tiers (e.g., VIPs, Occasional Shoppers, New Users, Churn Risks). This makes it highly actionable for marketing.
-    - **DBSCAN**, however, groups the vast majority of users into a single giant core cluster, while isolating the rest as outliers. While mathematically valid for finding anomalies, it is less useful for standard tiered marketing campaigns.
-    """)
-    
-    col1, col2 = st.columns(2)
-    with col1:
-        st.markdown("**KMeans Clusters**")
-        km_dist = pd.DataFrame({"Cluster": ["Segment 0", "Segment 1", "Segment 2", "Segment 3"], "Count": [709, 413, 859, 797]})
-        fig_km = px.pie(km_dist, values='Count', names='Cluster', hole=0.4, color_discrete_sequence=px.colors.sequential.YlOrBr)
-        st.plotly_chart(fig_km, use_container_width=True)
+    if eda_data is not None:
+        st.markdown("---")
+        st.markdown("### Phase 2: Original Dataset Features")
+        st.markdown("Before feature engineering, we analyzed the fundamental columns of the cleaned dataset to establish base truth.")
         
-    with col2:
-        st.markdown("**Agglomerative Clusters**")
-        agg_dist = pd.DataFrame({"Cluster": ["Segment 0", "Segment 1", "Segment 2", "Segment 3"], "Count": [836, 413, 1031, 498]})
-        fig_agg = px.pie(agg_dist, values='Count', names='Cluster', hole=0.4, color_discrete_sequence=px.colors.sequential.YlOrBr)
-        st.plotly_chart(fig_agg, use_container_width=True)
+        c1, c2 = st.columns(2)
+        
+        with c1:
+            st.markdown("**1. Invoice Date Trends (Revenue Over Time)**")
+            if 'revenue_by_month' in eda_data:
+                rev = eda_data['revenue_by_month']
+                fig1 = px.line(rev, x='MonthYear', y='TransactionValue', 
+                              title="Monthly Revenue Trend", color_discrete_sequence=['#06B6D4'], markers=True)
+                fig1.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font=dict(color='#E2E8F0'), xaxis_title="Month", yaxis_title="Revenue (£)")
+                st.plotly_chart(fig1, use_container_width=True)
+            
+            st.markdown("**3 & 4. StockCode & Description Treemap**")
+            if 'treemap_products' in eda_data:
+                tm = eda_data['treemap_products']
+                fig3 = px.treemap(tm, path=[px.Constant("Products"), 'Product'], values='Count',
+                                 color='Count', color_continuous_scale='teal', title="Top 50 Purchased Products")
+                fig3.update_layout(paper_bgcolor='rgba(0,0,0,0)', font=dict(color='#E2E8F0'))
+                st.plotly_chart(fig3, use_container_width=True)
+            
+        with c2:
+            st.markdown("**2. Country of Origin**")
+            top_countries = eda_data['top_countries']
+            fig2 = px.bar(top_countries, x='Count', y='Country', orientation='h', 
+                         title="Top 10 Source Countries", color_discrete_sequence=['#8B5CF6'])
+            fig2.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font=dict(color='#E2E8F0'))
+            st.plotly_chart(fig2, use_container_width=True)
+            
+            st.markdown("**5 & 6. Price & Quantity Distribution**")
+            fig4 = go.Figure()
+            fig4.add_trace(go.Box(y=eda_data['price_dist'], name="Unit Price", marker_color="#06B6D4"))
+            fig4.add_trace(go.Box(y=eda_data['quantity_dist'], name="Quantity Purchased", marker_color="#F43F5E"))
+            fig4.update_layout(title="Distribution of Price vs Quantity (Outliers Clipped)", 
+                               paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font=dict(color='#E2E8F0'))
+            st.plotly_chart(fig4, use_container_width=True)
+            
+        st.markdown("**7. Customer ID**: Tracked across tracking funnels.  \n**8. Invoice ID**: Used for aggregation indexing.")
+        
+        st.markdown("---")
+        st.markdown("### Phase 3: Derived Machine Learning Features")
+        
+        # Correlation Heatmap
+        if 'corr_matrix' in eda_data:
+            st.markdown("#### Feature Correlation Heatmap")
+            st.markdown("Understanding multicollinearity between derived features.")
+            corr = eda_data['corr_matrix']
+            fig_corr = px.imshow(
+                corr['z'], 
+                x=corr['x'], y=corr['y'],
+                color_continuous_scale='Viridis',
+                text_auto=True,
+                aspect="auto",
+                title="Correlation Matrix of Derived Features"
+            )
+            fig_corr.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font=dict(color='#E2E8F0'))
+            st.plotly_chart(fig_corr, use_container_width=True)
+
+        st.markdown("#### Feature Distributions")
+        st.markdown("These 13 complex mathematical derivations form the core matrix used to predict churn and establish clustering topologies.")
+        
+        derived_dist = eda_data['derived_dist']
+        features_to_plot = list(derived_dist.keys())
+        
+        rows = len(features_to_plot) // 3 + (1 if len(features_to_plot) % 3 != 0 else 0)
+        idx = 0
+        for _ in range(rows):
+            cols = st.columns(3)
+            for c in cols:
+                if idx < len(features_to_plot):
+                    feat = features_to_plot[idx]
+                    fig_derived = px.histogram(derived_dist[feat], nbins=40, title=f"Distribution of {feat}", 
+                                               color_discrete_sequence=['#0EA5E9'])
+                    fig_derived.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', 
+                                              font=dict(color='#E2E8F0'), showlegend=False, xaxis_title=feat, yaxis_title="Count")
+                    c.plotly_chart(fig_derived, use_container_width=True)
+                    idx += 1
 
 
-elif page == "Retention Prediction":
-    st.title("Retention Prediction Models")
-    st.markdown("### Predicting 90-Day Churn (`classf_dataset.py` & `classf_pipeline.py`)")
-    
+elif page == "Customer Behavior Trends":
+    st.title("Customer Behavior & Velocity")
     st.markdown("""
-    Predicting whether a customer will return allows the business to proactively target at-risk users with retention campaigns.
-    
-    **Building the Feature Set (`classf_dataset.py`):**
-    - **Cutoff Simulation:** We artificially cut off our historical data on `2011-09-09`. Any transaction data before this date is aggregated to create historical features (e.g., total spend, average gap days, cancellation rate).
-    - **Target Labeling:** We look at the "future" 90-day window (`2011-09-09` to `2011-12-08`). If a customer makes at least one purchase in this window, their label is set to `1` (Retained). If they do not, their label is `0` (Churned).
-    - **Active Window Filter:** We only generate predictions for customers who were active in the 180 days leading up to the cutoff. Filtering out heavily dormant users ensures the model learns the nuances of recent customer churn, rather than trivially predicting that someone who hasn't shopped in 2 years won't shop tomorrow.
+    Analyzing behavioral velocity helps pinpoint exact marketing windows. If a user is going to return naturally, they do so quickly.
     """)
     
-    st.markdown("**Dataset Split Configuration:**")
-    st.code("Cutoff Date: 2011-09-09\nPrediction End: 2011-12-08\nActive Customer Window: 180 Days")
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Repeat Customer Rate", "72.26%")
+    c2.metric("Median Purchase Gap", "24 Days")
+    c3.metric("90th Percentile Gap", "135 Days")
     
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.metric("Total Active Customers", "2,778")
-    with col2:
-        st.metric("Overall Retention Rate", "61.45%")
-    with col3:
-        st.metric("Retained vs Lost", "1707 / 1071")
-        
     st.markdown("---")
-    st.markdown("### Model Pipeline & Hyperparameter Tuning (`classf_pipeline.py`)")
+    colA, colB = st.columns(2)
+    
+    with colA:
+        st.markdown("### The Window of Opportunity")
+        st.markdown("""
+        The plot below demonstrates the cumulative probability of a returning customer making their next purchase within a specific timeframe. 
+        Notice the sharp drop in velocity after 60 days. This indicates that **retention campaigns should trigger around Day 45-50 of inactivity**.
+        """)
+        
+        x_days = ['30 Days', '60 Days', '75 Days', '90 Days']
+        y_prob = [55.86, 74.70, 79.57, 83.26]
+        
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(
+            x=x_days, y=y_prob, 
+            mode='lines+markers+text',
+            name='Return Probability',
+            line=dict(color='#F43F5E', width=4),
+            marker=dict(size=12, symbol='diamond-wide'),
+            text=[f"{p}%" for p in y_prob],
+            textposition="top center",
+            textfont=dict(color='#F43F5E', size=14)
+        ))
+        fig.update_layout(
+            paper_bgcolor='rgba(0,0,0,0)', 
+            plot_bgcolor='rgba(0,0,0,0)',
+            font=dict(color='#E2E8F0'),
+            yaxis=dict(title='Probability (%)', range=[0, 100], gridcolor='rgba(255,255,255,0.1)'),
+            xaxis=dict(gridcolor='rgba(255,255,255,0.1)')
+        )
+        st.plotly_chart(fig, use_container_width=True)
+        
+    with colB:
+        if eda_data is not None and 'hourly_trend' in eda_data and 'daily_trend' in eda_data:
+            st.markdown("### When do customers shop?")
+            st.markdown("Time-based cadences show operational peaks, which are critical for targeted email drops and ad spend.")
+            
+            # Hourly trend
+            hourly = eda_data['hourly_trend']
+            fig_h = px.bar(hourly, x='Hour', y='Count', title="Orders by Hour of Day", color_discrete_sequence=['#10B981'])
+            fig_h.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font=dict(color='#E2E8F0'), height=250)
+            st.plotly_chart(fig_h, use_container_width=True)
+            
+            # Daily trend
+            daily = eda_data['daily_trend']
+            fig_d = px.bar(daily, x='Day', y='Count', title="Orders by Day of Week", color_discrete_sequence=['#8B5CF6'])
+            fig_d.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font=dict(color='#E2E8F0'), height=250)
+            st.plotly_chart(fig_d, use_container_width=True)
+
+elif page == "Customer Segmentation (3D)":
+    st.title("Topological Segmentation Maps")
     st.markdown("""
-    Using the engineered dataset, we trained a battery of machine learning classification models.
-    
-    **The Pipeline Architecture:**
-    1. **Preprocessing Transformer:** We utilize a Scikit-Learn `ColumnTransformer`. The dataset is split into two tracks: skewed features (like Frequency and Monetary) undergo `SimpleImputer(median) -> Log1p Transformation -> StandardScaler`, while normally distributed features undergo `SimpleImputer(median) -> StandardScaler`.
-    2. **Model Training:** This perfectly scaled data is passed directly into a classifier. We train multiple algorithms including Logistic Regression, Support Vector Machines (SVC), Decision Trees, Random Forests, and XGBoost.
-    3. **RandomizedSearchCV:** For every model, we perform an exhaustive 5-fold cross-validation search over a predefined hyperparameter grid, maximizing the F1 score to find the optimal configuration.
-    
-    *As shown below, tree-based ensemble methods (Random Forest and XGBoost) achieved the best trade-off between Recall (successfully identifying returning users) and overall ROC AUC (the model's overall capability to distinguish between churners and retainees).*
+    We applied clustering algorithms to standardized, log-transformed behavioral features. 
+    To visualize these hyper-dimensional groups, we applied **Principal Component Analysis (PCA)** to project them into a 3D subspace.
     """)
     
-    # Hardcoded Classification Data
-    classf_results = pd.DataFrame({
-        "Model": ["RandomForest", "XGBoost", "LogisticRegression", "SVC", "KNN", "DecisionTree"],
-        "Accuracy": [0.6924, 0.6906, 0.6745, 0.6924, 0.6871, 0.6871],
-        "Precision": [0.7317, 0.7179, 0.7069, 0.7101, 0.7211, 0.7346],
-        "Recall": [0.7895, 0.8187, 0.8041, 0.8450, 0.8012, 0.7690],
-        "F1 Score": [0.7595, 0.7650, 0.7524, 0.7717, 0.7590, 0.7514],
-        "ROC AUC": [0.7640, 0.7609, 0.7579, 0.7442, 0.7395, 0.7391]
-    })
-    
-    # Format to percentage for better readability
-    format_cols = ["Accuracy", "Precision", "Recall", "F1 Score", "ROC AUC"]
-    for c in format_cols:
-        classf_results[c] = (classf_results[c] * 100).map('{:.2f}%'.format)
+    if clustering_data is None:
+        st.warning("Clustering data not found. Please run backend extraction.")
+    else:
+        pca_3d = clustering_data['pca_3d']
+        labels_dict = clustering_data['labels']
         
-    st.table(classf_results)
+        tabs = st.tabs(list(labels_dict.keys()))
+        
+        for idx, (model_name, labels) in enumerate(labels_dict.items()):
+            with tabs[idx]:
+                st.markdown(f"### {model_name} Space Topology")
+                st.markdown("Rotate and zoom the 3D map to explore how the algorithm separated the customer profiles.")
+                
+                fig_3d = px.scatter_3d(
+                    x=pca_3d[:,0], y=pca_3d[:,1], z=pca_3d[:,2],
+                    color=[str(l) for l in labels],
+                    color_discrete_sequence=px.colors.qualitative.Pastel,
+                    labels={'x':'PCA 1', 'y':'PCA 2', 'z':'PCA 3'},
+                    title=f"3D Cluster Distribution: {model_name}"
+                )
+                fig_3d.update_layout(
+                    paper_bgcolor='rgba(0,0,0,0)',
+                    scene=dict(
+                        xaxis=dict(backgroundcolor='rgba(0,0,0,0)', gridcolor='rgba(255,255,255,0.1)', title_font=dict(color='#E2E8F0')),
+                        yaxis=dict(backgroundcolor='rgba(0,0,0,0)', gridcolor='rgba(255,255,255,0.1)', title_font=dict(color='#E2E8F0')),
+                        zaxis=dict(backgroundcolor='rgba(0,0,0,0)', gridcolor='rgba(255,255,255,0.1)', title_font=dict(color='#E2E8F0')),
+                    ),
+                    legend=dict(font=dict(color='#E2E8F0'), title=dict(text="Cluster ID"))
+                )
+                st.plotly_chart(fig_3d, use_container_width=True, height=700)
+                
+                scores = {
+                    'KMeans': (0.3244, 1.1163),
+                    'Agglomerative': (0.3204, 1.1298),
+                    'DBSCAN': (0.4409, 0.8368),
+                    'GaussianMixture': (0.2747, 1.4684)
+                }
+                c1, c2 = st.columns(2)
+                c1.metric("Silhouette Score (Higher is Better)", scores[model_name][0])
+                c2.metric("Davies Bouldin Score (Lower is Better)", scores[model_name][1])
+
+elif page == "Retention Prediction (Hyperparams)":
+    st.title("Retention Modeling & Hyperparameter Search")
+    st.markdown("""
+    We evaluated several models to predict 90-day churn. To prove rigor, we executed **GridSearchCV** over a hyperparameter space for each algorithm, optimizing for the `F1 Score`.
+    """)
     
-    # Optional bar chart for ROC AUC
-    chart_data = pd.DataFrame({
-        "Model": ["RandomForest", "XGBoost", "LogisticRegression", "SVC", "KNN", "DecisionTree"],
-        "ROC AUC": [0.7640, 0.7609, 0.7579, 0.7442, 0.7395, 0.7391]
-    })
-    
-    chart_data = chart_data.sort_values(by="ROC AUC", ascending=True)
-    fig = px.bar(chart_data, x="ROC AUC", y="Model", orientation='h', 
-                 title="ROC AUC Score by Model", color_discrete_sequence=["#744210"])
-    fig.update_layout(xaxis_range=[0.7, 0.8], plot_bgcolor='rgba(0,0,0,0)')
-    st.plotly_chart(fig, use_container_width=True)
+    if classification_results is None:
+        st.warning("Classification results not found. Please run backend extraction.")
+    else:
+        st.markdown("### Radar Comparison of Best Models")
+        st.markdown("This radar chart compares the absolute best-performing configuration of each algorithm across Accuracy, Precision, Recall, F1, and ROC AUC.")
+        
+        radar_df = pd.DataFrame({
+            "Metric": ["Accuracy", "Precision", "Recall", "F1 Score", "ROC AUC"],
+            "RandomForest": [0.6906, 0.7284, 0.7923, 0.7591, 0.7666],
+            "XGBoost": [0.6906, 0.7179, 0.8187, 0.7650, 0.7608],
+            "LogisticReg": [0.6744, 0.7069, 0.8040, 0.7523, 0.7578],
+            "SVC": [0.6924, 0.7100, 0.8450, 0.7716, 0.7442]
+        })
+        
+        fig_radar = go.Figure()
+        
+        # Fix for Plotly Scatterpolar fillcolor bug (Hex length 8 -> RGBA)
+        border_colors = ['rgba(6, 182, 212, 1)', 'rgba(16, 185, 129, 1)', 'rgba(245, 158, 11, 1)', 'rgba(139, 92, 246, 1)']
+        fill_colors = ['rgba(6, 182, 212, 0.2)', 'rgba(16, 185, 129, 0.2)', 'rgba(245, 158, 11, 0.2)', 'rgba(139, 92, 246, 0.2)']
+        
+        for idx, model in enumerate(["RandomForest", "XGBoost", "LogisticReg", "SVC"]):
+            fig_radar.add_trace(go.Scatterpolar(
+                r=radar_df[model],
+                theta=radar_df["Metric"],
+                fill='toself',
+                name=model,
+                line=dict(color=border_colors[idx]),
+                fillcolor=fill_colors[idx]
+            ))
+            
+        fig_radar.update_layout(
+            polar=dict(
+                radialaxis=dict(visible=True, range=[0.65, 0.85], gridcolor='rgba(255,255,255,0.1)', tickfont=dict(color='#94A3B8')),
+                angularaxis=dict(gridcolor='rgba(255,255,255,0.1)', tickfont=dict(color='#E2E8F0', size=14)),
+                bgcolor='rgba(0,0,0,0)'
+            ),
+            paper_bgcolor='rgba(0,0,0,0)',
+            font=dict(color='#E2E8F0')
+        )
+        st.plotly_chart(fig_radar, use_container_width=True)
+        
+        st.markdown("---")
+        st.markdown("### Hyperparameter Optimization Surfaces")
+        st.markdown("Select a model below to explore how tweaking specific hyperparameters drastically affected cross-validation test scores (Mean F1 Score).")
+        
+        model_selection = st.selectbox("Select Model for Hyperparameter Drilldown:", list(classification_results.keys()))
+        
+        res = classification_results[model_selection]
+        params_list = res['params']
+        mean_scores = res['mean_test_score']
+        
+        flat_params = []
+        for i, p_dict in enumerate(params_list):
+            row = {'Mean F1 Score': mean_scores[i]}
+            for k, v in p_dict.items():
+                clean_k = k.replace('model__', '')
+                row[clean_k] = str(v) if isinstance(v, (bool, str)) else v
+            flat_params.append(row)
+            
+        df_hp = pd.DataFrame(flat_params)
+        
+        st.markdown(f"**Top 5 Configurations for {model_selection}:**")
+        st.dataframe(df_hp.sort_values(by='Mean F1 Score', ascending=False).head(5), use_container_width=True)
+        
+        param_cols = [c for c in df_hp.columns if c != 'Mean F1 Score']
+        
+        if len(param_cols) == 1:
+            fig_hp = px.line(
+                df_hp.sort_values(by=param_cols[0]), 
+                x=param_cols[0], y="Mean F1 Score",
+                markers=True, title=f"Effect of {param_cols[0]} on Performance",
+                color_discrete_sequence=['#06B6D4']
+            )
+        elif len(param_cols) >= 2:
+            x_col = param_cols[0]
+            color_col = param_cols[1]
+            fig_hp = px.scatter(
+                df_hp, x=x_col, y="Mean F1 Score", color=color_col, size_max=15, size=[1]*len(df_hp),
+                title=f"Interaction: {x_col} vs {color_col}",
+                color_discrete_sequence=px.colors.qualitative.Vivid
+            )
+            fig_hp.update_traces(marker=dict(size=12, opacity=0.8, line=dict(width=1, color='white')))
+
+        fig_hp.update_layout(
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)',
+            font=dict(color='#E2E8F0'),
+            xaxis=dict(gridcolor='rgba(255,255,255,0.1)', title_font=dict(color='#E2E8F0')),
+            yaxis=dict(gridcolor='rgba(255,255,255,0.1)', title_font=dict(color='#E2E8F0'))
+        )
+        st.plotly_chart(fig_hp, use_container_width=True)

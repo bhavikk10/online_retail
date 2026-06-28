@@ -1,0 +1,42 @@
+{
+  "status": "partial",
+  "source": "src/tweedie_clv.py",
+  "reason": "Full CLV hyperparameter trial history was not saved as a reusable artifact. Showing selected final parameters only.",
+  "suggestedScriptToRun": "python src/tweedie_clv.py",
+  "rows": 1,
+  "columns": [
+    "tweedie_variance_power",
+    "subsample",
+    "reg_lambda",
+    "reg_alpha",
+    "n_estimators",
+    "min_child_weight",
+    "max_depth",
+    "learning_rate",
+    "colsample_bytree"
+  ],
+  "data": [
+    {
+      "tweedie_variance_power": 1.1,
+      "subsample": 0.8,
+      "reg_lambda": 5,
+      "reg_alpha": 0.1,
+      "n_estimators": 1000,
+      "min_child_weight": 5,
+      "max_depth": 2,
+      "learning_rate": 0.03,
+      "colsample_bytree": 0.8
+    }
+  ],
+  "finalSelectedParameters": {
+    "tweedie_variance_power": 1.1,
+    "subsample": 0.8,
+    "reg_lambda": 5,
+    "reg_alpha": 0.1,
+    "n_estimators": 1000,
+    "min_child_weight": 5,
+    "max_depth": 2,
+    "learning_rate": 0.03,
+    "colsample_bytree": 0.8
+  }
+}

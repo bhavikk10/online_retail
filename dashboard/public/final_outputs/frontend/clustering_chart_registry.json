@@ -1,0 +1,35 @@
+{
+  "clusteringStatus": "complete",
+  "finalModel": "KMeans",
+  "finalClusterCount": 4,
+  "modelDecision": "KMeans with 4 clusters was selected because it gives balanced, interpretable customer groups with no unassigned noise customers.",
+  "dbscanNote": "DBSCAN had higher silhouette in diagnostics but was not selected because it leaves a meaningful share of customers as noise.",
+  "plots": {
+    "kmeansElbow": "clustering_frontend_plots/01_kmeans_elbow_curve.png",
+    "kmeansSilhouette": "clustering_frontend_plots/02_kmeans_silhouette_by_k.png",
+    "modelSilhouetteComparison": "clustering_frontend_plots/03_clustering_model_silhouette_comparison.png",
+    "modelNoiseComparison": "clustering_frontend_plots/04_clustering_model_noise_comparison.png",
+    "pcaSegments": "clustering_frontend_plots/05_kmeans_pca_segments.png",
+    "customerShare": "clustering_frontend_plots/06_customer_share_by_segment.png",
+    "futureRevenueShare": "clustering_frontend_plots/07_future_revenue_share_by_segment.png",
+    "customerVsRevenueShare": "clustering_frontend_plots/08_customer_share_vs_revenue_share.png",
+    "retentionVsZeroSpend": "clustering_frontend_plots/09_retention_vs_zero_spend_by_segment.png",
+    "avgFutureSpend": "clustering_frontend_plots/10_avg_future_spend_by_segment.png",
+    "avgRecency": "clustering_frontend_plots/11_avg_recency_by_segment.png",
+    "avgFrequency": "clustering_frontend_plots/12_avg_frequency_by_segment.png",
+    "avgMonetary": "clustering_frontend_plots/13_avg_monetary_by_segment.png",
+    "historicalVsFutureRevenue": "clustering_frontend_plots/14_historical_vs_future_revenue_by_segment.png",
+    "segmentHeatmap": "clustering_frontend_plots/15_segment_profile_heatmap.png",
+    "dbscanNoiseDiagnostic": "clustering_frontend_plots/16_dbscan_noise_vs_silhouette.png"
+  },
+  "data": {
+    "segmentCards": "clustering_frontend_data/segment_cards.json",
+    "segmentCardsCsv": "clustering_frontend_data/segment_cards.csv",
+    "clusterProfile": "clustering_frontend_data/cluster_profile_frontend.csv",
+    "pcaSample": "clustering_frontend_data/pca_cluster_coordinates_sampled_frontend.json",
+    "pcaFullCsv": "clustering_frontend_data/pca_cluster_coordinates_frontend.csv",
+    "modelComparison": "clustering_frontend_data/clustering_model_comparison_frontend.csv",
+    "kmeansSearch": "clustering_frontend_data/kmeans_k_search_frontend.csv",
+    "dbscanSearch": "clustering_frontend_data/dbscan_search_frontend.csv"
+  }
+}

@@ -1,0 +1,1 @@
+export default function range(start, end, step = 1) { if (end == null) { end = start; start = 0; } const out = []; for (let i = start; step > 0 ? i < end : i > end; i += step) out.push(i); return out; }

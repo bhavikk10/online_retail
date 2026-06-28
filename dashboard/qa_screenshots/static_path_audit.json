@@ -1,0 +1,494 @@
+{
+  "checkedAt": "2026-06-26T18:00:30.201Z",
+  "sourceRoot": "dashboard/src",
+  "validCount": 69,
+  "brokenCount": 0,
+  "optionalMissingCount": 0,
+  "valid": [
+    {
+      "file": "src/pages/Explainability.jsx",
+      "publicPath": "/raw_outputs/shap_plots/01_retention_shap_summary_beeswarm.png",
+      "status": "valid",
+      "requirement": "optional",
+      "bytes": 493981
+    },
+    {
+      "file": "src/pages/Explainability.jsx",
+      "publicPath": "/raw_outputs/shap_plots/02_retention_shap_summary_bar.png",
+      "status": "valid",
+      "requirement": "optional",
+      "bytes": 165227
+    },
+    {
+      "file": "src/pages/Explainability.jsx",
+      "publicPath": "/raw_outputs/shap_plots/04_retention_waterfall_example.png",
+      "status": "valid",
+      "requirement": "optional",
+      "bytes": 142153
+    },
+    {
+      "file": "src/pages/Explainability.jsx",
+      "publicPath": "/raw_outputs/shap_plots/01_clv_shap_summary_beeswarm.png",
+      "status": "valid",
+      "requirement": "optional",
+      "bytes": 283840
+    },
+    {
+      "file": "src/pages/Explainability.jsx",
+      "publicPath": "/raw_outputs/shap_plots/02_clv_shap_summary_bar.png",
+      "status": "valid",
+      "requirement": "optional",
+      "bytes": 163608
+    },
+    {
+      "file": "src/pages/Explainability.jsx",
+      "publicPath": "/raw_outputs/shap_plots/04_clv_waterfall_example.png",
+      "status": "valid",
+      "requirement": "optional",
+      "bytes": 141059
+    },
+    {
+      "file": "src/pages/Explainability.jsx",
+      "publicPath": "/raw_outputs/shap_outputs/retention_shap_feature_importance.csv",
+      "status": "valid",
+      "requirement": "optional",
+      "bytes": 698
+    },
+    {
+      "file": "src/pages/Explainability.jsx",
+      "publicPath": "/raw_outputs/shap_outputs/clv_shap_feature_importance.csv",
+      "status": "valid",
+      "requirement": "optional",
+      "bytes": 701
+    },
+    {
+      "file": "src/pages/Explainability.jsx",
+      "publicPath": "/raw_outputs/shap_plots/",
+      "status": "valid",
+      "requirement": "optional",
+      "bytes": 0
+    },
+    {
+      "file": "src/pages/Retention.jsx",
+      "publicPath": "/assets/f1_rocauc_bar.png",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 27387
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/frontend/project_master_summary.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 7790
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/frontend/project_kpi_cards.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 1921
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/frontend/project_insights.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 1748
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/generated/project_health_report.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 4907
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/generated/project_data_inventory.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 119413
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/generated/metadata/pipeline_file_map.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 94302
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/frontend/segment_cards_json.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 2568
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/generated/tables/original_dataset_head.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 5899
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/generated/tables/cleaned_purchase_head.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 4700
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/generated/tables/retention_dataset_head.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 23535
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/generated/tables/clv_dataset_head.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 23529
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/generated/tables/clustered_customers_head.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 23542
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/generated/tables/weekly_revenue_head.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 3769
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/generated/tables/monthly_revenue_head.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 3819
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/generated/tables/forecast_results_head.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 6992
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/data/clv_model_comparison.csv",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 1415
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/data/clv_lift_table.csv",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 367
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/data/clv_predicted_decile_calibration.csv",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 988
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/data/clv_error_by_actual_decile.csv",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 1253
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/data/clv_residual_diagnostics.csv",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 64361
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/data/clv_zero_spender_diagnostics.csv",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 22413
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/data/clustered_customers.csv",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 707242
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/data/kmeans_cluster_profiles.csv",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 2953
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/data/pca_cluster_coordinates.csv",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 149837
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/data/forecast_model_comparison.csv",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 2368
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/data/weekly_revenue_series.csv",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 5137
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/data/monthly_revenue_series.csv",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 1317
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/data/weekly_forecast_results.csv",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 2835
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/data/future_12_week_forecast.csv",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 384
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/plots/clv_actual_vs_predicted.png",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 139484
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/plots/clv_log_actual_vs_predicted.png",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 314273
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/plots/clv_residuals_vs_predicted.png",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 120947
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/plots/clv_lift_curve.png",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 153219
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/plots/clv_lift_vs_random.png",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 76767
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/plots/clv_zero_spender_distribution.png",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 83697
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/plots/cluster_customer_vs_revenue_share.png",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 176288
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/plots/cluster_pca.png",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 514663
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/plots/cluster_retention_vs_zero_spend.png",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 173212
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/plots/cluster_avg_future_spend.png",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 106583
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/plots/cluster_profile_heatmap.png",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 250920
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/raw_outputs/clustering_frontend_plots/16_dbscan_noise_vs_silhouette.png",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 110847
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/raw_outputs/clustering_plots/07_gmm_pca_clusters.png",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 598110
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/raw_outputs/clustering_plots/06_agglomerative_pca_clusters.png",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 642526
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/plots/weekly_revenue_trend.png",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 237813
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/plots/monthly_revenue_trend.png",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 187770
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/plots/best_forecast.png",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 231768
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/plots/future_forecast.png",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 190715
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/plots/forecast_model_comparison.png",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 125422
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/generated/model_lab/classification_model_results.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 1364
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/generated/model_lab/classification_hyperparameter_trials.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 9713
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/generated/model_lab/clv_model_results.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 3688
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/generated/model_lab/clv_hyperparameter_trials.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 1045
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/generated/model_lab/kmeans_k_search.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 2360
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/generated/model_lab/dbscan_parameter_search.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 10222
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/generated/model_lab/clustering_model_comparison.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 1478
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/generated/model_lab/forecast_model_comparison.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 6133
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/generated/model_lab/forecast_model_results.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 7272
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/generated/model_lab/clv_lift_slider_data.json",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 1384
+    },
+    {
+      "file": "src/utils/filePaths.js",
+      "publicPath": "/final_outputs/data/future_12_week_forecast.csv",
+      "status": "valid",
+      "requirement": "required",
+      "bytes": 384
+    }
+  ],
+  "broken": [],
+  "optionalMissing": []
+}

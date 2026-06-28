@@ -1,0 +1,50 @@
+{
+  "timeSeriesStatus": "complete",
+  "target": "Weekly Revenue",
+  "interpretation": "Exploratory short-term weekly revenue forecasting. Monthly data has only 25 points, so monthly output is used mainly for trend visualization rather than serious forecasting.",
+  "testHorizonWeeks": 12,
+  "futureForecastWeeks": 12,
+  "bestModel": "SARIMA",
+  "bestModelMetrics": {
+    "Model": "SARIMA",
+    "RMSE": 57057.60978973488,
+    "MAE": 48227.70592429092,
+    "MSE": 3255570834.9176497,
+    "R2": -0.169103750047509,
+    "WAPE_%": 18.290977386593962,
+    "sMAPE_%": 19.886470198141627,
+    "Revenue_Error_%": 12.773281451912771,
+    "Actual_Total": 3164032.5109999995,
+    "Predicted_Total": 2759881.7331399466,
+    "Order": "(1, 1, 0)",
+    "Seasonal_Order": "(1, 1, 0, 4)",
+    "AIC": 368.45398389100274
+  },
+  "trainStart": "2009-12-06 00:00:00",
+  "trainEnd": "2011-09-18 00:00:00",
+  "testStart": "2011-09-25 00:00:00",
+  "testEnd": "2011-12-11 00:00:00",
+  "weeklyObservations": 106,
+  "monthlyObservations": 25,
+  "totalHistoricalRevenue": 17237799.867000002,
+  "averageWeeklyRevenue": 162620.75346226417,
+  "latestWeeklyRevenue": 404543.71,
+  "latestMonthlyRevenue": 512816.18,
+  "frontendFiles": {
+    "weeklyRevenueSeries": "time_series_frontend_data/weekly_revenue_series.json",
+    "monthlyRevenueSeries": "time_series_frontend_data/monthly_revenue_series.json",
+    "weeklyForecastResults": "time_series_frontend_data/weekly_forecast_results.json",
+    "forecastModelComparison": "time_series_frontend_data/forecast_model_comparison.json",
+    "futureForecast": "time_series_frontend_data/future_12_week_forecast.json"
+  },
+  "plots": {
+    "weeklyRevenueTrend": "time_series_plots/01_weekly_revenue_trend.png",
+    "monthlyRevenueTrend": "time_series_plots/02_monthly_revenue_trend.png",
+    "forecastComparison": "time_series_plots/03_train_test_forecast_comparison.png",
+    "bestModelForecast": "time_series_plots/04_best_model_test_forecast.png",
+    "modelComparison": "time_series_plots/05_forecast_model_comparison_rmse.png",
+    "residualDistribution": "time_series_plots/06_forecast_residual_distribution.png",
+    "futureForecast": "time_series_plots/07_future_12_week_forecast.png",
+    "seasonalDecomposition": "time_series_plots/08_seasonal_decomposition.png"
+  }
+}

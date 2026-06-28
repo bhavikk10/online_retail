@@ -1,0 +1,3817 @@
+{
+  "generatedAt": "2026-06-27T04:26:42.175482+00:00",
+  "files": [
+    {
+      "file": "src/final_outputs/data/clustered_customers.csv",
+      "extension": "csv",
+      "sizeBytes": 707242,
+      "status": "ok",
+      "rows": 2778,
+      "columns": [
+        "Customer_ID",
+        "KMeans_Cluster",
+        "KMeans_SegmentName",
+        "Agglomerative_Cluster",
+        "GaussianMixture_Cluster",
+        "DBSCAN_Cluster",
+        "FutureSpend90Days",
+        "RetentionLabel",
+        "Frequency",
+        "Monetary",
+        "AvgBasketValue",
+        "AvgQuantity",
+        "UniqueProducts",
+        "Recency",
+        "LifetimeDays",
+        "IsNewCustomer",
+        "PurchaseRate",
+        "RecencyFrequency",
+        "RevenuePerDay",
+        "AvgSpendPerProduct",
+        "ProductDiversityRate",
+        "AvgGapDays",
+        "StdGapDays",
+        "PurchasesLast30Days",
+        "SpendLast30Days",
+        "PurchasesLast90Days",
+        "SpendLast90Days",
+        "SpendPrior90Days",
+        "PurchasesPrior90Days",
+        "SpendTrendRatio",
+        "FrequencyLast90DaysRatio",
+        "ReturnRate",
+        "AvgGapDaysMissing"
+      ],
+      "sample": [
+        {
+          "Customer_ID": 12347,
+          "KMeans_Cluster": 0,
+          "KMeans_SegmentName": "Regular Mid-Value Customers",
+          "Agglomerative_Cluster": 0,
+          "GaussianMixture_Cluster": 3,
+          "DBSCAN_Cluster": 0,
+          "FutureSpend90Days": 1519.14,
+          "RetentionLabel": 1,
+          "Frequency": 6,
+          "Monetary": 3402.39,
+          "AvgBasketValue": 567.0649999999999,
+          "AvgQuantity": 349.8333333333333,
+          "UniqueProducts": 164,
+          "Recency": 37,
+          "LifetimeDays": 274,
+          "IsNewCustomer": 0,
+          "PurchaseRate": 0.0218978102189781,
+          "RecencyFrequency": 6.166666666666667,
+          "RevenuePerDay": 12.417481751824816,
+          "AvgSpendPerProduct": 20.74628048780488,
+          "ProductDiversityRate": 27.33333333333333,
+          "AvgGapDays": 54.4,
+          "StdGapDays": 12.759310326189263,
+          "PurchasesLast30Days": 0.0,
+          "SpendLast30Days": 0.0,
+          "PurchasesLast90Days": 1.0,
+          "SpendLast90Days": 584.9100000000001,
+          "SpendPrior90Days": 1018.77,
+          "PurchasesPrior90Days": 2.0,
+          "SpendTrendRatio": 0.5735705109975779,
+          "FrequencyLast90DaysRatio": 0.3333333333333333,
+          "ReturnRate": 0.0,
+          "AvgGapDaysMissing": 0
+        },
+        {
+          "Customer_ID": 12348,
+          "KMeans_Cluster": 3,
+          "KMeans_SegmentName": "At-Risk Inactive Customers",
+          "Agglomerative_Cluster": 1,
+          "GaussianMixture_Cluster": 1,
+          "DBSCAN_Cluster": 0,
+          "FutureSpend90Days": 270.0,
+          "RetentionLabel": 1,
+          "Frequency": 4,
+          "Monetary": 1388.4,
+          "AvgBasketValue": 347.1,
+          "AvgQuantity": 622.0,
+          "UniqueProducts": 40,
+          "Recency": 156,
+          "LifetimeDays": 189,
+          "IsNewCustomer": 0,
+          "PurchaseRate": 0.0211640211640211,
+          "RecencyFrequency": 39.0,
+          "RevenuePerDay": 7.346031746031746,
+          "AvgSpendPerProduct": 34.709999999999994,
+          "ProductDiversityRate": 10.0,
+          "AvgGapDays": 63.0,
+          "StdGapDays": 21.37755832643195,
+          "PurchasesLast30Days": 0.0,
+          "SpendLast30Days": 0.0,
+          "PurchasesLast90Days": 0.0,
+          "SpendLast90Days": 0.0,
+          "SpendPrior90Days": 327.0,
+          "PurchasesPrior90Days": 1.0,
+          "SpendTrendRatio": 0.0,
+          "FrequencyLast90DaysRatio": 0.0,
+          "ReturnRate": 0.0,
+          "AvgGapDaysMissing": 0
+        },
+        {
+          "Customer_ID": 12352,
+          "KMeans_Cluster": 3,
+          "KMeans_SegmentName": "At-Risk Inactive Customers",
+          "Agglomerative_Cluster": 1,
+          "GaussianMixture_Cluster": 1,
+          "DBSCAN_Cluster": 0,
+          "FutureSpend90Days": 744.23,
+          "RetentionLabel": 1,
+          "Frequency": 7,
+          "Monetary": 1825.61,
+          "AvgBasketValue": 260.8014285714286,
+          "AvgQuantity": 62.85714285714285,
+          "UniqueProducts": 52,
+          "Recency": 170,
+          "LifetimeDays": 130,
+          "IsNewCustomer": 0,
+          "PurchaseRate": 0.0538461538461538,
+          "RecencyFrequency": 24.285714285714285,
+          "RevenuePerDay": 14.043153846153846,
+          "AvgSpendPerProduct": 35.10788461538461,
+          "ProductDiversityRate": 7.428571428571429,
+          "AvgGapDays": 21.5,
+          "StdGapDays": 28.891175123210203,
+          "PurchasesLast30Days": 0.0,
+          "SpendLast30Days": 0.0,
+          "PurchasesLast90Days": 0.0,
+          "SpendLast90Days": 0.0,
+          "SpendPrior90Days": 240.66,
+          "PurchasesPrior90Days": 2.0,
+          "SpendTrendRatio": 0.0,
+          "FrequencyLast90DaysRatio": 0.0,
+          "ReturnRate": 0.1515151515151515,
+          "AvgGapDaysMissing": 0
+        }
+      ]
+    },
+    {
+      "file": "src/final_outputs/data/clustering_model_comparison.csv",
+      "extension": "csv",
+      "sizeBytes": 418,
+      "status": "ok",
+      "rows": 4,
+      "columns": [
+        "Model",
+        "Clusters",
+        "Noise_Count",
+        "Noise_%",
+        "Silhouette_Score",
+        "Davies_Bouldin_Score",
+        "Calinski_Harabasz_Score"
+      ],
+      "sample": [
+        {
+          "Model": "DBSCAN",
+          "Clusters": 4,
+          "Noise_Count": 623,
+          "Noise_%": 22.42620590352772,
+          "Silhouette_Score": 0.3668928407373143,
+          "Davies_Bouldin_Score": 1.1806724264685473,
+          "Calinski_Harabasz_Score": 457.6550480837011
+        },
+        {
+          "Model": "GaussianMixture",
+          "Clusters": 4,
+          "Noise_Count": 0,
+          "Noise_%": 0.0,
+          "Silhouette_Score": 0.2147117109321679,
+          "Davies_Bouldin_Score": 2.0076994752757105,
+          "Calinski_Harabasz_Score": 585.3915074229772
+        },
+        {
+          "Model": "Agglomerative",
+          "Clusters": 4,
+          "Noise_Count": 0,
+          "Noise_%": 0.0,
+          "Silhouette_Score": 0.199701556736947,
+          "Davies_Bouldin_Score": 2.0062988923482044,
+          "Calinski_Harabasz_Score": 585.1483000711652
+        }
+      ]
+    },
+    {
+      "file": "src/final_outputs/data/clv_error_by_actual_decile.csv",
+      "extension": "csv",
+      "sizeBytes": 1253,
+      "status": "ok",
+      "rows": 10,
+      "columns": [
+        "ActualDecile",
+        "Count",
+        "MeanActual",
+        "MeanPredicted",
+        "ActualRevenue",
+        "PredictedRevenue",
+        "MAE",
+        "MedianAE",
+        "RevenueError_%"
+      ],
+      "sample": [
+        {
+          "ActualDecile": 1,
+          "Count": 56,
+          "MeanActual": 0.0,
+          "MeanPredicted": 297.05089947405514,
+          "ActualRevenue": 0.0,
+          "PredictedRevenue": 16634.850370547087,
+          "MAE": 297.05089947405514,
+          "MedianAE": 221.47142310467552,
+          "RevenueError_%": null
+        },
+        {
+          "ActualDecile": 2,
+          "Count": 56,
+          "MeanActual": 0.0,
+          "MeanPredicted": 353.4227889854181,
+          "ActualRevenue": 0.0,
+          "PredictedRevenue": 19791.67618318341,
+          "MAE": 353.4227889854181,
+          "MedianAE": 265.4008312448315,
+          "RevenueError_%": null
+        },
+        {
+          "ActualDecile": 3,
+          "Count": 55,
+          "MeanActual": 0.0,
+          "MeanPredicted": 290.37438142544727,
+          "ActualRevenue": 0.0,
+          "PredictedRevenue": 15970.5909783996,
+          "MAE": 290.37438142544727,
+          "MedianAE": 227.3723531287252,
+          "RevenueError_%": null
+        }
+      ]
+    },
+    {
+      "file": "src/final_outputs/data/clv_lift_table.csv",
+      "extension": "csv",
+      "sizeBytes": 367,
+      "status": "ok",
+      "rows": 5,
+      "columns": [
+        "TopCustomer_%",
+        "CustomerCount",
+        "ActualRevenueCaptured",
+        "RevenueCapture_%",
+        "LiftVsRandom"
+      ],
+      "sample": [
+        {
+          "TopCustomer_%": 5.0,
+          "CustomerCount": 27,
+          "ActualRevenueCaptured": 238827.45,
+          "RevenueCapture_%": 47.88051527707072,
+          "LiftVsRandom": 9.576103055414144
+        },
+        {
+          "TopCustomer_%": 10.0,
+          "CustomerCount": 55,
+          "ActualRevenueCaptured": 284827.57,
+          "RevenueCapture_%": 57.10269408611084,
+          "LiftVsRandom": 5.710269408611084
+        },
+        {
+          "TopCustomer_%": 20.0,
+          "CustomerCount": 111,
+          "ActualRevenueCaptured": 362787.6299999999,
+          "RevenueCapture_%": 72.7322536021185,
+          "LiftVsRandom": 3.636612680105925
+        }
+      ]
+    },
+    {
+      "file": "src/final_outputs/data/clv_model_comparison.csv",
+      "extension": "csv",
+      "sizeBytes": 1415,
+      "status": "ok",
+      "rows": 5,
+      "columns": [
+        "Model",
+        "Version",
+        "MSE",
+        "RMSE",
+        "MAE",
+        "R2",
+        "MEDIAN_AE",
+        "RMSLE",
+        "WMAPE_%",
+        "Revenue_Error_%",
+        "Prediction_Actual_Ratio",
+        "Spearman_Rank_Correlation",
+        "Actual_Total_Revenue",
+        "Predicted_Total_Revenue",
+        "Calibration_Factor"
+      ],
+      "sample": [
+        {
+          "Model": "XGBoost_Tweedie",
+          "Version": "Calibrated",
+          "MSE": 3905660.4804745615,
+          "RMSE": 1976.2743940239072,
+          "MAE": 529.8777355944866,
+          "R2": 0.8329799126925654,
+          "MEDIAN_AE": 251.49154984423515,
+          "RMSLE": 3.4513270066977646,
+          "WMAPE_%": 59.0642967206909,
+          "Revenue_Error_%": 11.27265336846863,
+          "Prediction_Actual_Ratio": 0.8872734663153137,
+          "Spearman_Rank_Correlation": 0.6172056479835779,
+          "Actual_Total_Revenue": 498798.83,
+          "Predicted_Total_Revenue": 442570.9668881229,
+          "Calibration_Factor": 1.011588886158303
+        },
+        {
+          "Model": "XGBoost_Tweedie",
+          "Version": "Uncalibrated",
+          "MSE": 4021623.9784694263,
+          "RMSE": 2005.398708105056,
+          "MAE": 529.6852995481423,
+          "R2": 0.8280208965014744,
+          "MEDIAN_AE": 253.5991769409179,
+          "RMSLE": 3.444719240497628,
+          "WMAPE_%": 59.0428463011365,
+          "Revenue_Error_%": 12.289119894286843,
+          "Prediction_Actual_Ratio": 0.8771088010571315,
+          "Spearman_Rank_Correlation": 0.6172056479835779,
+          "Actual_Total_Revenue": 498798.83,
+          "Predicted_Total_Revenue": 437500.84375,
+          "Calibration_Factor": 1.0
+        },
+        {
+          "Model": "LGBM_Tweedie",
+          "Version": "Calibrated",
+          "MSE": 7022738.645570925,
+          "RMSE": 2650.045027083677,
+          "MAE": 647.2257486210638,
+          "R2": 0.6996824410149365,
+          "MEDIAN_AE": 210.89035202455705,
+          "RMSLE": 3.0991030209604835,
+          "WMAPE_%": 72.14481963265861,
+          "Revenue_Error_%": 48.61311326999822,
+          "Prediction_Actual_Ratio": 0.5138688673000177,
+          "Spearman_Rank_Correlation": 0.5233547815576436,
+          "Actual_Total_Revenue": 498798.83,
+          "Predicted_Total_Revenue": 256317.1897826741,
+          "Calibration_Factor": 1.0170234047706486
+        }
+      ]
+    },
+    {
+      "file": "src/final_outputs/data/clv_predicted_decile_calibration.csv",
+      "extension": "csv",
+      "sizeBytes": 988,
+      "status": "ok",
+      "rows": 10,
+      "columns": [
+        "PredictedDecile",
+        "Count",
+        "MeanActual",
+        "MeanPredicted",
+        "ActualRevenue",
+        "PredictedRevenue",
+        "RevenueError_%"
+      ],
+      "sample": [
+        {
+          "PredictedDecile": 1,
+          "Count": 56,
+          "MeanActual": 62.49857142857143,
+          "MeanPredicted": 69.65248922471832,
+          "ActualRevenue": 3499.92,
+          "PredictedRevenue": 3900.5393965842254,
+          "RevenueError_%": 11.446530108808952
+        },
+        {
+          "PredictedDecile": 2,
+          "Count": 56,
+          "MeanActual": 148.82160714285715,
+          "MeanPredicted": 134.6153151289308,
+          "ActualRevenue": 8334.01,
+          "PredictedRevenue": 7538.457647220124,
+          "RevenueError_%": 9.545853110085972
+        },
+        {
+          "PredictedDecile": 3,
+          "Count": 55,
+          "MeanActual": 147.45509090909093,
+          "MeanPredicted": 199.127562078165,
+          "ActualRevenue": 8110.030000000001,
+          "PredictedRevenue": 10952.015914299074,
+          "RevenueError_%": 35.04285328536483
+        }
+      ]
+    },
+    {
+      "file": "src/final_outputs/data/clv_residual_diagnostics.csv",
+      "extension": "csv",
+      "sizeBytes": 64361,
+      "status": "ok",
+      "rows": 556,
+      "columns": [
+        "Actual",
+        "Predicted",
+        "Residual",
+        "AbsResidual",
+        "LogActual",
+        "LogPredicted",
+        "LogResidual",
+        "ActualZeroFlag"
+      ],
+      "sample": [
+        {
+          "Actual": 968.1,
+          "Predicted": 1906.6661206847623,
+          "Residual": -938.5661206847624,
+          "AbsResidual": 938.5661206847624,
+          "LogActual": 6.876367805740505,
+          "LogPredicted": 7.553635847536913,
+          "LogResidual": -0.6772680417964088,
+          "ActualZeroFlag": 0
+        },
+        {
+          "Actual": 0.0,
+          "Predicted": 126.94086817287123,
+          "Residual": -126.94086817287123,
+          "AbsResidual": 126.94086817287123,
+          "LogActual": 0.0,
+          "LogPredicted": 4.85156818978036,
+          "LogResidual": -4.85156818978036,
+          "ActualZeroFlag": 1
+        },
+        {
+          "Actual": 0.0,
+          "Predicted": 178.19117545945784,
+          "Residual": -178.19117545945784,
+          "AbsResidual": 178.19117545945784,
+          "LogActual": 0.0,
+          "LogPredicted": 5.188453255240454,
+          "LogResidual": -5.188453255240454,
+          "ActualZeroFlag": 1
+        }
+      ]
+    },
+    {
+      "file": "src/final_outputs/data/clv_zero_spender_diagnostics.csv",
+      "extension": "csv",
+      "sizeBytes": 22413,
+      "status": "ok",
+      "rows": 214,
+      "columns": [
+        "Actual",
+        "Predicted",
+        "Residual",
+        "AbsResidual",
+        "LogActual",
+        "LogPredicted",
+        "LogResidual",
+        "ActualZeroFlag"
+      ],
+      "sample": [
+        {
+          "Actual": 0.0,
+          "Predicted": 126.94086817287123,
+          "Residual": -126.94086817287123,
+          "AbsResidual": 126.94086817287123,
+          "LogActual": 0.0,
+          "LogPredicted": 4.85156818978036,
+          "LogResidual": -4.85156818978036,
+          "ActualZeroFlag": 1
+        },
+        {
+          "Actual": 0.0,
+          "Predicted": 178.19117545945784,
+          "Residual": -178.19117545945784,
+          "AbsResidual": 178.19117545945784,
+          "LogActual": 0.0,
+          "LogPredicted": 5.188453255240454,
+          "LogResidual": -5.188453255240454,
+          "ActualZeroFlag": 1
+        },
+        {
+          "Actual": 0.0,
+          "Predicted": 357.24359685232764,
+          "Residual": -357.24359685232764,
+          "AbsResidual": 357.24359685232764,
+          "LogActual": 0.0,
+          "LogPredicted": 5.881213193142626,
+          "LogResidual": -5.881213193142626,
+          "ActualZeroFlag": 1
+        }
+      ]
+    },
+    {
+      "file": "src/final_outputs/data/forecast_model_comparison.csv",
+      "extension": "csv",
+      "sizeBytes": 2368,
+      "status": "ok",
+      "rows": 12,
+      "columns": [
+        "Model",
+        "RMSE",
+        "MAE",
+        "MSE",
+        "R2",
+        "WAPE_%",
+        "sMAPE_%",
+        "Revenue_Error_%",
+        "Actual_Total",
+        "Predicted_Total",
+        "Order",
+        "Seasonal_Order",
+        "AIC"
+      ],
+      "sample": [
+        {
+          "Model": "SARIMA",
+          "RMSE": 57057.60978973488,
+          "MAE": 48227.70592429092,
+          "MSE": 3255570834.9176497,
+          "R2": -0.169103750047509,
+          "WAPE_%": 18.29097738659396,
+          "sMAPE_%": 19.886470198141627,
+          "Revenue_Error_%": 12.773281451912773,
+          "Actual_Total": 3164032.5109999995,
+          "Predicted_Total": 2759881.7331399466,
+          "Order": "(1, 1, 0)",
+          "Seasonal_Order": "(1, 1, 0, 4)",
+          "AIC": 368.45398389100274
+        },
+        {
+          "Model": "XGBoost_Lag",
+          "RMSE": 73746.81806000038,
+          "MAE": 50759.16872916668,
+          "MSE": 5438593173.974799,
+          "R2": -0.9530460239049156,
+          "WAPE_%": 19.25106719454945,
+          "sMAPE_%": 19.541882723349516,
+          "Revenue_Error_%": 11.589048460317782,
+          "Actual_Total": 3164032.5109999995,
+          "Predicted_Total": 2797351.25,
+          "Order": null,
+          "Seasonal_Order": null,
+          "AIC": null
+        },
+        {
+          "Model": "Naive",
+          "RMSE": 76669.11967175541,
+          "MAE": 59468.710916666685,
+          "MSE": 5878153911.241952,
+          "R2": -1.1108961007027918,
+          "WAPE_%": 22.554273020869108,
+          "sMAPE_%": 23.494084197033217,
+          "Revenue_Error_%": 21.094249464240097,
+          "Actual_Total": 3164032.5109999995,
+          "Predicted_Total": 2496603.6,
+          "Order": null,
+          "Seasonal_Order": null,
+          "AIC": null
+        }
+      ]
+    },
+    {
+      "file": "src/final_outputs/data/future_12_week_forecast.csv",
+      "extension": "csv",
+      "sizeBytes": 384,
+      "status": "ok",
+      "rows": 12,
+      "columns": [
+        "Date",
+        "ForecastRevenue"
+      ],
+      "sample": [
+        {
+          "Date": "2011-12-18",
+          "ForecastRevenue": 361580.12543490966
+        },
+        {
+          "Date": "2011-12-25",
+          "ForecastRevenue": 354612.29332762706
+        },
+        {
+          "Date": "2012-01-01",
+          "ForecastRevenue": 359268.2454661125
+        }
+      ]
+    },
+    {
+      "file": "src/final_outputs/data/kmeans_cluster_profiles.csv",
+      "extension": "csv",
+      "sizeBytes": 2953,
+      "status": "ok",
+      "rows": 4,
+      "columns": [
+        "KMeans_Cluster",
+        "ClusterSize",
+        "CustomerShare_%",
+        "AvgRecency",
+        "AvgFrequency",
+        "AvgMonetary",
+        "TotalHistoricalRevenue",
+        "AvgBasketValue",
+        "AvgQuantity",
+        "UniqueProducts_mean",
+        "LifetimeDays_mean",
+        "PurchaseRate_mean",
+        "AvgGapDays",
+        "AvgGapDaysMissingRate_%",
+        "StdGapDays_mean",
+        "PurchasesLast30Days_mean",
+        "SpendLast30Days_mean",
+        "PurchasesLast90Days_mean",
+        "SpendLast90Days_mean",
+        "ReturnRate_mean",
+        "RevenuePerDay_mean",
+        "AvgSpendPerProduct_mean",
+        "ProductDiversityRate_mean",
+        "RecencyFrequency_mean",
+        "SpendTrendRatio_mean",
+        "FrequencyLast90DaysRatio_mean",
+        "IsNewCustomer_mean",
+        "AvgFutureSpend90Days",
+        "TotalFutureRevenue",
+        "FutureRevenueShare_%",
+        "RetentionRate_%",
+        "ZeroFutureSpendRate_%",
+        "RevenueRank",
+        "RetentionRank",
+        "RecencyRank",
+        "FrequencyRank",
+        "SegmentName"
+      ],
+      "sample": [
+        {
+          "KMeans_Cluster": 0,
+          "ClusterSize": 1031,
+          "CustomerShare_%": 37.1130309575234,
+          "AvgRecency": 45.53152279340446,
+          "AvgFrequency": 5.802133850630456,
+          "AvgMonetary": 1913.94922114452,
+          "TotalHistoricalRevenue": 1973281.647,
+          "AvgBasketValue": 335.2922156485799,
+          "AvgQuantity": 209.89760835215088,
+          "UniqueProducts_mean": 114.9466537342386,
+          "LifetimeDays_mean": 367.6605237633366,
+          "PurchaseRate_mean": 0.0231109069571066,
+          "AvgGapDays": 105.85015756389215,
+          "AvgGapDaysMissingRate_%": 0.0,
+          "StdGapDays_mean": 57.80275241582336,
+          "PurchasesLast30Days_mean": 0.2948593598448109,
+          "SpendLast30Days_mean": 79.1901648884578,
+          "PurchasesLast90Days_mean": 1.3501454898157128,
+          "SpendLast90Days_mean": 426.37887584869065,
+          "ReturnRate_mean": 0.023915808132667,
+          "RevenuePerDay_mean": 7.318290501735833,
+          "AvgSpendPerProduct_mean": 28.08447529939007,
+          "ProductDiversityRate_mean": 20.371955603134975,
+          "RecencyFrequency_mean": 10.763544710464425,
+          "SpendTrendRatio_mean": 224.66861459915336,
+          "FrequencyLast90DaysRatio_mean": 0.9459786307022,
+          "IsNewCustomer_mean": 0.0775945683802133,
+          "AvgFutureSpend90Days": 448.69638215324926,
+          "TotalFutureRevenue": 462605.97,
+          "FutureRevenueShare_%": 18.51312724860209,
+          "RetentionRate_%": 62.46362754607178,
+          "ZeroFutureSpendRate_%": 37.53637245392822,
+          "RevenueRank": 2.0,
+          "RetentionRank": 2.0,
+          "RecencyRank": 2.0,
+          "FrequencyRank": 2.0,
+          "SegmentName": "Regular Mid-Value Customers"
+        },
+        {
+          "KMeans_Cluster": 1,
+          "ClusterSize": 630,
+          "CustomerShare_%": 22.67818574514039,
+          "AvgRecency": 15.66190476190476,
+          "AvgFrequency": 21.704761904761902,
+          "AvgMonetary": 12542.668766666668,
+          "TotalHistoricalRevenue": 7901881.323000001,
+          "AvgBasketValue": 506.0446066270736,
+          "AvgQuantity": 328.092262663023,
+          "UniqueProducts_mean": 447.1222222222222,
+          "LifetimeDays_mean": 516.6619047619048,
+          "PurchaseRate_mean": 0.0432413289082628,
+          "AvgGapDays": 39.46150953066216,
+          "AvgGapDaysMissingRate_%": 0.0,
+          "StdGapDays_mean": 32.93207129585382,
+          "PurchasesLast30Days_mean": 1.4603174603174602,
+          "SpendLast30Days_mean": 810.5575396825396,
+          "PurchasesLast90Days_mean": 3.5841269841269843,
+          "SpendLast90Days_mean": 2036.0279841269844,
+          "ReturnRate_mean": 0.027134719899526,
+          "RevenuePerDay_mean": 23.966437783059565,
+          "AvgSpendPerProduct_mean": 39.51693948610748,
+          "ProductDiversityRate_mean": 22.842754816497187,
+          "RecencyFrequency_mean": 1.1461124767985014,
+          "SpendTrendRatio_mean": 127.8105531611624,
+          "FrequencyLast90DaysRatio_mean": 1.0380845257795177,
+          "IsNewCustomer_mean": 0.0079365079365079,
+          "AvgFutureSpend90Days": 2592.055666666666,
+          "TotalFutureRevenue": 1632995.07,
+          "FutureRevenueShare_%": 65.35117894663114,
+          "RetentionRate_%": 86.98412698412699,
+          "ZeroFutureSpendRate_%": 13.015873015873018,
+          "RevenueRank": 1.0,
+          "RetentionRank": 1.0,
+          "RecencyRank": 1.0,
+          "FrequencyRank": 1.0,
+          "SegmentName": "High-Value Loyalists"
+        },
+        {
+          "KMeans_Cluster": 2,
+          "ClusterSize": 420,
+          "CustomerShare_%": 15.118790496760258,
+          "AvgRecency": 84.18571428571428,
+          "AvgFrequency": 1.0666666666666669,
+          "AvgMonetary": 471.30271428571433,
+          "TotalHistoricalRevenue": 197947.14,
+          "AvgBasketValue": 389.4517857142857,
+          "AvgQuantity": 210.66626984126987,
+          "UniqueProducts_mean": 22.59523809523809,
+          "LifetimeDays_mean": 1.0476190476190477,
+          "PurchaseRate_mean": 1.0435714285714286,
+          "AvgGapDays": 1.1111111111111112,
+          "AvgGapDaysMissingRate_%": 93.57142857142856,
+          "StdGapDays_mean": 0.0,
+          "PurchasesLast30Days_mean": 0.2357142857142857,
+          "SpendLast30Days_mean": 83.69473809523808,
+          "PurchasesLast90Days_mean": 0.5857142857142857,
+          "SpendLast90Days_mean": 214.9849047619048,
+          "ReturnRate_mean": 0.0192226542211525,
+          "RevenuePerDay_mean": 466.8728591269841,
+          "AvgSpendPerProduct_mean": 64.75051679895934,
+          "ProductDiversityRate_mean": 21.48333333333333,
+          "RecencyFrequency_mean": 81.70119047619048,
+          "SpendTrendRatio_mean": 214.9849047619048,
+          "FrequencyLast90DaysRatio_mean": 0.5857142857142857,
+          "IsNewCustomer_mean": 1.0,
+          "AvgFutureSpend90Days": 326.1995476190476,
+          "TotalFutureRevenue": 137003.81,
+          "FutureRevenueShare_%": 5.482784772693926,
+          "RetentionRate_%": 35.95238095238095,
+          "ZeroFutureSpendRate_%": 64.04761904761904,
+          "RevenueRank": 4.0,
+          "RetentionRank": 4.0,
+          "RecencyRank": 3.0,
+          "FrequencyRank": 4.0,
+          "SegmentName": "New / One-Time Customers"
+        }
+      ]
+    },
+    {
+      "file": "src/final_outputs/data/monthly_revenue_series.csv",
+      "extension": "csv",
+      "sizeBytes": 1317,
+      "status": "ok",
+      "rows": 25,
+      "columns": [
+        "Date",
+        "Revenue",
+        "OrderCount",
+        "UniqueCustomers",
+        "AvgOrderValue"
+      ],
+      "sample": [
+        {
+          "Date": "2009-12-01",
+          "Revenue": 680586.01,
+          "OrderCount": 1508,
+          "UniqueCustomers": 953,
+          "AvgOrderValue": 451.3169827586207
+        },
+        {
+          "Date": "2010-01-01",
+          "Revenue": 553112.672,
+          "OrderCount": 1006,
+          "UniqueCustomers": 720,
+          "AvgOrderValue": 549.8137892644136
+        },
+        {
+          "Date": "2010-02-01",
+          "Revenue": 501823.956,
+          "OrderCount": 1099,
+          "UniqueCustomers": 772,
+          "AvgOrderValue": 456.6187042766151
+        }
+      ]
+    },
+    {
+      "file": "src/final_outputs/data/pca_cluster_coordinates.csv",
+      "extension": "csv",
+      "sizeBytes": 149837,
+      "status": "ok",
+      "rows": 2778,
+      "columns": [
+        "Customer_ID",
+        "PCA1",
+        "PCA2",
+        "KMeans_Cluster",
+        "Agglomerative_Cluster",
+        "GaussianMixture_Cluster",
+        "DBSCAN_Cluster"
+      ],
+      "sample": [
+        {
+          "Customer_ID": 12347,
+          "PCA1": -0.8451987801331741,
+          "PCA2": -0.1596569262530016,
+          "KMeans_Cluster": 0,
+          "Agglomerative_Cluster": 0,
+          "GaussianMixture_Cluster": 3,
+          "DBSCAN_Cluster": 0
+        },
+        {
+          "Customer_ID": 12348,
+          "PCA1": 1.6174102008222675,
+          "PCA2": -1.6383011197321826,
+          "KMeans_Cluster": 3,
+          "Agglomerative_Cluster": 1,
+          "GaussianMixture_Cluster": 1,
+          "DBSCAN_Cluster": 0
+        },
+        {
+          "Customer_ID": 12352,
+          "PCA1": 1.4748470934704585,
+          "PCA2": -1.588844989600941,
+          "KMeans_Cluster": 3,
+          "Agglomerative_Cluster": 1,
+          "GaussianMixture_Cluster": 1,
+          "DBSCAN_Cluster": 0
+        }
+      ]
+    },
+    {
+      "file": "src/final_outputs/data/segment_cards.csv",
+      "extension": "csv",
+      "sizeBytes": 1611,
+      "status": "ok",
+      "rows": 4,
+      "columns": [
+        "KMeans_Cluster",
+        "SegmentName",
+        "ClusterSize",
+        "CustomerShare_%",
+        "AvgRecency",
+        "AvgFrequency",
+        "AvgMonetary",
+        "AvgFutureSpend90Days",
+        "TotalFutureRevenue",
+        "FutureRevenueShare_%",
+        "RetentionRate_%",
+        "ZeroFutureSpendRate_%",
+        "Insight",
+        "Recommendation"
+      ],
+      "sample": [
+        {
+          "KMeans_Cluster": 1,
+          "SegmentName": "High-Value Loyalists",
+          "ClusterSize": 630,
+          "CustomerShare_%": 22.67818574514039,
+          "AvgRecency": 15.66190476190476,
+          "AvgFrequency": 21.704761904761902,
+          "AvgMonetary": 12542.668766666668,
+          "AvgFutureSpend90Days": 2592.055666666666,
+          "TotalFutureRevenue": 1632995.07,
+          "FutureRevenueShare_%": 65.35117894663114,
+          "RetentionRate_%": 86.98412698412699,
+          "ZeroFutureSpendRate_%": 13.015873015873018,
+          "Insight": "Small but extremely valuable group that drives most future revenue.",
+          "Recommendation": "Protect with loyalty rewards, VIP campaigns, early access, and personalized recommendations."
+        },
+        {
+          "KMeans_Cluster": 0,
+          "SegmentName": "Regular Mid-Value Customers",
+          "ClusterSize": 1031,
+          "CustomerShare_%": 37.1130309575234,
+          "AvgRecency": 45.53152279340446,
+          "AvgFrequency": 5.802133850630456,
+          "AvgMonetary": 1913.94922114452,
+          "AvgFutureSpend90Days": 448.69638215324926,
+          "TotalFutureRevenue": 462605.97,
+          "FutureRevenueShare_%": 18.51312724860209,
+          "RetentionRate_%": 62.46362754607178,
+          "ZeroFutureSpendRate_%": 37.53637245392822,
+          "Insight": "Largest stable customer group with moderate revenue potential.",
+          "Recommendation": "Grow using cross-sell offers, bundles, category recommendations, and moderate-value campaigns."
+        },
+        {
+          "KMeans_Cluster": 3,
+          "SegmentName": "At-Risk Inactive Customers",
+          "ClusterSize": 697,
+          "CustomerShare_%": 25.08999280057596,
+          "AvgRecency": 127.03586800573888,
+          "AvgFrequency": 5.243902439024391,
+          "AvgMonetary": 1945.4923414634147,
+          "AvgFutureSpend90Days": 381.91515064562407,
+          "TotalFutureRevenue": 266194.86,
+          "FutureRevenueShare_%": 10.65290903207284,
+          "RetentionRate_%": 52.22381635581061,
+          "ZeroFutureSpendRate_%": 47.77618364418939,
+          "Insight": "Previously active customers whose long recency makes them risky.",
+          "Recommendation": "Reactivate using win-back discounts, reminder campaigns, and limited-time offers."
+        }
+      ]
+    },
+    {
+      "file": "src/final_outputs/data/weekly_forecast_results.csv",
+      "extension": "csv",
+      "sizeBytes": 2835,
+      "status": "ok",
+      "rows": 12,
+      "columns": [
+        "Date",
+        "Actual",
+        "Naive",
+        "MovingAverage_4",
+        "MovingAverage_8",
+        "MovingAverage_12",
+        "SES",
+        "Holt",
+        "HoltWinters_s4",
+        "HoltWinters_s13",
+        "ARIMA",
+        "SARIMA",
+        "RandomForest_Lag",
+        "XGBoost_Lag"
+      ],
+      "sample": [
+        {
+          "Date": "2011-09-25",
+          "Actual": 306021.451,
+          "Naive": 208050.3,
+          "MovingAverage_4": 157911.22499999998,
+          "MovingAverage_8": 157294.063875,
+          "MovingAverage_12": 148929.84841666667,
+          "SES": 112368.5589435658,
+          "Holt": 147952.94432270867,
+          "HoltWinters_s4": 180884.83630599425,
+          "HoltWinters_s13": 124033.86260759985,
+          "ARIMA": 188480.14670574985,
+          "SARIMA": 188994.01598625613,
+          "RandomForest_Lag": 186198.9511542764,
+          "XGBoost_Lag": 195639.0
+        },
+        {
+          "Date": "2011-10-02",
+          "Actual": 191844.35,
+          "Naive": 208050.3,
+          "MovingAverage_4": 157911.22499999998,
+          "MovingAverage_8": 157294.063875,
+          "MovingAverage_12": 148929.84841666667,
+          "SES": 112368.5589435658,
+          "Holt": 148812.34229183162,
+          "HoltWinters_s4": 181967.5503655264,
+          "HoltWinters_s13": 6496.080423063703,
+          "ARIMA": 196509.9099712957,
+          "SARIMA": 156624.1608663431,
+          "RandomForest_Lag": 190021.7037318615,
+          "XGBoost_Lag": 251339.2
+        },
+        {
+          "Date": "2011-10-09",
+          "Actual": 293886.99,
+          "Naive": 208050.3,
+          "MovingAverage_4": 157911.22499999998,
+          "MovingAverage_8": 157294.063875,
+          "MovingAverage_12": 148929.84841666667,
+          "SES": 112368.5589435658,
+          "Holt": 149676.73211752667,
+          "HoltWinters_s4": 75618.88760099956,
+          "HoltWinters_s13": 179471.89546117012,
+          "ARIMA": 193077.84320044777,
+          "SARIMA": 195375.97906201077,
+          "RandomForest_Lag": 186456.8774895992,
+          "XGBoost_Lag": 213778.89
+        }
+      ]
+    },
+    {
+      "file": "src/final_outputs/data/weekly_revenue_series.csv",
+      "extension": "csv",
+      "sizeBytes": 5137,
+      "status": "ok",
+      "rows": 106,
+      "columns": [
+        "Date",
+        "Revenue",
+        "OrderCount",
+        "UniqueCustomers",
+        "AvgOrderValue"
+      ],
+      "sample": [
+        {
+          "Date": "2009-12-06",
+          "Revenue": 231188.51,
+          "OrderCount": 510,
+          "UniqueCustomers": 425,
+          "AvgOrderValue": 453.3108039215687
+        },
+        {
+          "Date": "2009-12-13",
+          "Revenue": 206940.73,
+          "OrderCount": 492,
+          "UniqueCustomers": 410,
+          "AvgOrderValue": 420.6112398373984
+        },
+        {
+          "Date": "2009-12-20",
+          "Revenue": 206912.87,
+          "OrderCount": 441,
+          "UniqueCustomers": 359,
+          "AvgOrderValue": 469.19018140589566
+        }
+      ]
+    },
+    {
+      "file": "src/final_outputs/frontend/clustering_chart_registry.json",
+      "extension": "json",
+      "sizeBytes": 2501,
+      "status": "ok",
+      "keys": [
+        "clusteringStatus",
+        "finalModel",
+        "finalClusterCount",
+        "modelDecision",
+        "dbscanNote",
+        "plots",
+        "data"
+      ],
+      "itemCount": 7
+    },
+    {
+      "file": "src/final_outputs/frontend/frontend_manifest.json",
+      "extension": "json",
+      "sizeBytes": 1933,
+      "status": "ok",
+      "keys": [
+        "overview",
+        "clv",
+        "segmentation",
+        "forecasting"
+      ],
+      "itemCount": 4
+    },
+    {
+      "file": "src/final_outputs/frontend/project_insights.csv",
+      "extension": "csv",
+      "sizeBytes": 1340,
+      "status": "ok",
+      "rows": 6,
+      "columns": [
+        "section",
+        "insight",
+        "businessMeaning"
+      ],
+      "sample": [
+        {
+          "section": "CLV Prediction",
+          "insight": "The calibrated XGBoost Tweedie CLV model is the strongest predictive component of the project.",
+          "businessMeaning": "The business can prioritize customers by expected future value instead of treating all retained customers equally."
+        },
+        {
+          "section": "CLV Prediction",
+          "insight": "The top predicted CLV customers captured a disproportionate share of actual future revenue.",
+          "businessMeaning": "Revenue is concentrated among a small group of high-value customers, making targeted campaigns more efficient."
+        },
+        {
+          "section": "Customer Segmentation",
+          "insight": "KMeans produced four interpretable customer groups.",
+          "businessMeaning": "The customer base can be separated into loyal high-value customers, regular mid-value customers, inactive customers, and new/one-time customers."
+        }
+      ]
+    },
+    {
+      "file": "src/final_outputs/frontend/project_insights.json",
+      "extension": "json",
+      "sizeBytes": 1748,
+      "status": "ok",
+      "keys": [
+        "section",
+        "insight",
+        "businessMeaning"
+      ],
+      "itemCount": 6
+    },
+    {
+      "file": "src/final_outputs/frontend/project_kpi_cards.csv",
+      "extension": "csv",
+      "sizeBytes": 1107,
+      "status": "ok",
+      "rows": 10,
+      "columns": [
+        "section",
+        "title",
+        "value",
+        "description"
+      ],
+      "sample": [
+        {
+          "section": "CLV Prediction",
+          "title": "Final CLV Model",
+          "value": "XGBoost_Tweedie",
+          "description": "Selected model for predicting customer future spend."
+        },
+        {
+          "section": "CLV Prediction",
+          "title": "CLV R\u00b2",
+          "value": "0.833",
+          "description": "Explained variance for customer future spend prediction."
+        },
+        {
+          "section": "CLV Prediction",
+          "title": "CLV RMSE",
+          "value": "1976.27",
+          "description": "Average large-error scale for customer spend prediction."
+        }
+      ]
+    },
+    {
+      "file": "src/final_outputs/frontend/project_kpi_cards.json",
+      "extension": "json",
+      "sizeBytes": 1921,
+      "status": "ok",
+      "keys": [
+        "section",
+        "title",
+        "value",
+        "description"
+      ],
+      "itemCount": 10
+    },
+    {
+      "file": "src/final_outputs/frontend/project_master_summary.json",
+      "extension": "json",
+      "sizeBytes": 7790,
+      "status": "ok",
+      "keys": [
+        "projectName",
+        "status",
+        "modules",
+        "finalRecommendations",
+        "frontendFiles",
+        "plotFiles",
+        "dataFiles"
+      ],
+      "itemCount": 7
+    },
+    {
+      "file": "src/final_outputs/frontend/report_ready_metrics.csv",
+      "extension": "csv",
+      "sizeBytes": 632,
+      "status": "ok",
+      "rows": 3,
+      "columns": [
+        "Module",
+        "Final Method",
+        "Main Metric 1",
+        "Value 1",
+        "Main Metric 2",
+        "Value 2",
+        "Main Insight"
+      ],
+      "sample": [
+        {
+          "Module": "CLV Prediction",
+          "Final Method": "XGBoost_Tweedie",
+          "Main Metric 1": "RMSE",
+          "Value 1": 1976.2743940239072,
+          "Main Metric 2": "R2",
+          "Value 2": 0.8329799126925654,
+          "Main Insight": "Customer-level future spend can be predicted well enough for revenue prioritization."
+        },
+        {
+          "Module": "Customer Segmentation",
+          "Final Method": "KMeans, k = 4",
+          "Main Metric 1": "High-value customer share",
+          "Value 1": 22.67818574514039,
+          "Main Metric 2": "High-value future revenue share",
+          "Value 2": 65.35117894663114,
+          "Main Insight": "A small high-value segment contributes a large share of future revenue."
+        },
+        {
+          "Module": "Revenue Forecasting",
+          "Final Method": "SARIMA",
+          "Main Metric 1": "WAPE",
+          "Value 1": 18.29097738659396,
+          "Main Metric 2": "RMSE",
+          "Value 2": 57057.60978973488,
+          "Main Insight": "Forecasting is useful as short-term directional revenue planning, not production-grade long-term forecasting."
+        }
+      ]
+    },
+    {
+      "file": "src/final_outputs/frontend/segment_cards_json.json",
+      "extension": "json",
+      "sizeBytes": 2568,
+      "status": "ok",
+      "keys": [
+        "KMeans_Cluster",
+        "SegmentName",
+        "ClusterSize",
+        "CustomerShare_%",
+        "AvgRecency",
+        "AvgFrequency",
+        "AvgMonetary",
+        "AvgFutureSpend90Days",
+        "TotalFutureRevenue",
+        "FutureRevenueShare_%",
+        "RetentionRate_%",
+        "ZeroFutureSpendRate_%",
+        "Insight",
+        "Recommendation"
+      ],
+      "itemCount": 4
+    },
+    {
+      "file": "src/final_outputs/frontend/time_series_summary.json",
+      "extension": "json",
+      "sizeBytes": 2336,
+      "status": "ok",
+      "keys": [
+        "timeSeriesStatus",
+        "target",
+        "interpretation",
+        "testHorizonWeeks",
+        "futureForecastWeeks",
+        "bestModel",
+        "bestModelMetrics",
+        "trainStart",
+        "trainEnd",
+        "testStart",
+        "testEnd",
+        "weeklyObservations",
+        "monthlyObservations",
+        "totalHistoricalRevenue",
+        "averageWeeklyRevenue",
+        "latestWeeklyRevenue",
+        "latestMonthlyRevenue",
+        "frontendFiles",
+        "plots"
+      ],
+      "itemCount": 19
+    },
+    {
+      "file": "src/final_outputs/plots/best_forecast.png",
+      "extension": "png",
+      "sizeBytes": 231768,
+      "status": "ok",
+      "width": 3571,
+      "height": 1765
+    },
+    {
+      "file": "src/final_outputs/plots/cluster_avg_future_spend.png",
+      "extension": "png",
+      "sizeBytes": 106583,
+      "status": "ok",
+      "width": 2969,
+      "height": 1765
+    },
+    {
+      "file": "src/final_outputs/plots/cluster_customer_vs_revenue_share.png",
+      "extension": "png",
+      "sizeBytes": 176288,
+      "status": "ok",
+      "width": 3270,
+      "height": 1765
+    },
+    {
+      "file": "src/final_outputs/plots/cluster_pca.png",
+      "extension": "png",
+      "sizeBytes": 514663,
+      "status": "ok",
+      "width": 2275,
+      "height": 1765
+    },
+    {
+      "file": "src/final_outputs/plots/cluster_profile_heatmap.png",
+      "extension": "png",
+      "sizeBytes": 250920,
+      "status": "ok",
+      "width": 3395,
+      "height": 1765
+    },
+    {
+      "file": "src/final_outputs/plots/cluster_retention_vs_zero_spend.png",
+      "extension": "png",
+      "sizeBytes": 173212,
+      "status": "ok",
+      "width": 3270,
+      "height": 1765
+    },
+    {
+      "file": "src/final_outputs/plots/clv_actual_vs_predicted.png",
+      "extension": "png",
+      "sizeBytes": 139484,
+      "status": "ok",
+      "width": 2371,
+      "height": 1765
+    },
+    {
+      "file": "src/final_outputs/plots/clv_lift_curve.png",
+      "extension": "png",
+      "sizeBytes": 153219,
+      "status": "ok",
+      "width": 2370,
+      "height": 1765
+    },
+    {
+      "file": "src/final_outputs/plots/clv_lift_vs_random.png",
+      "extension": "png",
+      "sizeBytes": 76767,
+      "status": "ok",
+      "width": 2370,
+      "height": 1765
+    },
+    {
+      "file": "src/final_outputs/plots/clv_log_actual_vs_predicted.png",
+      "extension": "png",
+      "sizeBytes": 314273,
+      "status": "ok",
+      "width": 2368,
+      "height": 1765
+    },
+    {
+      "file": "src/final_outputs/plots/clv_residuals_vs_predicted.png",
+      "extension": "png",
+      "sizeBytes": 120947,
+      "status": "ok",
+      "width": 2367,
+      "height": 1765
+    },
+    {
+      "file": "src/final_outputs/plots/clv_residual_distribution.png",
+      "extension": "png",
+      "sizeBytes": 81967,
+      "status": "ok",
+      "width": 2370,
+      "height": 1765
+    },
+    {
+      "file": "src/final_outputs/plots/clv_zero_spender_distribution.png",
+      "extension": "png",
+      "sizeBytes": 83697,
+      "status": "ok",
+      "width": 2370,
+      "height": 1765
+    },
+    {
+      "file": "src/final_outputs/plots/forecast_comparison.png",
+      "extension": "png",
+      "sizeBytes": 450635,
+      "status": "ok",
+      "width": 3571,
+      "height": 1765
+    },
+    {
+      "file": "src/final_outputs/plots/forecast_model_comparison.png",
+      "extension": "png",
+      "sizeBytes": 125422,
+      "status": "ok",
+      "width": 2968,
+      "height": 1765
+    },
+    {
+      "file": "src/final_outputs/plots/future_forecast.png",
+      "extension": "png",
+      "sizeBytes": 190715,
+      "status": "ok",
+      "width": 3571,
+      "height": 1765
+    },
+    {
+      "file": "src/final_outputs/plots/monthly_revenue_trend.png",
+      "extension": "png",
+      "sizeBytes": 187770,
+      "status": "ok",
+      "width": 3567,
+      "height": 1765
+    },
+    {
+      "file": "src/final_outputs/plots/weekly_revenue_trend.png",
+      "extension": "png",
+      "sizeBytes": 237813,
+      "status": "ok",
+      "width": 3563,
+      "height": 1765
+    },
+    {
+      "file": "src/clv_diagnostic_tables/clv_error_by_actual_decile.csv",
+      "extension": "csv",
+      "sizeBytes": 1253,
+      "status": "ok",
+      "rows": 10,
+      "columns": [
+        "ActualDecile",
+        "Count",
+        "MeanActual",
+        "MeanPredicted",
+        "ActualRevenue",
+        "PredictedRevenue",
+        "MAE",
+        "MedianAE",
+        "RevenueError_%"
+      ],
+      "sample": [
+        {
+          "ActualDecile": 1,
+          "Count": 56,
+          "MeanActual": 0.0,
+          "MeanPredicted": 297.05089947405514,
+          "ActualRevenue": 0.0,
+          "PredictedRevenue": 16634.850370547087,
+          "MAE": 297.05089947405514,
+          "MedianAE": 221.47142310467552,
+          "RevenueError_%": null
+        },
+        {
+          "ActualDecile": 2,
+          "Count": 56,
+          "MeanActual": 0.0,
+          "MeanPredicted": 353.4227889854181,
+          "ActualRevenue": 0.0,
+          "PredictedRevenue": 19791.67618318341,
+          "MAE": 353.4227889854181,
+          "MedianAE": 265.4008312448315,
+          "RevenueError_%": null
+        },
+        {
+          "ActualDecile": 3,
+          "Count": 55,
+          "MeanActual": 0.0,
+          "MeanPredicted": 290.37438142544727,
+          "ActualRevenue": 0.0,
+          "PredictedRevenue": 15970.5909783996,
+          "MAE": 290.37438142544727,
+          "MedianAE": 227.3723531287252,
+          "RevenueError_%": null
+        }
+      ]
+    },
+    {
+      "file": "src/clv_diagnostic_tables/clv_lift_table.csv",
+      "extension": "csv",
+      "sizeBytes": 367,
+      "status": "ok",
+      "rows": 5,
+      "columns": [
+        "TopCustomer_%",
+        "CustomerCount",
+        "ActualRevenueCaptured",
+        "RevenueCapture_%",
+        "LiftVsRandom"
+      ],
+      "sample": [
+        {
+          "TopCustomer_%": 5.0,
+          "CustomerCount": 27,
+          "ActualRevenueCaptured": 238827.45,
+          "RevenueCapture_%": 47.88051527707072,
+          "LiftVsRandom": 9.576103055414144
+        },
+        {
+          "TopCustomer_%": 10.0,
+          "CustomerCount": 55,
+          "ActualRevenueCaptured": 284827.57,
+          "RevenueCapture_%": 57.10269408611084,
+          "LiftVsRandom": 5.710269408611084
+        },
+        {
+          "TopCustomer_%": 20.0,
+          "CustomerCount": 111,
+          "ActualRevenueCaptured": 362787.6299999999,
+          "RevenueCapture_%": 72.7322536021185,
+          "LiftVsRandom": 3.636612680105925
+        }
+      ]
+    },
+    {
+      "file": "src/clv_diagnostic_tables/clv_model_comparison.csv",
+      "extension": "csv",
+      "sizeBytes": 1415,
+      "status": "ok",
+      "rows": 5,
+      "columns": [
+        "Model",
+        "Version",
+        "MSE",
+        "RMSE",
+        "MAE",
+        "R2",
+        "MEDIAN_AE",
+        "RMSLE",
+        "WMAPE_%",
+        "Revenue_Error_%",
+        "Prediction_Actual_Ratio",
+        "Spearman_Rank_Correlation",
+        "Actual_Total_Revenue",
+        "Predicted_Total_Revenue",
+        "Calibration_Factor"
+      ],
+      "sample": [
+        {
+          "Model": "XGBoost_Tweedie",
+          "Version": "Calibrated",
+          "MSE": 3905660.4804745615,
+          "RMSE": 1976.2743940239072,
+          "MAE": 529.8777355944866,
+          "R2": 0.8329799126925654,
+          "MEDIAN_AE": 251.49154984423515,
+          "RMSLE": 3.4513270066977646,
+          "WMAPE_%": 59.0642967206909,
+          "Revenue_Error_%": 11.27265336846863,
+          "Prediction_Actual_Ratio": 0.8872734663153137,
+          "Spearman_Rank_Correlation": 0.6172056479835779,
+          "Actual_Total_Revenue": 498798.83,
+          "Predicted_Total_Revenue": 442570.9668881229,
+          "Calibration_Factor": 1.011588886158303
+        },
+        {
+          "Model": "XGBoost_Tweedie",
+          "Version": "Uncalibrated",
+          "MSE": 4021623.9784694263,
+          "RMSE": 2005.398708105056,
+          "MAE": 529.6852995481423,
+          "R2": 0.8280208965014744,
+          "MEDIAN_AE": 253.5991769409179,
+          "RMSLE": 3.444719240497628,
+          "WMAPE_%": 59.0428463011365,
+          "Revenue_Error_%": 12.289119894286843,
+          "Prediction_Actual_Ratio": 0.8771088010571315,
+          "Spearman_Rank_Correlation": 0.6172056479835779,
+          "Actual_Total_Revenue": 498798.83,
+          "Predicted_Total_Revenue": 437500.84375,
+          "Calibration_Factor": 1.0
+        },
+        {
+          "Model": "LGBM_Tweedie",
+          "Version": "Calibrated",
+          "MSE": 7022738.645570925,
+          "RMSE": 2650.045027083677,
+          "MAE": 647.2257486210638,
+          "R2": 0.6996824410149365,
+          "MEDIAN_AE": 210.89035202455705,
+          "RMSLE": 3.0991030209604835,
+          "WMAPE_%": 72.14481963265861,
+          "Revenue_Error_%": 48.61311326999822,
+          "Prediction_Actual_Ratio": 0.5138688673000177,
+          "Spearman_Rank_Correlation": 0.5233547815576436,
+          "Actual_Total_Revenue": 498798.83,
+          "Predicted_Total_Revenue": 256317.1897826741,
+          "Calibration_Factor": 1.0170234047706486
+        }
+      ]
+    },
+    {
+      "file": "src/clv_diagnostic_tables/clv_predicted_decile_calibration.csv",
+      "extension": "csv",
+      "sizeBytes": 988,
+      "status": "ok",
+      "rows": 10,
+      "columns": [
+        "PredictedDecile",
+        "Count",
+        "MeanActual",
+        "MeanPredicted",
+        "ActualRevenue",
+        "PredictedRevenue",
+        "RevenueError_%"
+      ],
+      "sample": [
+        {
+          "PredictedDecile": 1,
+          "Count": 56,
+          "MeanActual": 62.49857142857143,
+          "MeanPredicted": 69.65248922471832,
+          "ActualRevenue": 3499.92,
+          "PredictedRevenue": 3900.5393965842254,
+          "RevenueError_%": 11.446530108808952
+        },
+        {
+          "PredictedDecile": 2,
+          "Count": 56,
+          "MeanActual": 148.82160714285715,
+          "MeanPredicted": 134.6153151289308,
+          "ActualRevenue": 8334.01,
+          "PredictedRevenue": 7538.457647220124,
+          "RevenueError_%": 9.545853110085972
+        },
+        {
+          "PredictedDecile": 3,
+          "Count": 55,
+          "MeanActual": 147.45509090909093,
+          "MeanPredicted": 199.127562078165,
+          "ActualRevenue": 8110.030000000001,
+          "PredictedRevenue": 10952.015914299074,
+          "RevenueError_%": 35.04285328536483
+        }
+      ]
+    },
+    {
+      "file": "src/clv_diagnostic_tables/clv_residual_diagnostics.csv",
+      "extension": "csv",
+      "sizeBytes": 64361,
+      "status": "ok",
+      "rows": 556,
+      "columns": [
+        "Actual",
+        "Predicted",
+        "Residual",
+        "AbsResidual",
+        "LogActual",
+        "LogPredicted",
+        "LogResidual",
+        "ActualZeroFlag"
+      ],
+      "sample": [
+        {
+          "Actual": 968.1,
+          "Predicted": 1906.6661206847623,
+          "Residual": -938.5661206847624,
+          "AbsResidual": 938.5661206847624,
+          "LogActual": 6.876367805740505,
+          "LogPredicted": 7.553635847536913,
+          "LogResidual": -0.6772680417964088,
+          "ActualZeroFlag": 0
+        },
+        {
+          "Actual": 0.0,
+          "Predicted": 126.94086817287123,
+          "Residual": -126.94086817287123,
+          "AbsResidual": 126.94086817287123,
+          "LogActual": 0.0,
+          "LogPredicted": 4.85156818978036,
+          "LogResidual": -4.85156818978036,
+          "ActualZeroFlag": 1
+        },
+        {
+          "Actual": 0.0,
+          "Predicted": 178.19117545945784,
+          "Residual": -178.19117545945784,
+          "AbsResidual": 178.19117545945784,
+          "LogActual": 0.0,
+          "LogPredicted": 5.188453255240454,
+          "LogResidual": -5.188453255240454,
+          "ActualZeroFlag": 1
+        }
+      ]
+    },
+    {
+      "file": "src/clv_diagnostic_tables/clv_zero_spender_diagnostics.csv",
+      "extension": "csv",
+      "sizeBytes": 22413,
+      "status": "ok",
+      "rows": 214,
+      "columns": [
+        "Actual",
+        "Predicted",
+        "Residual",
+        "AbsResidual",
+        "LogActual",
+        "LogPredicted",
+        "LogResidual",
+        "ActualZeroFlag"
+      ],
+      "sample": [
+        {
+          "Actual": 0.0,
+          "Predicted": 126.94086817287123,
+          "Residual": -126.94086817287123,
+          "AbsResidual": 126.94086817287123,
+          "LogActual": 0.0,
+          "LogPredicted": 4.85156818978036,
+          "LogResidual": -4.85156818978036,
+          "ActualZeroFlag": 1
+        },
+        {
+          "Actual": 0.0,
+          "Predicted": 178.19117545945784,
+          "Residual": -178.19117545945784,
+          "AbsResidual": 178.19117545945784,
+          "LogActual": 0.0,
+          "LogPredicted": 5.188453255240454,
+          "LogResidual": -5.188453255240454,
+          "ActualZeroFlag": 1
+        },
+        {
+          "Actual": 0.0,
+          "Predicted": 357.24359685232764,
+          "Residual": -357.24359685232764,
+          "AbsResidual": 357.24359685232764,
+          "LogActual": 0.0,
+          "LogPredicted": 5.881213193142626,
+          "LogResidual": -5.881213193142626,
+          "ActualZeroFlag": 1
+        }
+      ]
+    },
+    {
+      "file": "src/clv_diagnostic_plots/01_actual_vs_predicted_clv.png",
+      "extension": "png",
+      "sizeBytes": 139484,
+      "status": "ok",
+      "width": 2371,
+      "height": 1765
+    },
+    {
+      "file": "src/clv_diagnostic_plots/02_log_actual_vs_log_predicted_clv.png",
+      "extension": "png",
+      "sizeBytes": 314273,
+      "status": "ok",
+      "width": 2368,
+      "height": 1765
+    },
+    {
+      "file": "src/clv_diagnostic_plots/03_residuals_vs_predicted_clv.png",
+      "extension": "png",
+      "sizeBytes": 120947,
+      "status": "ok",
+      "width": 2367,
+      "height": 1765
+    },
+    {
+      "file": "src/clv_diagnostic_plots/04_residual_distribution.png",
+      "extension": "png",
+      "sizeBytes": 81967,
+      "status": "ok",
+      "width": 2370,
+      "height": 1765
+    },
+    {
+      "file": "src/clv_diagnostic_plots/05_log_residual_distribution.png",
+      "extension": "png",
+      "sizeBytes": 81024,
+      "status": "ok",
+      "width": 2370,
+      "height": 1765
+    },
+    {
+      "file": "src/clv_diagnostic_plots/06_mae_by_actual_clv_decile.png",
+      "extension": "png",
+      "sizeBytes": 81136,
+      "status": "ok",
+      "width": 2670,
+      "height": 1765
+    },
+    {
+      "file": "src/clv_diagnostic_plots/07_revenue_by_actual_clv_decile.png",
+      "extension": "png",
+      "sizeBytes": 147760,
+      "status": "ok",
+      "width": 2671,
+      "height": 1765
+    },
+    {
+      "file": "src/clv_diagnostic_plots/08_mean_clv_by_predicted_decile.png",
+      "extension": "png",
+      "sizeBytes": 150846,
+      "status": "ok",
+      "width": 2670,
+      "height": 1765
+    },
+    {
+      "file": "src/clv_diagnostic_plots/09_actual_revenue_by_predicted_decile.png",
+      "extension": "png",
+      "sizeBytes": 87064,
+      "status": "ok",
+      "width": 2671,
+      "height": 1765
+    },
+    {
+      "file": "src/clv_diagnostic_plots/10_revenue_capture_by_top_customers.png",
+      "extension": "png",
+      "sizeBytes": 153219,
+      "status": "ok",
+      "width": 2370,
+      "height": 1765
+    },
+    {
+      "file": "src/clv_diagnostic_plots/11_clv_lift_vs_random.png",
+      "extension": "png",
+      "sizeBytes": 76767,
+      "status": "ok",
+      "width": 2370,
+      "height": 1765
+    },
+    {
+      "file": "src/clv_diagnostic_plots/12_zero_spender_predicted_clv_distribution.png",
+      "extension": "png",
+      "sizeBytes": 83697,
+      "status": "ok",
+      "width": 2370,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_outputs/clustered_customers.csv",
+      "extension": "csv",
+      "sizeBytes": 707242,
+      "status": "ok",
+      "rows": 2778,
+      "columns": [
+        "Customer_ID",
+        "KMeans_Cluster",
+        "KMeans_SegmentName",
+        "Agglomerative_Cluster",
+        "GaussianMixture_Cluster",
+        "DBSCAN_Cluster",
+        "FutureSpend90Days",
+        "RetentionLabel",
+        "Frequency",
+        "Monetary",
+        "AvgBasketValue",
+        "AvgQuantity",
+        "UniqueProducts",
+        "Recency",
+        "LifetimeDays",
+        "IsNewCustomer",
+        "PurchaseRate",
+        "RecencyFrequency",
+        "RevenuePerDay",
+        "AvgSpendPerProduct",
+        "ProductDiversityRate",
+        "AvgGapDays",
+        "StdGapDays",
+        "PurchasesLast30Days",
+        "SpendLast30Days",
+        "PurchasesLast90Days",
+        "SpendLast90Days",
+        "SpendPrior90Days",
+        "PurchasesPrior90Days",
+        "SpendTrendRatio",
+        "FrequencyLast90DaysRatio",
+        "ReturnRate",
+        "AvgGapDaysMissing"
+      ],
+      "sample": [
+        {
+          "Customer_ID": 12347,
+          "KMeans_Cluster": 0,
+          "KMeans_SegmentName": "Regular Mid-Value Customers",
+          "Agglomerative_Cluster": 0,
+          "GaussianMixture_Cluster": 3,
+          "DBSCAN_Cluster": 0,
+          "FutureSpend90Days": 1519.14,
+          "RetentionLabel": 1,
+          "Frequency": 6,
+          "Monetary": 3402.39,
+          "AvgBasketValue": 567.0649999999999,
+          "AvgQuantity": 349.8333333333333,
+          "UniqueProducts": 164,
+          "Recency": 37,
+          "LifetimeDays": 274,
+          "IsNewCustomer": 0,
+          "PurchaseRate": 0.0218978102189781,
+          "RecencyFrequency": 6.166666666666667,
+          "RevenuePerDay": 12.417481751824816,
+          "AvgSpendPerProduct": 20.74628048780488,
+          "ProductDiversityRate": 27.33333333333333,
+          "AvgGapDays": 54.4,
+          "StdGapDays": 12.759310326189263,
+          "PurchasesLast30Days": 0.0,
+          "SpendLast30Days": 0.0,
+          "PurchasesLast90Days": 1.0,
+          "SpendLast90Days": 584.9100000000001,
+          "SpendPrior90Days": 1018.77,
+          "PurchasesPrior90Days": 2.0,
+          "SpendTrendRatio": 0.5735705109975779,
+          "FrequencyLast90DaysRatio": 0.3333333333333333,
+          "ReturnRate": 0.0,
+          "AvgGapDaysMissing": 0
+        },
+        {
+          "Customer_ID": 12348,
+          "KMeans_Cluster": 3,
+          "KMeans_SegmentName": "At-Risk Inactive Customers",
+          "Agglomerative_Cluster": 1,
+          "GaussianMixture_Cluster": 1,
+          "DBSCAN_Cluster": 0,
+          "FutureSpend90Days": 270.0,
+          "RetentionLabel": 1,
+          "Frequency": 4,
+          "Monetary": 1388.4,
+          "AvgBasketValue": 347.1,
+          "AvgQuantity": 622.0,
+          "UniqueProducts": 40,
+          "Recency": 156,
+          "LifetimeDays": 189,
+          "IsNewCustomer": 0,
+          "PurchaseRate": 0.0211640211640211,
+          "RecencyFrequency": 39.0,
+          "RevenuePerDay": 7.346031746031746,
+          "AvgSpendPerProduct": 34.709999999999994,
+          "ProductDiversityRate": 10.0,
+          "AvgGapDays": 63.0,
+          "StdGapDays": 21.37755832643195,
+          "PurchasesLast30Days": 0.0,
+          "SpendLast30Days": 0.0,
+          "PurchasesLast90Days": 0.0,
+          "SpendLast90Days": 0.0,
+          "SpendPrior90Days": 327.0,
+          "PurchasesPrior90Days": 1.0,
+          "SpendTrendRatio": 0.0,
+          "FrequencyLast90DaysRatio": 0.0,
+          "ReturnRate": 0.0,
+          "AvgGapDaysMissing": 0
+        },
+        {
+          "Customer_ID": 12352,
+          "KMeans_Cluster": 3,
+          "KMeans_SegmentName": "At-Risk Inactive Customers",
+          "Agglomerative_Cluster": 1,
+          "GaussianMixture_Cluster": 1,
+          "DBSCAN_Cluster": 0,
+          "FutureSpend90Days": 744.23,
+          "RetentionLabel": 1,
+          "Frequency": 7,
+          "Monetary": 1825.61,
+          "AvgBasketValue": 260.8014285714286,
+          "AvgQuantity": 62.85714285714285,
+          "UniqueProducts": 52,
+          "Recency": 170,
+          "LifetimeDays": 130,
+          "IsNewCustomer": 0,
+          "PurchaseRate": 0.0538461538461538,
+          "RecencyFrequency": 24.285714285714285,
+          "RevenuePerDay": 14.043153846153846,
+          "AvgSpendPerProduct": 35.10788461538461,
+          "ProductDiversityRate": 7.428571428571429,
+          "AvgGapDays": 21.5,
+          "StdGapDays": 28.891175123210203,
+          "PurchasesLast30Days": 0.0,
+          "SpendLast30Days": 0.0,
+          "PurchasesLast90Days": 0.0,
+          "SpendLast90Days": 0.0,
+          "SpendPrior90Days": 240.66,
+          "PurchasesPrior90Days": 2.0,
+          "SpendTrendRatio": 0.0,
+          "FrequencyLast90DaysRatio": 0.0,
+          "ReturnRate": 0.1515151515151515,
+          "AvgGapDaysMissing": 0
+        }
+      ]
+    },
+    {
+      "file": "src/clustering_outputs/clustering_model_comparison.csv",
+      "extension": "csv",
+      "sizeBytes": 418,
+      "status": "ok",
+      "rows": 4,
+      "columns": [
+        "Model",
+        "Clusters",
+        "Noise_Count",
+        "Noise_%",
+        "Silhouette_Score",
+        "Davies_Bouldin_Score",
+        "Calinski_Harabasz_Score"
+      ],
+      "sample": [
+        {
+          "Model": "DBSCAN",
+          "Clusters": 4,
+          "Noise_Count": 623,
+          "Noise_%": 22.42620590352772,
+          "Silhouette_Score": 0.3668928407373143,
+          "Davies_Bouldin_Score": 1.1806724264685473,
+          "Calinski_Harabasz_Score": 457.6550480837011
+        },
+        {
+          "Model": "GaussianMixture",
+          "Clusters": 4,
+          "Noise_Count": 0,
+          "Noise_%": 0.0,
+          "Silhouette_Score": 0.2147117109321679,
+          "Davies_Bouldin_Score": 2.0076994752757105,
+          "Calinski_Harabasz_Score": 585.3915074229772
+        },
+        {
+          "Model": "Agglomerative",
+          "Clusters": 4,
+          "Noise_Count": 0,
+          "Noise_%": 0.0,
+          "Silhouette_Score": 0.199701556736947,
+          "Davies_Bouldin_Score": 2.0062988923482044,
+          "Calinski_Harabasz_Score": 585.1483000711652
+        }
+      ]
+    },
+    {
+      "file": "src/clustering_outputs/dbscan_parameter_search_results.csv",
+      "extension": "csv",
+      "sizeBytes": 2785,
+      "status": "ok",
+      "rows": 32,
+      "columns": [
+        "eps",
+        "min_samples",
+        "Clusters",
+        "Noise_Count",
+        "Noise_%",
+        "Silhouette_Score",
+        "Davies_Bouldin_Score",
+        "Calinski_Harabasz_Score"
+      ],
+      "sample": [
+        {
+          "eps": 2.0,
+          "min_samples": 5,
+          "Clusters": 7,
+          "Noise_Count": 342,
+          "Noise_%": 12.311015118790497,
+          "Silhouette_Score": 0.1167019030773706,
+          "Davies_Bouldin_Score": 1.2278335414567816,
+          "Calinski_Harabasz_Score": 241.7895772448384
+        },
+        {
+          "eps": 2.0,
+          "min_samples": 10,
+          "Clusters": 8,
+          "Noise_Count": 416,
+          "Noise_%": 14.974802015838732,
+          "Silhouette_Score": 0.1530041687180278,
+          "Davies_Bouldin_Score": 1.245256112088312,
+          "Calinski_Harabasz_Score": 215.1214825292992
+        },
+        {
+          "eps": 1.8,
+          "min_samples": 5,
+          "Clusters": 11,
+          "Noise_Count": 463,
+          "Noise_%": 16.666666666666664,
+          "Silhouette_Score": 0.1579130882545898,
+          "Davies_Bouldin_Score": 1.246900007245479,
+          "Calinski_Harabasz_Score": 277.8193351110077
+        }
+      ]
+    },
+    {
+      "file": "src/clustering_outputs/kmeans_cluster_feature_means.csv",
+      "extension": "csv",
+      "sizeBytes": 2001,
+      "status": "ok",
+      "rows": 4,
+      "columns": [
+        "KMeans_Cluster",
+        "Recency",
+        "Frequency",
+        "Monetary",
+        "AvgBasketValue",
+        "AvgQuantity",
+        "UniqueProducts",
+        "LifetimeDays",
+        "PurchaseRate",
+        "AvgGapDays",
+        "AvgGapDaysMissing",
+        "StdGapDays",
+        "PurchasesLast30Days",
+        "SpendLast30Days",
+        "PurchasesLast90Days",
+        "SpendLast90Days",
+        "ReturnRate",
+        "RevenuePerDay",
+        "AvgSpendPerProduct",
+        "ProductDiversityRate",
+        "RecencyFrequency",
+        "SpendTrendRatio",
+        "FrequencyLast90DaysRatio",
+        "IsNewCustomer"
+      ],
+      "sample": [
+        {
+          "KMeans_Cluster": 0,
+          "Recency": 45.53152279340446,
+          "Frequency": 5.802133850630456,
+          "Monetary": 1913.94922114452,
+          "AvgBasketValue": 335.2922156485799,
+          "AvgQuantity": 209.89760835215088,
+          "UniqueProducts": 114.9466537342386,
+          "LifetimeDays": 367.6605237633366,
+          "PurchaseRate": 0.0231109069571066,
+          "AvgGapDays": 105.85015756389215,
+          "AvgGapDaysMissing": 0.0,
+          "StdGapDays": 57.80275241582336,
+          "PurchasesLast30Days": 0.2948593598448109,
+          "SpendLast30Days": 79.1901648884578,
+          "PurchasesLast90Days": 1.3501454898157128,
+          "SpendLast90Days": 426.3788758486906,
+          "ReturnRate": 0.023915808132667,
+          "RevenuePerDay": 7.318290501735833,
+          "AvgSpendPerProduct": 28.08447529939007,
+          "ProductDiversityRate": 20.371955603134975,
+          "RecencyFrequency": 10.763544710464425,
+          "SpendTrendRatio": 224.66861459915336,
+          "FrequencyLast90DaysRatio": 0.9459786307022,
+          "IsNewCustomer": 0.0775945683802133
+        },
+        {
+          "KMeans_Cluster": 1,
+          "Recency": 15.66190476190476,
+          "Frequency": 21.704761904761902,
+          "Monetary": 12542.668766666666,
+          "AvgBasketValue": 506.0446066270736,
+          "AvgQuantity": 328.092262663023,
+          "UniqueProducts": 447.1222222222222,
+          "LifetimeDays": 516.6619047619048,
+          "PurchaseRate": 0.0432413289082628,
+          "AvgGapDays": 39.46150953066216,
+          "AvgGapDaysMissing": 0.0,
+          "StdGapDays": 32.93207129585382,
+          "PurchasesLast30Days": 1.4603174603174602,
+          "SpendLast30Days": 810.5575396825396,
+          "PurchasesLast90Days": 3.5841269841269843,
+          "SpendLast90Days": 2036.0279841269844,
+          "ReturnRate": 0.027134719899526,
+          "RevenuePerDay": 23.96643778305956,
+          "AvgSpendPerProduct": 39.51693948610748,
+          "ProductDiversityRate": 22.842754816497187,
+          "RecencyFrequency": 1.1461124767985014,
+          "SpendTrendRatio": 127.8105531611624,
+          "FrequencyLast90DaysRatio": 1.0380845257795177,
+          "IsNewCustomer": 0.0079365079365079
+        },
+        {
+          "KMeans_Cluster": 2,
+          "Recency": 84.18571428571428,
+          "Frequency": 1.0666666666666669,
+          "Monetary": 471.30271428571433,
+          "AvgBasketValue": 389.4517857142857,
+          "AvgQuantity": 210.66626984126984,
+          "UniqueProducts": 22.59523809523809,
+          "LifetimeDays": 1.0476190476190477,
+          "PurchaseRate": 1.0435714285714286,
+          "AvgGapDays": 1.1111111111111112,
+          "AvgGapDaysMissing": 0.9357142857142856,
+          "StdGapDays": 0.0,
+          "PurchasesLast30Days": 0.2357142857142857,
+          "SpendLast30Days": 83.6947380952381,
+          "PurchasesLast90Days": 0.5857142857142857,
+          "SpendLast90Days": 214.9849047619048,
+          "ReturnRate": 0.0192226542211525,
+          "RevenuePerDay": 466.8728591269841,
+          "AvgSpendPerProduct": 64.75051679895934,
+          "ProductDiversityRate": 21.48333333333333,
+          "RecencyFrequency": 81.70119047619048,
+          "SpendTrendRatio": 214.9849047619048,
+          "FrequencyLast90DaysRatio": 0.5857142857142857,
+          "IsNewCustomer": 1.0
+        }
+      ]
+    },
+    {
+      "file": "src/clustering_outputs/kmeans_cluster_profiles.csv",
+      "extension": "csv",
+      "sizeBytes": 2953,
+      "status": "ok",
+      "rows": 4,
+      "columns": [
+        "KMeans_Cluster",
+        "ClusterSize",
+        "CustomerShare_%",
+        "AvgRecency",
+        "AvgFrequency",
+        "AvgMonetary",
+        "TotalHistoricalRevenue",
+        "AvgBasketValue",
+        "AvgQuantity",
+        "UniqueProducts_mean",
+        "LifetimeDays_mean",
+        "PurchaseRate_mean",
+        "AvgGapDays",
+        "AvgGapDaysMissingRate_%",
+        "StdGapDays_mean",
+        "PurchasesLast30Days_mean",
+        "SpendLast30Days_mean",
+        "PurchasesLast90Days_mean",
+        "SpendLast90Days_mean",
+        "ReturnRate_mean",
+        "RevenuePerDay_mean",
+        "AvgSpendPerProduct_mean",
+        "ProductDiversityRate_mean",
+        "RecencyFrequency_mean",
+        "SpendTrendRatio_mean",
+        "FrequencyLast90DaysRatio_mean",
+        "IsNewCustomer_mean",
+        "AvgFutureSpend90Days",
+        "TotalFutureRevenue",
+        "FutureRevenueShare_%",
+        "RetentionRate_%",
+        "ZeroFutureSpendRate_%",
+        "RevenueRank",
+        "RetentionRank",
+        "RecencyRank",
+        "FrequencyRank",
+        "SegmentName"
+      ],
+      "sample": [
+        {
+          "KMeans_Cluster": 0,
+          "ClusterSize": 1031,
+          "CustomerShare_%": 37.1130309575234,
+          "AvgRecency": 45.53152279340446,
+          "AvgFrequency": 5.802133850630456,
+          "AvgMonetary": 1913.94922114452,
+          "TotalHistoricalRevenue": 1973281.647,
+          "AvgBasketValue": 335.2922156485799,
+          "AvgQuantity": 209.89760835215088,
+          "UniqueProducts_mean": 114.9466537342386,
+          "LifetimeDays_mean": 367.6605237633366,
+          "PurchaseRate_mean": 0.0231109069571066,
+          "AvgGapDays": 105.85015756389215,
+          "AvgGapDaysMissingRate_%": 0.0,
+          "StdGapDays_mean": 57.80275241582336,
+          "PurchasesLast30Days_mean": 0.2948593598448109,
+          "SpendLast30Days_mean": 79.1901648884578,
+          "PurchasesLast90Days_mean": 1.3501454898157128,
+          "SpendLast90Days_mean": 426.37887584869065,
+          "ReturnRate_mean": 0.023915808132667,
+          "RevenuePerDay_mean": 7.318290501735833,
+          "AvgSpendPerProduct_mean": 28.08447529939007,
+          "ProductDiversityRate_mean": 20.371955603134975,
+          "RecencyFrequency_mean": 10.763544710464425,
+          "SpendTrendRatio_mean": 224.66861459915336,
+          "FrequencyLast90DaysRatio_mean": 0.9459786307022,
+          "IsNewCustomer_mean": 0.0775945683802133,
+          "AvgFutureSpend90Days": 448.69638215324926,
+          "TotalFutureRevenue": 462605.97,
+          "FutureRevenueShare_%": 18.51312724860209,
+          "RetentionRate_%": 62.46362754607178,
+          "ZeroFutureSpendRate_%": 37.53637245392822,
+          "RevenueRank": 2.0,
+          "RetentionRank": 2.0,
+          "RecencyRank": 2.0,
+          "FrequencyRank": 2.0,
+          "SegmentName": "Regular Mid-Value Customers"
+        },
+        {
+          "KMeans_Cluster": 1,
+          "ClusterSize": 630,
+          "CustomerShare_%": 22.67818574514039,
+          "AvgRecency": 15.66190476190476,
+          "AvgFrequency": 21.704761904761902,
+          "AvgMonetary": 12542.668766666668,
+          "TotalHistoricalRevenue": 7901881.323000001,
+          "AvgBasketValue": 506.0446066270736,
+          "AvgQuantity": 328.092262663023,
+          "UniqueProducts_mean": 447.1222222222222,
+          "LifetimeDays_mean": 516.6619047619048,
+          "PurchaseRate_mean": 0.0432413289082628,
+          "AvgGapDays": 39.46150953066216,
+          "AvgGapDaysMissingRate_%": 0.0,
+          "StdGapDays_mean": 32.93207129585382,
+          "PurchasesLast30Days_mean": 1.4603174603174602,
+          "SpendLast30Days_mean": 810.5575396825396,
+          "PurchasesLast90Days_mean": 3.5841269841269843,
+          "SpendLast90Days_mean": 2036.0279841269844,
+          "ReturnRate_mean": 0.027134719899526,
+          "RevenuePerDay_mean": 23.966437783059565,
+          "AvgSpendPerProduct_mean": 39.51693948610748,
+          "ProductDiversityRate_mean": 22.842754816497187,
+          "RecencyFrequency_mean": 1.1461124767985014,
+          "SpendTrendRatio_mean": 127.8105531611624,
+          "FrequencyLast90DaysRatio_mean": 1.0380845257795177,
+          "IsNewCustomer_mean": 0.0079365079365079,
+          "AvgFutureSpend90Days": 2592.055666666666,
+          "TotalFutureRevenue": 1632995.07,
+          "FutureRevenueShare_%": 65.35117894663114,
+          "RetentionRate_%": 86.98412698412699,
+          "ZeroFutureSpendRate_%": 13.015873015873018,
+          "RevenueRank": 1.0,
+          "RetentionRank": 1.0,
+          "RecencyRank": 1.0,
+          "FrequencyRank": 1.0,
+          "SegmentName": "High-Value Loyalists"
+        },
+        {
+          "KMeans_Cluster": 2,
+          "ClusterSize": 420,
+          "CustomerShare_%": 15.118790496760258,
+          "AvgRecency": 84.18571428571428,
+          "AvgFrequency": 1.0666666666666669,
+          "AvgMonetary": 471.30271428571433,
+          "TotalHistoricalRevenue": 197947.14,
+          "AvgBasketValue": 389.4517857142857,
+          "AvgQuantity": 210.66626984126987,
+          "UniqueProducts_mean": 22.59523809523809,
+          "LifetimeDays_mean": 1.0476190476190477,
+          "PurchaseRate_mean": 1.0435714285714286,
+          "AvgGapDays": 1.1111111111111112,
+          "AvgGapDaysMissingRate_%": 93.57142857142856,
+          "StdGapDays_mean": 0.0,
+          "PurchasesLast30Days_mean": 0.2357142857142857,
+          "SpendLast30Days_mean": 83.69473809523808,
+          "PurchasesLast90Days_mean": 0.5857142857142857,
+          "SpendLast90Days_mean": 214.9849047619048,
+          "ReturnRate_mean": 0.0192226542211525,
+          "RevenuePerDay_mean": 466.8728591269841,
+          "AvgSpendPerProduct_mean": 64.75051679895934,
+          "ProductDiversityRate_mean": 21.48333333333333,
+          "RecencyFrequency_mean": 81.70119047619048,
+          "SpendTrendRatio_mean": 214.9849047619048,
+          "FrequencyLast90DaysRatio_mean": 0.5857142857142857,
+          "IsNewCustomer_mean": 1.0,
+          "AvgFutureSpend90Days": 326.1995476190476,
+          "TotalFutureRevenue": 137003.81,
+          "FutureRevenueShare_%": 5.482784772693926,
+          "RetentionRate_%": 35.95238095238095,
+          "ZeroFutureSpendRate_%": 64.04761904761904,
+          "RevenueRank": 4.0,
+          "RetentionRank": 4.0,
+          "RecencyRank": 3.0,
+          "FrequencyRank": 4.0,
+          "SegmentName": "New / One-Time Customers"
+        }
+      ]
+    },
+    {
+      "file": "src/clustering_outputs/kmeans_k_search_results.csv",
+      "extension": "csv",
+      "sizeBytes": 774,
+      "status": "ok",
+      "rows": 9,
+      "columns": [
+        "K",
+        "Inertia",
+        "Silhouette_Score",
+        "Davies_Bouldin_Score",
+        "Calinski_Harabasz_Score"
+      ],
+      "sample": [
+        {
+          "K": 2,
+          "Inertia": 49540.916852349255,
+          "Silhouette_Score": 0.333441243262657,
+          "Davies_Bouldin_Score": 1.2455820321618711,
+          "Calinski_Harabasz_Score": 804.2676912223715
+        },
+        {
+          "K": 3,
+          "Inertia": 40409.88811911546,
+          "Silhouette_Score": 0.2416521118301059,
+          "Davies_Bouldin_Score": 1.5005619098875205,
+          "Calinski_Harabasz_Score": 806.3432685266365
+        },
+        {
+          "K": 4,
+          "Inertia": 37233.11366011211,
+          "Silhouette_Score": 0.1958198855803622,
+          "Davies_Bouldin_Score": 1.708888430712773,
+          "Calinski_Harabasz_Score": 662.1104301758448
+        }
+      ]
+    },
+    {
+      "file": "src/clustering_outputs/pca_cluster_coordinates.csv",
+      "extension": "csv",
+      "sizeBytes": 149837,
+      "status": "ok",
+      "rows": 2778,
+      "columns": [
+        "Customer_ID",
+        "PCA1",
+        "PCA2",
+        "KMeans_Cluster",
+        "Agglomerative_Cluster",
+        "GaussianMixture_Cluster",
+        "DBSCAN_Cluster"
+      ],
+      "sample": [
+        {
+          "Customer_ID": 12347,
+          "PCA1": -0.8451987801331741,
+          "PCA2": -0.1596569262530016,
+          "KMeans_Cluster": 0,
+          "Agglomerative_Cluster": 0,
+          "GaussianMixture_Cluster": 3,
+          "DBSCAN_Cluster": 0
+        },
+        {
+          "Customer_ID": 12348,
+          "PCA1": 1.6174102008222675,
+          "PCA2": -1.6383011197321826,
+          "KMeans_Cluster": 3,
+          "Agglomerative_Cluster": 1,
+          "GaussianMixture_Cluster": 1,
+          "DBSCAN_Cluster": 0
+        },
+        {
+          "Customer_ID": 12352,
+          "PCA1": 1.4748470934704585,
+          "PCA2": -1.588844989600941,
+          "KMeans_Cluster": 3,
+          "Agglomerative_Cluster": 1,
+          "GaussianMixture_Cluster": 1,
+          "DBSCAN_Cluster": 0
+        }
+      ]
+    },
+    {
+      "file": "src/clustering_plots/01_kmeans_elbow_plot.png",
+      "extension": "png",
+      "sizeBytes": 112374,
+      "status": "ok",
+      "width": 2371,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_plots/02_kmeans_silhouette_by_k.png",
+      "extension": "png",
+      "sizeBytes": 122260,
+      "status": "ok",
+      "width": 2371,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_plots/03_kmeans_davies_bouldin_by_k.png",
+      "extension": "png",
+      "sizeBytes": 112214,
+      "status": "ok",
+      "width": 2370,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_plots/04_model_comparison_silhouette.png",
+      "extension": "png",
+      "sizeBytes": 119418,
+      "status": "ok",
+      "width": 2670,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_plots/05_kmeans_pca_clusters.png",
+      "extension": "png",
+      "sizeBytes": 595048,
+      "status": "ok",
+      "width": 2276,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_plots/06_agglomerative_pca_clusters.png",
+      "extension": "png",
+      "sizeBytes": 642526,
+      "status": "ok",
+      "width": 2276,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_plots/07_gmm_pca_clusters.png",
+      "extension": "png",
+      "sizeBytes": 598110,
+      "status": "ok",
+      "width": 2276,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_plots/08_kmeans_cluster_size_distribution.png",
+      "extension": "png",
+      "sizeBytes": 65494,
+      "status": "ok",
+      "width": 2370,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_plots/09_future_revenue_by_cluster.png",
+      "extension": "png",
+      "sizeBytes": 70962,
+      "status": "ok",
+      "width": 2370,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_plots/10_retention_rate_by_cluster.png",
+      "extension": "png",
+      "sizeBytes": 72841,
+      "status": "ok",
+      "width": 2370,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_plots/11_cluster_profile_heatmap.png",
+      "extension": "png",
+      "sizeBytes": 193726,
+      "status": "ok",
+      "width": 3052,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_plots/kmeans_elbow_curve.png",
+      "extension": "png",
+      "sizeBytes": 103617,
+      "status": "ok",
+      "width": 2400,
+      "height": 1500
+    },
+    {
+      "file": "src/clustering_plots/kmeans_pca_clusters.png",
+      "extension": "png",
+      "sizeBytes": 514639,
+      "status": "ok",
+      "width": 2400,
+      "height": 1800
+    },
+    {
+      "file": "src/clustering_plots/kmeans_silhouette_scores.png",
+      "extension": "png",
+      "sizeBytes": 115715,
+      "status": "ok",
+      "width": 2400,
+      "height": 1500
+    },
+    {
+      "file": "src/clustering_frontend_data/clustering_chart_registry.json",
+      "extension": "json",
+      "sizeBytes": 2501,
+      "status": "ok",
+      "keys": [
+        "clusteringStatus",
+        "finalModel",
+        "finalClusterCount",
+        "modelDecision",
+        "dbscanNote",
+        "plots",
+        "data"
+      ],
+      "itemCount": 7
+    },
+    {
+      "file": "src/clustering_frontend_data/clustering_model_comparison_frontend.csv",
+      "extension": "csv",
+      "sizeBytes": 416,
+      "status": "ok",
+      "rows": 4,
+      "columns": [
+        "Model",
+        "Clusters",
+        "Noise_Count",
+        "Noise_%",
+        "Silhouette_Score",
+        "Davies_Bouldin_Score",
+        "Calinski_Harabasz_Score"
+      ],
+      "sample": [
+        {
+          "Model": "DBSCAN",
+          "Clusters": 4,
+          "Noise_Count": 623,
+          "Noise_%": 22.42620590352772,
+          "Silhouette_Score": 0.3668928407373143,
+          "Davies_Bouldin_Score": 1.1806724264685473,
+          "Calinski_Harabasz_Score": 457.6550480837011
+        },
+        {
+          "Model": "GaussianMixture",
+          "Clusters": 4,
+          "Noise_Count": 0,
+          "Noise_%": 0.0,
+          "Silhouette_Score": 0.2147117109321679,
+          "Davies_Bouldin_Score": 2.0076994752757105,
+          "Calinski_Harabasz_Score": 585.3915074229772
+        },
+        {
+          "Model": "Agglomerative",
+          "Clusters": 4,
+          "Noise_Count": 0,
+          "Noise_%": 0.0,
+          "Silhouette_Score": 0.199701556736947,
+          "Davies_Bouldin_Score": 2.0062988923482044,
+          "Calinski_Harabasz_Score": 585.1483000711652
+        }
+      ]
+    },
+    {
+      "file": "src/clustering_frontend_data/cluster_profile_frontend.csv",
+      "extension": "csv",
+      "sizeBytes": 3739,
+      "status": "ok",
+      "rows": 4,
+      "columns": [
+        "KMeans_Cluster",
+        "ClusterSize",
+        "CustomerShare_%",
+        "AvgRecency",
+        "AvgFrequency",
+        "AvgMonetary",
+        "TotalHistoricalRevenue",
+        "AvgBasketValue",
+        "AvgQuantity",
+        "UniqueProducts_mean",
+        "LifetimeDays_mean",
+        "PurchaseRate_mean",
+        "AvgGapDays",
+        "AvgGapDaysMissingRate_%",
+        "StdGapDays_mean",
+        "PurchasesLast30Days_mean",
+        "SpendLast30Days_mean",
+        "PurchasesLast90Days_mean",
+        "SpendLast90Days_mean",
+        "ReturnRate_mean",
+        "RevenuePerDay_mean",
+        "AvgSpendPerProduct_mean",
+        "ProductDiversityRate_mean",
+        "RecencyFrequency_mean",
+        "SpendTrendRatio_mean",
+        "FrequencyLast90DaysRatio_mean",
+        "IsNewCustomer_mean",
+        "AvgFutureSpend90Days",
+        "TotalFutureRevenue",
+        "FutureRevenueShare_%",
+        "RetentionRate_%",
+        "ZeroFutureSpendRate_%",
+        "RevenueRank",
+        "RetentionRank",
+        "RecencyRank",
+        "FrequencyRank",
+        "SegmentName",
+        "SegmentDisplay",
+        "Recommendation",
+        "Insight"
+      ],
+      "sample": [
+        {
+          "KMeans_Cluster": 1,
+          "ClusterSize": 630,
+          "CustomerShare_%": 22.67818574514039,
+          "AvgRecency": 15.66190476190476,
+          "AvgFrequency": 21.704761904761902,
+          "AvgMonetary": 12542.668766666668,
+          "TotalHistoricalRevenue": 7901881.323000001,
+          "AvgBasketValue": 506.0446066270736,
+          "AvgQuantity": 328.092262663023,
+          "UniqueProducts_mean": 447.1222222222222,
+          "LifetimeDays_mean": 516.6619047619048,
+          "PurchaseRate_mean": 0.0432413289082628,
+          "AvgGapDays": 39.46150953066216,
+          "AvgGapDaysMissingRate_%": 0.0,
+          "StdGapDays_mean": 32.93207129585382,
+          "PurchasesLast30Days_mean": 1.4603174603174602,
+          "SpendLast30Days_mean": 810.5575396825396,
+          "PurchasesLast90Days_mean": 3.5841269841269843,
+          "SpendLast90Days_mean": 2036.0279841269844,
+          "ReturnRate_mean": 0.027134719899526,
+          "RevenuePerDay_mean": 23.966437783059565,
+          "AvgSpendPerProduct_mean": 39.51693948610748,
+          "ProductDiversityRate_mean": 22.842754816497187,
+          "RecencyFrequency_mean": 1.1461124767985014,
+          "SpendTrendRatio_mean": 127.8105531611624,
+          "FrequencyLast90DaysRatio_mean": 1.0380845257795177,
+          "IsNewCustomer_mean": 0.0079365079365079,
+          "AvgFutureSpend90Days": 2592.055666666666,
+          "TotalFutureRevenue": 1632995.07,
+          "FutureRevenueShare_%": 65.35117894663114,
+          "RetentionRate_%": 86.98412698412699,
+          "ZeroFutureSpendRate_%": 13.015873015873018,
+          "RevenueRank": 1.0,
+          "RetentionRank": 1.0,
+          "RecencyRank": 1.0,
+          "FrequencyRank": 1.0,
+          "SegmentName": "High-Value Loyalists",
+          "SegmentDisplay": "High-Value Loyalists\nCluster 1",
+          "Recommendation": "Protect with loyalty rewards, VIP campaigns, early access, and personalized recommendations.",
+          "Insight": "Small but extremely valuable group that drives most future revenue."
+        },
+        {
+          "KMeans_Cluster": 0,
+          "ClusterSize": 1031,
+          "CustomerShare_%": 37.1130309575234,
+          "AvgRecency": 45.53152279340446,
+          "AvgFrequency": 5.802133850630456,
+          "AvgMonetary": 1913.94922114452,
+          "TotalHistoricalRevenue": 1973281.647,
+          "AvgBasketValue": 335.2922156485799,
+          "AvgQuantity": 209.89760835215088,
+          "UniqueProducts_mean": 114.9466537342386,
+          "LifetimeDays_mean": 367.6605237633366,
+          "PurchaseRate_mean": 0.0231109069571066,
+          "AvgGapDays": 105.85015756389215,
+          "AvgGapDaysMissingRate_%": 0.0,
+          "StdGapDays_mean": 57.80275241582336,
+          "PurchasesLast30Days_mean": 0.2948593598448109,
+          "SpendLast30Days_mean": 79.1901648884578,
+          "PurchasesLast90Days_mean": 1.3501454898157128,
+          "SpendLast90Days_mean": 426.37887584869065,
+          "ReturnRate_mean": 0.023915808132667,
+          "RevenuePerDay_mean": 7.318290501735833,
+          "AvgSpendPerProduct_mean": 28.08447529939007,
+          "ProductDiversityRate_mean": 20.37195560313497,
+          "RecencyFrequency_mean": 10.763544710464425,
+          "SpendTrendRatio_mean": 224.66861459915336,
+          "FrequencyLast90DaysRatio_mean": 0.9459786307022,
+          "IsNewCustomer_mean": 0.0775945683802133,
+          "AvgFutureSpend90Days": 448.69638215324926,
+          "TotalFutureRevenue": 462605.97,
+          "FutureRevenueShare_%": 18.51312724860209,
+          "RetentionRate_%": 62.46362754607178,
+          "ZeroFutureSpendRate_%": 37.53637245392822,
+          "RevenueRank": 2.0,
+          "RetentionRank": 2.0,
+          "RecencyRank": 2.0,
+          "FrequencyRank": 2.0,
+          "SegmentName": "Regular Mid-Value Customers",
+          "SegmentDisplay": "Regular Mid-Value Customers\nCluster 0",
+          "Recommendation": "Grow using cross-sell offers, bundles, category recommendations, and moderate-value campaigns.",
+          "Insight": "Largest stable customer group with moderate revenue potential."
+        },
+        {
+          "KMeans_Cluster": 3,
+          "ClusterSize": 697,
+          "CustomerShare_%": 25.08999280057596,
+          "AvgRecency": 127.03586800573888,
+          "AvgFrequency": 5.243902439024391,
+          "AvgMonetary": 1945.4923414634147,
+          "TotalHistoricalRevenue": 1356008.162,
+          "AvgBasketValue": 367.6737683578779,
+          "AvgQuantity": 215.52388496637903,
+          "UniqueProducts_mean": 105.571018651363,
+          "LifetimeDays_mean": 334.012912482066,
+          "PurchaseRate_mean": 0.01937039372766,
+          "AvgGapDays": 117.55490398551932,
+          "AvgGapDaysMissingRate_%": 0.0,
+          "StdGapDays_mean": 53.13383682062247,
+          "PurchasesLast30Days_mean": 0.0,
+          "SpendLast30Days_mean": 0.0,
+          "PurchasesLast90Days_mean": 0.0043041606886657,
+          "SpendLast90Days_mean": 0.132754662840746,
+          "ReturnRate_mean": 0.0292327246437612,
+          "RevenuePerDay_mean": 7.093448491669482,
+          "AvgSpendPerProduct_mean": 32.077578556201274,
+          "ProductDiversityRate_mean": 20.09177295855059,
+          "RecencyFrequency_mean": 35.17167481447859,
+          "SpendTrendRatio_mean": 0.0004222463253522,
+          "FrequencyLast90DaysRatio_mean": 0.0019129603060736,
+          "IsNewCustomer_mean": 0.0516499282639885,
+          "AvgFutureSpend90Days": 381.91515064562407,
+          "TotalFutureRevenue": 266194.86,
+          "FutureRevenueShare_%": 10.65290903207284,
+          "RetentionRate_%": 52.22381635581061,
+          "ZeroFutureSpendRate_%": 47.77618364418939,
+          "RevenueRank": 3.0,
+          "RetentionRank": 3.0,
+          "RecencyRank": 4.0,
+          "FrequencyRank": 3.0,
+          "SegmentName": "At-Risk Inactive Customers",
+          "SegmentDisplay": "At-Risk Inactive Customers\nCluster 3",
+          "Recommendation": "Reactivate using win-back discounts, reminder campaigns, and limited-time offers.",
+          "Insight": "Previously active customers whose long recency makes them risky."
+        }
+      ]
+    },
+    {
+      "file": "src/clustering_frontend_data/dbscan_search_frontend.csv",
+      "extension": "csv",
+      "sizeBytes": 2764,
+      "status": "ok",
+      "rows": 32,
+      "columns": [
+        "eps",
+        "min_samples",
+        "Clusters",
+        "Noise_Count",
+        "Noise_%",
+        "Silhouette_Score",
+        "Davies_Bouldin_Score",
+        "Calinski_Harabasz_Score"
+      ],
+      "sample": [
+        {
+          "eps": 2.0,
+          "min_samples": 5,
+          "Clusters": 7,
+          "Noise_Count": 342,
+          "Noise_%": 12.311015118790497,
+          "Silhouette_Score": 0.1167019030773706,
+          "Davies_Bouldin_Score": 1.2278335414567816,
+          "Calinski_Harabasz_Score": 241.7895772448384
+        },
+        {
+          "eps": 2.0,
+          "min_samples": 10,
+          "Clusters": 8,
+          "Noise_Count": 416,
+          "Noise_%": 14.974802015838732,
+          "Silhouette_Score": 0.1530041687180278,
+          "Davies_Bouldin_Score": 1.245256112088312,
+          "Calinski_Harabasz_Score": 215.1214825292992
+        },
+        {
+          "eps": 1.8,
+          "min_samples": 5,
+          "Clusters": 11,
+          "Noise_Count": 463,
+          "Noise_%": 16.666666666666664,
+          "Silhouette_Score": 0.1579130882545898,
+          "Davies_Bouldin_Score": 1.246900007245479,
+          "Calinski_Harabasz_Score": 277.8193351110077
+        }
+      ]
+    },
+    {
+      "file": "src/clustering_frontend_data/kmeans_k_search_frontend.csv",
+      "extension": "csv",
+      "sizeBytes": 766,
+      "status": "ok",
+      "rows": 9,
+      "columns": [
+        "K",
+        "Inertia",
+        "Silhouette_Score",
+        "Davies_Bouldin_Score",
+        "Calinski_Harabasz_Score"
+      ],
+      "sample": [
+        {
+          "K": 2,
+          "Inertia": 49540.916852349255,
+          "Silhouette_Score": 0.333441243262657,
+          "Davies_Bouldin_Score": 1.2455820321618711,
+          "Calinski_Harabasz_Score": 804.2676912223715
+        },
+        {
+          "K": 3,
+          "Inertia": 40409.88811911546,
+          "Silhouette_Score": 0.2416521118301059,
+          "Davies_Bouldin_Score": 1.5005619098875205,
+          "Calinski_Harabasz_Score": 806.3432685266365
+        },
+        {
+          "K": 4,
+          "Inertia": 37233.11366011211,
+          "Silhouette_Score": 0.1958198855803622,
+          "Davies_Bouldin_Score": 1.708888430712773,
+          "Calinski_Harabasz_Score": 662.1104301758448
+        }
+      ]
+    },
+    {
+      "file": "src/clustering_frontend_data/pca_cluster_coordinates_frontend.csv",
+      "extension": "csv",
+      "sizeBytes": 148635,
+      "status": "ok",
+      "rows": 2778,
+      "columns": [
+        "Customer_ID",
+        "PCA1",
+        "PCA2",
+        "KMeans_Cluster",
+        "Agglomerative_Cluster",
+        "GaussianMixture_Cluster",
+        "DBSCAN_Cluster"
+      ],
+      "sample": [
+        {
+          "Customer_ID": 12347,
+          "PCA1": -0.8451987801331741,
+          "PCA2": -0.1596569262530016,
+          "KMeans_Cluster": 0,
+          "Agglomerative_Cluster": 0,
+          "GaussianMixture_Cluster": 3,
+          "DBSCAN_Cluster": 0
+        },
+        {
+          "Customer_ID": 12348,
+          "PCA1": 1.6174102008222675,
+          "PCA2": -1.6383011197321826,
+          "KMeans_Cluster": 3,
+          "Agglomerative_Cluster": 1,
+          "GaussianMixture_Cluster": 1,
+          "DBSCAN_Cluster": 0
+        },
+        {
+          "Customer_ID": 12352,
+          "PCA1": 1.4748470934704585,
+          "PCA2": -1.588844989600941,
+          "KMeans_Cluster": 3,
+          "Agglomerative_Cluster": 1,
+          "GaussianMixture_Cluster": 1,
+          "DBSCAN_Cluster": 0
+        }
+      ]
+    },
+    {
+      "file": "src/clustering_frontend_data/pca_cluster_coordinates_sampled_frontend.csv",
+      "extension": "csv",
+      "sizeBytes": 80339,
+      "status": "ok",
+      "rows": 1500,
+      "columns": [
+        "Customer_ID",
+        "PCA1",
+        "PCA2",
+        "KMeans_Cluster",
+        "Agglomerative_Cluster",
+        "GaussianMixture_Cluster",
+        "DBSCAN_Cluster"
+      ],
+      "sample": [
+        {
+          "Customer_ID": 14173,
+          "PCA1": 1.840770760195681,
+          "PCA2": -4.206588953633405,
+          "KMeans_Cluster": 3,
+          "Agglomerative_Cluster": 1,
+          "GaussianMixture_Cluster": 1,
+          "DBSCAN_Cluster": -1
+        },
+        {
+          "Customer_ID": 16572,
+          "PCA1": -0.2551725141256694,
+          "PCA2": 0.3162667724964136,
+          "KMeans_Cluster": 0,
+          "Agglomerative_Cluster": 2,
+          "GaussianMixture_Cluster": 0,
+          "DBSCAN_Cluster": 0
+        },
+        {
+          "Customer_ID": 14195,
+          "PCA1": 0.6604560402125507,
+          "PCA2": -1.9564013425521407,
+          "KMeans_Cluster": 3,
+          "Agglomerative_Cluster": 2,
+          "GaussianMixture_Cluster": 1,
+          "DBSCAN_Cluster": -1
+        }
+      ]
+    },
+    {
+      "file": "src/clustering_frontend_data/pca_cluster_coordinates_sampled_frontend.json",
+      "extension": "json",
+      "sizeBytes": 294152,
+      "status": "ok",
+      "keys": [
+        "Customer_ID",
+        "PCA1",
+        "PCA2",
+        "KMeans_Cluster",
+        "Agglomerative_Cluster",
+        "GaussianMixture_Cluster",
+        "DBSCAN_Cluster"
+      ],
+      "itemCount": 1500
+    },
+    {
+      "file": "src/clustering_frontend_data/segment_cards.csv",
+      "extension": "csv",
+      "sizeBytes": 1611,
+      "status": "ok",
+      "rows": 4,
+      "columns": [
+        "KMeans_Cluster",
+        "SegmentName",
+        "ClusterSize",
+        "CustomerShare_%",
+        "AvgRecency",
+        "AvgFrequency",
+        "AvgMonetary",
+        "AvgFutureSpend90Days",
+        "TotalFutureRevenue",
+        "FutureRevenueShare_%",
+        "RetentionRate_%",
+        "ZeroFutureSpendRate_%",
+        "Insight",
+        "Recommendation"
+      ],
+      "sample": [
+        {
+          "KMeans_Cluster": 1,
+          "SegmentName": "High-Value Loyalists",
+          "ClusterSize": 630,
+          "CustomerShare_%": 22.67818574514039,
+          "AvgRecency": 15.66190476190476,
+          "AvgFrequency": 21.704761904761902,
+          "AvgMonetary": 12542.668766666668,
+          "AvgFutureSpend90Days": 2592.055666666666,
+          "TotalFutureRevenue": 1632995.07,
+          "FutureRevenueShare_%": 65.35117894663114,
+          "RetentionRate_%": 86.98412698412699,
+          "ZeroFutureSpendRate_%": 13.015873015873018,
+          "Insight": "Small but extremely valuable group that drives most future revenue.",
+          "Recommendation": "Protect with loyalty rewards, VIP campaigns, early access, and personalized recommendations."
+        },
+        {
+          "KMeans_Cluster": 0,
+          "SegmentName": "Regular Mid-Value Customers",
+          "ClusterSize": 1031,
+          "CustomerShare_%": 37.1130309575234,
+          "AvgRecency": 45.53152279340446,
+          "AvgFrequency": 5.802133850630456,
+          "AvgMonetary": 1913.94922114452,
+          "AvgFutureSpend90Days": 448.69638215324926,
+          "TotalFutureRevenue": 462605.97,
+          "FutureRevenueShare_%": 18.51312724860209,
+          "RetentionRate_%": 62.46362754607178,
+          "ZeroFutureSpendRate_%": 37.53637245392822,
+          "Insight": "Largest stable customer group with moderate revenue potential.",
+          "Recommendation": "Grow using cross-sell offers, bundles, category recommendations, and moderate-value campaigns."
+        },
+        {
+          "KMeans_Cluster": 3,
+          "SegmentName": "At-Risk Inactive Customers",
+          "ClusterSize": 697,
+          "CustomerShare_%": 25.08999280057596,
+          "AvgRecency": 127.03586800573888,
+          "AvgFrequency": 5.243902439024391,
+          "AvgMonetary": 1945.4923414634147,
+          "AvgFutureSpend90Days": 381.91515064562407,
+          "TotalFutureRevenue": 266194.86,
+          "FutureRevenueShare_%": 10.65290903207284,
+          "RetentionRate_%": 52.22381635581061,
+          "ZeroFutureSpendRate_%": 47.77618364418939,
+          "Insight": "Previously active customers whose long recency makes them risky.",
+          "Recommendation": "Reactivate using win-back discounts, reminder campaigns, and limited-time offers."
+        }
+      ]
+    },
+    {
+      "file": "src/clustering_frontend_data/segment_cards.json",
+      "extension": "json",
+      "sizeBytes": 2568,
+      "status": "ok",
+      "keys": [
+        "KMeans_Cluster",
+        "SegmentName",
+        "ClusterSize",
+        "CustomerShare_%",
+        "AvgRecency",
+        "AvgFrequency",
+        "AvgMonetary",
+        "AvgFutureSpend90Days",
+        "TotalFutureRevenue",
+        "FutureRevenueShare_%",
+        "RetentionRate_%",
+        "ZeroFutureSpendRate_%",
+        "Insight",
+        "Recommendation"
+      ],
+      "itemCount": 4
+    },
+    {
+      "file": "src/clustering_frontend_plots/01_kmeans_elbow_curve.png",
+      "extension": "png",
+      "sizeBytes": 102898,
+      "status": "ok",
+      "width": 2371,
+      "height": 1466
+    },
+    {
+      "file": "src/clustering_frontend_plots/02_kmeans_silhouette_by_k.png",
+      "extension": "png",
+      "sizeBytes": 119880,
+      "status": "ok",
+      "width": 2370,
+      "height": 1466
+    },
+    {
+      "file": "src/clustering_frontend_plots/03_clustering_model_silhouette_comparison.png",
+      "extension": "png",
+      "sizeBytes": 71581,
+      "status": "ok",
+      "width": 2369,
+      "height": 1466
+    },
+    {
+      "file": "src/clustering_frontend_plots/04_clustering_model_noise_comparison.png",
+      "extension": "png",
+      "sizeBytes": 69039,
+      "status": "ok",
+      "width": 2369,
+      "height": 1466
+    },
+    {
+      "file": "src/clustering_frontend_plots/05_kmeans_pca_segments.png",
+      "extension": "png",
+      "sizeBytes": 514663,
+      "status": "ok",
+      "width": 2275,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_frontend_plots/06_customer_share_by_segment.png",
+      "extension": "png",
+      "sizeBytes": 101771,
+      "status": "ok",
+      "width": 2969,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_frontend_plots/07_future_revenue_share_by_segment.png",
+      "extension": "png",
+      "sizeBytes": 101422,
+      "status": "ok",
+      "width": 2969,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_frontend_plots/08_customer_share_vs_revenue_share.png",
+      "extension": "png",
+      "sizeBytes": 176288,
+      "status": "ok",
+      "width": 3270,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_frontend_plots/09_retention_vs_zero_spend_by_segment.png",
+      "extension": "png",
+      "sizeBytes": 173212,
+      "status": "ok",
+      "width": 3270,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_frontend_plots/10_avg_future_spend_by_segment.png",
+      "extension": "png",
+      "sizeBytes": 106583,
+      "status": "ok",
+      "width": 2969,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_frontend_plots/11_avg_recency_by_segment.png",
+      "extension": "png",
+      "sizeBytes": 103572,
+      "status": "ok",
+      "width": 2969,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_frontend_plots/12_avg_frequency_by_segment.png",
+      "extension": "png",
+      "sizeBytes": 101608,
+      "status": "ok",
+      "width": 2969,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_frontend_plots/13_avg_monetary_by_segment.png",
+      "extension": "png",
+      "sizeBytes": 111485,
+      "status": "ok",
+      "width": 2969,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_frontend_plots/14_historical_vs_future_revenue_by_segment.png",
+      "extension": "png",
+      "sizeBytes": 168807,
+      "status": "ok",
+      "width": 3270,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_frontend_plots/15_segment_profile_heatmap.png",
+      "extension": "png",
+      "sizeBytes": 250920,
+      "status": "ok",
+      "width": 3395,
+      "height": 1765
+    },
+    {
+      "file": "src/clustering_frontend_plots/16_dbscan_noise_vs_silhouette.png",
+      "extension": "png",
+      "sizeBytes": 110847,
+      "status": "ok",
+      "width": 2370,
+      "height": 1765
+    },
+    {
+      "file": "src/time_series_outputs/forecast_model_comparison.csv",
+      "extension": "csv",
+      "sizeBytes": 2368,
+      "status": "ok",
+      "rows": 12,
+      "columns": [
+        "Model",
+        "RMSE",
+        "MAE",
+        "MSE",
+        "R2",
+        "WAPE_%",
+        "sMAPE_%",
+        "Revenue_Error_%",
+        "Actual_Total",
+        "Predicted_Total",
+        "Order",
+        "Seasonal_Order",
+        "AIC"
+      ],
+      "sample": [
+        {
+          "Model": "SARIMA",
+          "RMSE": 57057.60978973488,
+          "MAE": 48227.70592429092,
+          "MSE": 3255570834.9176497,
+          "R2": -0.169103750047509,
+          "WAPE_%": 18.29097738659396,
+          "sMAPE_%": 19.886470198141627,
+          "Revenue_Error_%": 12.773281451912773,
+          "Actual_Total": 3164032.5109999995,
+          "Predicted_Total": 2759881.7331399466,
+          "Order": "(1, 1, 0)",
+          "Seasonal_Order": "(1, 1, 0, 4)",
+          "AIC": 368.45398389100274
+        },
+        {
+          "Model": "XGBoost_Lag",
+          "RMSE": 73746.81806000038,
+          "MAE": 50759.16872916668,
+          "MSE": 5438593173.974799,
+          "R2": -0.9530460239049156,
+          "WAPE_%": 19.25106719454945,
+          "sMAPE_%": 19.541882723349516,
+          "Revenue_Error_%": 11.589048460317782,
+          "Actual_Total": 3164032.5109999995,
+          "Predicted_Total": 2797351.25,
+          "Order": null,
+          "Seasonal_Order": null,
+          "AIC": null
+        },
+        {
+          "Model": "Naive",
+          "RMSE": 76669.11967175541,
+          "MAE": 59468.710916666685,
+          "MSE": 5878153911.241952,
+          "R2": -1.1108961007027918,
+          "WAPE_%": 22.554273020869108,
+          "sMAPE_%": 23.494084197033217,
+          "Revenue_Error_%": 21.094249464240097,
+          "Actual_Total": 3164032.5109999995,
+          "Predicted_Total": 2496603.6,
+          "Order": null,
+          "Seasonal_Order": null,
+          "AIC": null
+        }
+      ]
+    },
+    {
+      "file": "src/time_series_outputs/future_12_week_forecast.csv",
+      "extension": "csv",
+      "sizeBytes": 384,
+      "status": "ok",
+      "rows": 12,
+      "columns": [
+        "Date",
+        "ForecastRevenue"
+      ],
+      "sample": [
+        {
+          "Date": "2011-12-18",
+          "ForecastRevenue": 361580.12543490966
+        },
+        {
+          "Date": "2011-12-25",
+          "ForecastRevenue": 354612.29332762706
+        },
+        {
+          "Date": "2012-01-01",
+          "ForecastRevenue": 359268.2454661125
+        }
+      ]
+    },
+    {
+      "file": "src/time_series_outputs/monthly_revenue_series.csv",
+      "extension": "csv",
+      "sizeBytes": 1317,
+      "status": "ok",
+      "rows": 25,
+      "columns": [
+        "Date",
+        "Revenue",
+        "OrderCount",
+        "UniqueCustomers",
+        "AvgOrderValue"
+      ],
+      "sample": [
+        {
+          "Date": "2009-12-01",
+          "Revenue": 680586.01,
+          "OrderCount": 1508,
+          "UniqueCustomers": 953,
+          "AvgOrderValue": 451.3169827586207
+        },
+        {
+          "Date": "2010-01-01",
+          "Revenue": 553112.672,
+          "OrderCount": 1006,
+          "UniqueCustomers": 720,
+          "AvgOrderValue": 549.8137892644136
+        },
+        {
+          "Date": "2010-02-01",
+          "Revenue": 501823.956,
+          "OrderCount": 1099,
+          "UniqueCustomers": 772,
+          "AvgOrderValue": 456.6187042766151
+        }
+      ]
+    },
+    {
+      "file": "src/time_series_outputs/time_series_summary.json",
+      "extension": "json",
+      "sizeBytes": 2336,
+      "status": "ok",
+      "keys": [
+        "timeSeriesStatus",
+        "target",
+        "interpretation",
+        "testHorizonWeeks",
+        "futureForecastWeeks",
+        "bestModel",
+        "bestModelMetrics",
+        "trainStart",
+        "trainEnd",
+        "testStart",
+        "testEnd",
+        "weeklyObservations",
+        "monthlyObservations",
+        "totalHistoricalRevenue",
+        "averageWeeklyRevenue",
+        "latestWeeklyRevenue",
+        "latestMonthlyRevenue",
+        "frontendFiles",
+        "plots"
+      ],
+      "itemCount": 19
+    },
+    {
+      "file": "src/time_series_outputs/weekly_forecast_results.csv",
+      "extension": "csv",
+      "sizeBytes": 2835,
+      "status": "ok",
+      "rows": 12,
+      "columns": [
+        "Date",
+        "Actual",
+        "Naive",
+        "MovingAverage_4",
+        "MovingAverage_8",
+        "MovingAverage_12",
+        "SES",
+        "Holt",
+        "HoltWinters_s4",
+        "HoltWinters_s13",
+        "ARIMA",
+        "SARIMA",
+        "RandomForest_Lag",
+        "XGBoost_Lag"
+      ],
+      "sample": [
+        {
+          "Date": "2011-09-25",
+          "Actual": 306021.451,
+          "Naive": 208050.3,
+          "MovingAverage_4": 157911.22499999998,
+          "MovingAverage_8": 157294.063875,
+          "MovingAverage_12": 148929.84841666667,
+          "SES": 112368.5589435658,
+          "Holt": 147952.94432270867,
+          "HoltWinters_s4": 180884.83630599425,
+          "HoltWinters_s13": 124033.86260759985,
+          "ARIMA": 188480.14670574985,
+          "SARIMA": 188994.01598625613,
+          "RandomForest_Lag": 186198.9511542764,
+          "XGBoost_Lag": 195639.0
+        },
+        {
+          "Date": "2011-10-02",
+          "Actual": 191844.35,
+          "Naive": 208050.3,
+          "MovingAverage_4": 157911.22499999998,
+          "MovingAverage_8": 157294.063875,
+          "MovingAverage_12": 148929.84841666667,
+          "SES": 112368.5589435658,
+          "Holt": 148812.34229183162,
+          "HoltWinters_s4": 181967.5503655264,
+          "HoltWinters_s13": 6496.080423063703,
+          "ARIMA": 196509.9099712957,
+          "SARIMA": 156624.1608663431,
+          "RandomForest_Lag": 190021.7037318615,
+          "XGBoost_Lag": 251339.2
+        },
+        {
+          "Date": "2011-10-09",
+          "Actual": 293886.99,
+          "Naive": 208050.3,
+          "MovingAverage_4": 157911.22499999998,
+          "MovingAverage_8": 157294.063875,
+          "MovingAverage_12": 148929.84841666667,
+          "SES": 112368.5589435658,
+          "Holt": 149676.73211752667,
+          "HoltWinters_s4": 75618.88760099956,
+          "HoltWinters_s13": 179471.89546117012,
+          "ARIMA": 193077.84320044777,
+          "SARIMA": 195375.97906201077,
+          "RandomForest_Lag": 186456.8774895992,
+          "XGBoost_Lag": 213778.89
+        }
+      ]
+    },
+    {
+      "file": "src/time_series_outputs/weekly_revenue_series.csv",
+      "extension": "csv",
+      "sizeBytes": 5137,
+      "status": "ok",
+      "rows": 106,
+      "columns": [
+        "Date",
+        "Revenue",
+        "OrderCount",
+        "UniqueCustomers",
+        "AvgOrderValue"
+      ],
+      "sample": [
+        {
+          "Date": "2009-12-06",
+          "Revenue": 231188.51,
+          "OrderCount": 510,
+          "UniqueCustomers": 425,
+          "AvgOrderValue": 453.3108039215687
+        },
+        {
+          "Date": "2009-12-13",
+          "Revenue": 206940.73,
+          "OrderCount": 492,
+          "UniqueCustomers": 410,
+          "AvgOrderValue": 420.6112398373984
+        },
+        {
+          "Date": "2009-12-20",
+          "Revenue": 206912.87,
+          "OrderCount": 441,
+          "UniqueCustomers": 359,
+          "AvgOrderValue": 469.19018140589566
+        }
+      ]
+    },
+    {
+      "file": "src/time_series_frontend_data/forecast_model_comparison.json",
+      "extension": "json",
+      "sizeBytes": 4656,
+      "status": "ok",
+      "keys": [
+        "Model",
+        "RMSE",
+        "MAE",
+        "MSE",
+        "R2",
+        "WAPE_%",
+        "sMAPE_%",
+        "Revenue_Error_%",
+        "Actual_Total",
+        "Predicted_Total",
+        "Order",
+        "Seasonal_Order",
+        "AIC"
+      ],
+      "itemCount": 12
+    },
+    {
+      "file": "src/time_series_frontend_data/future_12_week_forecast.json",
+      "extension": "json",
+      "sizeBytes": 1045,
+      "status": "ok",
+      "keys": [
+        "Date",
+        "ForecastRevenue"
+      ],
+      "itemCount": 12
+    },
+    {
+      "file": "src/time_series_frontend_data/monthly_revenue_series.json",
+      "extension": "json",
+      "sizeBytes": 3976,
+      "status": "ok",
+      "keys": [
+        "Date",
+        "Revenue",
+        "OrderCount",
+        "UniqueCustomers",
+        "AvgOrderValue"
+      ],
+      "itemCount": 25
+    },
+    {
+      "file": "src/time_series_frontend_data/time_series_summary.json",
+      "extension": "json",
+      "sizeBytes": 2336,
+      "status": "ok",
+      "keys": [
+        "timeSeriesStatus",
+        "target",
+        "interpretation",
+        "testHorizonWeeks",
+        "futureForecastWeeks",
+        "bestModel",
+        "bestModelMetrics",
+        "trainStart",
+        "trainEnd",
+        "testStart",
+        "testEnd",
+        "weeklyObservations",
+        "monthlyObservations",
+        "totalHistoricalRevenue",
+        "averageWeeklyRevenue",
+        "latestWeeklyRevenue",
+        "latestMonthlyRevenue",
+        "frontendFiles",
+        "plots"
+      ],
+      "itemCount": 19
+    },
+    {
+      "file": "src/time_series_frontend_data/weekly_forecast_results.json",
+      "extension": "json",
+      "sizeBytes": 5781,
+      "status": "ok",
+      "keys": [
+        "Date",
+        "Actual",
+        "Naive",
+        "MovingAverage_4",
+        "MovingAverage_8",
+        "MovingAverage_12",
+        "SES",
+        "Holt",
+        "HoltWinters_s4",
+        "HoltWinters_s13",
+        "ARIMA",
+        "SARIMA",
+        "RandomForest_Lag",
+        "XGBoost_Lag"
+      ],
+      "itemCount": 12
+    },
+    {
+      "file": "src/time_series_frontend_data/weekly_revenue_series.json",
+      "extension": "json",
+      "sizeBytes": 16469,
+      "status": "ok",
+      "keys": [
+        "Date",
+        "Revenue",
+        "OrderCount",
+        "UniqueCustomers",
+        "AvgOrderValue"
+      ],
+      "itemCount": 106
+    },
+    {
+      "file": "src/time_series_plots/01_weekly_revenue_trend.png",
+      "extension": "png",
+      "sizeBytes": 237813,
+      "status": "ok",
+      "width": 3563,
+      "height": 1765
+    },
+    {
+      "file": "src/time_series_plots/02_monthly_revenue_trend.png",
+      "extension": "png",
+      "sizeBytes": 187770,
+      "status": "ok",
+      "width": 3567,
+      "height": 1765
+    },
+    {
+      "file": "src/time_series_plots/03_train_test_forecast_comparison.png",
+      "extension": "png",
+      "sizeBytes": 450635,
+      "status": "ok",
+      "width": 3571,
+      "height": 1765
+    },
+    {
+      "file": "src/time_series_plots/04_best_model_test_forecast.png",
+      "extension": "png",
+      "sizeBytes": 231768,
+      "status": "ok",
+      "width": 3571,
+      "height": 1765
+    },
+    {
+      "file": "src/time_series_plots/05_forecast_model_comparison_rmse.png",
+      "extension": "png",
+      "sizeBytes": 125422,
+      "status": "ok",
+      "width": 2968,
+      "height": 1765
+    },
+    {
+      "file": "src/time_series_plots/06_forecast_residual_distribution.png",
+      "extension": "png",
+      "sizeBytes": 74727,
+      "status": "ok",
+      "width": 2363,
+      "height": 1765
+    },
+    {
+      "file": "src/time_series_plots/07_future_12_week_forecast.png",
+      "extension": "png",
+      "sizeBytes": 190715,
+      "status": "ok",
+      "width": 3571,
+      "height": 1765
+    },
+    {
+      "file": "src/time_series_plots/08_seasonal_decomposition.png",
+      "extension": "png",
+      "sizeBytes": 325708,
+      "status": "ok",
+      "width": 3571,
+      "height": 2366
+    },
+    {
+      "file": "src/shap_outputs/clv_shap_feature_importance.csv",
+      "extension": "csv",
+      "sizeBytes": 701,
+      "status": "ok",
+      "rows": 25,
+      "columns": [
+        "Feature",
+        "MeanAbsSHAP"
+      ],
+      "sample": [
+        {
+          "Feature": "Monetary",
+          "MeanAbsSHAP": 0.47709844
+        },
+        {
+          "Feature": "RecencyFrequency",
+          "MeanAbsSHAP": 0.20494403
+        },
+        {
+          "Feature": "RevenuePerDay",
+          "MeanAbsSHAP": 0.14732763
+        }
+      ]
+    },
+    {
+      "file": "src/shap_outputs/retention_shap_feature_importance.csv",
+      "extension": "csv",
+      "sizeBytes": 698,
+      "status": "ok",
+      "rows": 25,
+      "columns": [
+        "Feature",
+        "MeanAbsSHAP"
+      ],
+      "sample": [
+        {
+          "Feature": "UniqueProducts",
+          "MeanAbsSHAP": 0.29987273
+        },
+        {
+          "Feature": "SpendLast90Days",
+          "MeanAbsSHAP": 0.2378797
+        },
+        {
+          "Feature": "RecencyFrequency",
+          "MeanAbsSHAP": 0.15878628
+        }
+      ]
+    },
+    {
+      "file": "src/shap_outputs/shap_status.json",
+      "extension": "json",
+      "sizeBytes": 3363,
+      "status": "ok",
+      "keys": [
+        "status",
+        "retention",
+        "clv",
+        "notes",
+        "generatedAt"
+      ],
+      "itemCount": 5
+    },
+    {
+      "file": "src/shap_plots/01_clv_shap_summary_beeswarm.png",
+      "extension": "png",
+      "sizeBytes": 283840,
+      "status": "ok",
+      "width": 1709,
+      "height": 2068
+    },
+    {
+      "file": "src/shap_plots/01_retention_shap_summary_beeswarm.png",
+      "extension": "png",
+      "sizeBytes": 493981,
+      "status": "ok",
+      "width": 1710,
+      "height": 2068
+    },
+    {
+      "file": "src/shap_plots/02_clv_shap_summary_bar.png",
+      "extension": "png",
+      "sizeBytes": 163608,
+      "status": "ok",
+      "width": 1739,
+      "height": 2069
+    },
+    {
+      "file": "src/shap_plots/02_retention_shap_summary_bar.png",
+      "extension": "png",
+      "sizeBytes": 165227,
+      "status": "ok",
+      "width": 1738,
+      "height": 2069
+    },
+    {
+      "file": "src/shap_plots/03_clv_dependence_Monetary.png",
+      "extension": "png",
+      "sizeBytes": 69403,
+      "status": "ok",
+      "width": 1550,
+      "height": 1078
+    },
+    {
+      "file": "src/shap_plots/03_clv_dependence_RecencyFrequency.png",
+      "extension": "png",
+      "sizeBytes": 110897,
+      "status": "ok",
+      "width": 1571,
+      "height": 1078
+    },
+    {
+      "file": "src/shap_plots/03_clv_dependence_RevenuePerDay.png",
+      "extension": "png",
+      "sizeBytes": 102341,
+      "status": "ok",
+      "width": 1571,
+      "height": 1077
+    },
+    {
+      "file": "src/shap_plots/03_clv_dependence_SpendLast90Days.png",
+      "extension": "png",
+      "sizeBytes": 90618,
+      "status": "ok",
+      "width": 1571,
+      "height": 1078
+    },
+    {
+      "file": "src/shap_plots/03_clv_dependence_SpendPrior90Days.png",
+      "extension": "png",
+      "sizeBytes": 77890,
+      "status": "ok",
+      "width": 1550,
+      "height": 1078
+    },
+    {
+      "file": "src/shap_plots/03_retention_dependence_AvgGapDays.png",
+      "extension": "png",
+      "sizeBytes": 131852,
+      "status": "ok",
+      "width": 1571,
+      "height": 1078
+    },
+    {
+      "file": "src/shap_plots/03_retention_dependence_AvgQuantity.png",
+      "extension": "png",
+      "sizeBytes": 136472,
+      "status": "ok",
+      "width": 1571,
+      "height": 1078
+    },
+    {
+      "file": "src/shap_plots/03_retention_dependence_RecencyFrequency.png",
+      "extension": "png",
+      "sizeBytes": 135543,
+      "status": "ok",
+      "width": 1560,
+      "height": 1078
+    },
+    {
+      "file": "src/shap_plots/03_retention_dependence_SpendLast90Days.png",
+      "extension": "png",
+      "sizeBytes": 112814,
+      "status": "ok",
+      "width": 1571,
+      "height": 1078
+    },
+    {
+      "file": "src/shap_plots/03_retention_dependence_UniqueProducts.png",
+      "extension": "png",
+      "sizeBytes": 114955,
+      "status": "ok",
+      "width": 1571,
+      "height": 1078
+    },
+    {
+      "file": "src/shap_plots/04_clv_waterfall_example.png",
+      "extension": "png",
+      "sizeBytes": 141059,
+      "status": "ok",
+      "width": 1742,
+      "height": 1394
+    },
+    {
+      "file": "src/shap_plots/04_retention_waterfall_example.png",
+      "extension": "png",
+      "sizeBytes": 142153,
+      "status": "ok",
+      "width": 1739,
+      "height": 1394
+    }
+  ]
+}

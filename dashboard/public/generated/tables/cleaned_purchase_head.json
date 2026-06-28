@@ -1,0 +1,198 @@
+{
+  "status": "ok",
+  "source": "src/final_outputs/data/clustered_customers.csv",
+  "description": "Preview of cleaned purchase-derived customer features.",
+  "rowsShown": 20,
+  "totalRowsAvailable": 2778,
+  "columns": [
+    "Customer_ID",
+    "FutureSpend90Days",
+    "RetentionLabel",
+    "Frequency",
+    "Monetary",
+    "AvgBasketValue",
+    "Recency"
+  ],
+  "records": [
+    {
+      "Customer_ID": 12347,
+      "FutureSpend90Days": 1519.14,
+      "RetentionLabel": 1,
+      "Frequency": 6,
+      "Monetary": 3402.39,
+      "AvgBasketValue": 567.0649999999999,
+      "Recency": 37
+    },
+    {
+      "Customer_ID": 12348,
+      "FutureSpend90Days": 270.0,
+      "RetentionLabel": 1,
+      "Frequency": 4,
+      "Monetary": 1388.4,
+      "AvgBasketValue": 347.1,
+      "Recency": 156
+    },
+    {
+      "Customer_ID": 12352,
+      "FutureSpend90Days": 744.23,
+      "RetentionLabel": 1,
+      "Frequency": 7,
+      "Monetary": 1825.61,
+      "AvgBasketValue": 260.8014285714286,
+      "Recency": 170
+    },
+    {
+      "Customer_ID": 12353,
+      "FutureSpend90Days": 0.0,
+      "RetentionLabel": 0,
+      "Frequency": 2,
+      "Monetary": 406.76,
+      "AvgBasketValue": 203.38,
+      "Recency": 112
+    },
+    {
+      "Customer_ID": 12354,
+      "FutureSpend90Days": 0.0,
+      "RetentionLabel": 0,
+      "Frequency": 1,
+      "Monetary": 1079.4,
+      "AvgBasketValue": 1079.4,
+      "Recency": 140
+    },
+    {
+      "Customer_ID": 12355,
+      "FutureSpend90Days": 0.0,
+      "RetentionLabel": 0,
+      "Frequency": 2,
+      "Monetary": 947.61,
+      "AvgBasketValue": 473.805,
+      "Recency": 122
+    },
+    {
+      "Customer_ID": 12356,
+      "FutureSpend90Days": 58.35,
+      "RetentionLabel": 1,
+      "Frequency": 5,
+      "Monetary": 5553.38,
+      "AvgBasketValue": 1110.676,
+      "Recency": 153
+    },
+    {
+      "Customer_ID": 12358,
+      "FutureSpend90Days": 0.0,
+      "RetentionLabel": 0,
+      "Frequency": 4,
+      "Monetary": 2923.87,
+      "AvgBasketValue": 730.9675,
+      "Recency": 58
+    },
+    {
+      "Customer_ID": 12359,
+      "FutureSpend90Days": 2814.3,
+      "RetentionLabel": 1,
+      "Frequency": 9,
+      "Monetary": 6059.09,
+      "AvgBasketValue": 673.2322222222223,
+      "Recency": 97
+    },
+    {
+      "Customer_ID": 12360,
+      "FutureSpend90Days": 923.78,
+      "RetentionLabel": 1,
+      "Frequency": 5,
+      "Monetary": 2689.11,
+      "AvgBasketValue": 537.8219999999999,
+      "Recency": 20
+    },
+    {
+      "Customer_ID": 12362,
+      "FutureSpend90Days": 3154.88,
+      "RetentionLabel": 1,
+      "Frequency": 4,
+      "Monetary": 1582.35,
+      "AvgBasketValue": 395.5875,
+      "Recency": 28
+    },
+    {
+      "Customer_ID": 12363,
+      "FutureSpend90Days": 0.0,
+      "RetentionLabel": 0,
+      "Frequency": 2,
+      "Monetary": 552.0,
+      "AvgBasketValue": 276.0,
+      "Recency": 17
+    },
+    {
+      "Customer_ID": 12364,
+      "FutureSpend90Days": 629.18,
+      "RetentionLabel": 1,
+      "Frequency": 1,
+      "Monetary": 578.92,
+      "AvgBasketValue": 578.92,
+      "Recency": 20
+    },
+    {
+      "Customer_ID": 12372,
+      "FutureSpend90Days": 353.12,
+      "RetentionLabel": 1,
+      "Frequency": 2,
+      "Monetary": 842.9200000000001,
+      "AvgBasketValue": 421.46,
+      "Recency": 120
+    },
+    {
+      "Customer_ID": 12375,
+      "FutureSpend90Days": 187.2,
+      "RetentionLabel": 1,
+      "Frequency": 1,
+      "Monetary": 190.3,
+      "AvgBasketValue": 190.3,
+      "Recency": 6
+    },
+    {
+      "Customer_ID": 12378,
+      "FutureSpend90Days": 0.0,
+      "RetentionLabel": 0,
+      "Frequency": 2,
+      "Monetary": 5416.32,
+      "AvgBasketValue": 2708.16,
+      "Recency": 37
+    },
+    {
+      "Customer_ID": 12379,
+      "FutureSpend90Days": 362.4,
+      "RetentionLabel": 1,
+      "Frequency": 3,
+      "Monetary": 1107.82,
+      "AvgBasketValue": 369.2733333333333,
+      "Recency": 78
+    },
+    {
+      "Customer_ID": 12380,
+      "FutureSpend90Days": 1865.26,
+      "RetentionLabel": 1,
+      "Frequency": 6,
+      "Monetary": 6854.04,
+      "AvgBasketValue": 1142.34,
+      "Recency": 93
+    },
+    {
+      "Customer_ID": 12381,
+      "FutureSpend90Days": 446.07,
+      "RetentionLabel": 1,
+      "Frequency": 1,
+      "Monetary": 1028.74,
+      "AvgBasketValue": 1028.74,
+      "Recency": 27
+    },
+    {
+      "Customer_ID": 12383,
+      "FutureSpend90Days": 0.0,
+      "RetentionLabel": 0,
+      "Frequency": 5,
+      "Monetary": 1628.56,
+      "AvgBasketValue": 325.712,
+      "Recency": 92
+    }
+  ]
+}

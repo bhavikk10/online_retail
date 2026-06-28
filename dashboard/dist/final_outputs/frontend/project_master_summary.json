@@ -1,0 +1,147 @@
+{
+  "projectName": "Online Retail II Customer Analytics",
+  "status": "ML modules complete",
+  "modules": {
+    "clvPrediction": {
+      "status": "complete",
+      "finalModel": "XGBoost_Tweedie",
+      "rmse": 1976.2743940239072,
+      "mae": 529.8777355944866,
+      "r2": 0.8329799126925654,
+      "revenueErrorPercent": 11.27265336846863,
+      "spearmanRankCorrelation": 0.6172056479835779,
+      "top10PercentRevenueCapture": 57.10269408611084,
+      "businessConclusion": "The final CLV model identifies high-value customers effectively and supports revenue-prioritized targeting."
+    },
+    "customerSegmentation": {
+      "status": "complete",
+      "finalModel": "KMeans",
+      "clusterCount": 4,
+      "segments": [
+        {
+          "cluster": 1,
+          "segmentName": "High-Value Loyalists",
+          "clusterSize": 630,
+          "customerSharePercent": 22.67818574514039,
+          "futureRevenueSharePercent": 65.35117894663114,
+          "retentionRatePercent": 86.98412698412699,
+          "zeroFutureSpendRatePercent": 13.015873015873018,
+          "avgFutureSpend90Days": 2592.055666666666,
+          "avgRecency": 15.66190476190476,
+          "avgFrequency": 21.704761904761902,
+          "avgMonetary": 12542.668766666668
+        },
+        {
+          "cluster": 0,
+          "segmentName": "Regular Mid-Value Customers",
+          "clusterSize": 1031,
+          "customerSharePercent": 37.1130309575234,
+          "futureRevenueSharePercent": 18.51312724860209,
+          "retentionRatePercent": 62.46362754607178,
+          "zeroFutureSpendRatePercent": 37.53637245392822,
+          "avgFutureSpend90Days": 448.69638215324926,
+          "avgRecency": 45.53152279340446,
+          "avgFrequency": 5.802133850630456,
+          "avgMonetary": 1913.94922114452
+        },
+        {
+          "cluster": 3,
+          "segmentName": "At-Risk Inactive Customers",
+          "clusterSize": 697,
+          "customerSharePercent": 25.08999280057596,
+          "futureRevenueSharePercent": 10.65290903207284,
+          "retentionRatePercent": 52.22381635581061,
+          "zeroFutureSpendRatePercent": 47.77618364418939,
+          "avgFutureSpend90Days": 381.91515064562407,
+          "avgRecency": 127.03586800573888,
+          "avgFrequency": 5.243902439024391,
+          "avgMonetary": 1945.4923414634147
+        },
+        {
+          "cluster": 2,
+          "segmentName": "New / One-Time Customers",
+          "clusterSize": 420,
+          "customerSharePercent": 15.118790496760258,
+          "futureRevenueSharePercent": 5.482784772693926,
+          "retentionRatePercent": 35.95238095238095,
+          "zeroFutureSpendRatePercent": 64.04761904761904,
+          "avgFutureSpend90Days": 326.1995476190476,
+          "avgRecency": 84.18571428571428,
+          "avgFrequency": 1.0666666666666669,
+          "avgMonetary": 471.30271428571433
+        }
+      ],
+      "highValueSegment": "High-Value Loyalists",
+      "highValueCustomerSharePercent": 22.67818574514039,
+      "highValueFutureRevenueSharePercent": 65.35117894663114,
+      "businessConclusion": "KMeans produced balanced and interpretable customer segments. The highest-value segment contributes a disproportionate share of future revenue."
+    },
+    "revenueForecasting": {
+      "status": "complete",
+      "target": "Weekly Revenue",
+      "finalModel": "SARIMA",
+      "rmse": 57057.60978973488,
+      "mae": 48227.70592429092,
+      "wapePercent": 18.29097738659396,
+      "smapePercent": 19.886470198141627,
+      "revenueErrorPercent": 12.773281451912773,
+      "weeklyObservations": 106,
+      "monthlyObservations": 25,
+      "interpretation": "Time-series forecasting is treated as exploratory short-term weekly revenue forecasting because the dataset has limited weekly and monthly observations."
+    }
+  },
+  "finalRecommendations": [
+    "Use calibrated XGBoost Tweedie as the final CLV model.",
+    "Use KMeans with four clusters as the final customer segmentation model.",
+    "Use SARIMA as the exploratory weekly revenue forecasting model.",
+    "Treat time-series forecasting as short-term directional analysis because the dataset has only 106 weekly and 25 monthly observations.",
+    "Move next to frontend/dashboard development."
+  ],
+  "frontendFiles": {
+    "kpiCards": "final_outputs/frontend/project_kpi_cards.json",
+    "projectInsights": "final_outputs/frontend/project_insights.json",
+    "segmentCards": "final_outputs/frontend/segment_cards_json.json",
+    "timeSeriesSummary": "final_outputs/frontend/time_series_summary.json"
+  },
+  "plotFiles": {
+    "clv_actual_vs_predicted": "final_outputs\\plots\\clv_actual_vs_predicted.png",
+    "clv_log_actual_vs_predicted": "final_outputs\\plots\\clv_log_actual_vs_predicted.png",
+    "clv_residuals_vs_predicted": "final_outputs\\plots\\clv_residuals_vs_predicted.png",
+    "clv_residual_distribution": "final_outputs\\plots\\clv_residual_distribution.png",
+    "clv_lift_curve": "final_outputs\\plots\\clv_lift_curve.png",
+    "clv_lift_vs_random": "final_outputs\\plots\\clv_lift_vs_random.png",
+    "clv_zero_spender_distribution": "final_outputs\\plots\\clv_zero_spender_distribution.png",
+    "cluster_pca": "final_outputs\\plots\\cluster_pca.png",
+    "cluster_customer_vs_revenue_share": "final_outputs\\plots\\cluster_customer_vs_revenue_share.png",
+    "cluster_retention_vs_zero_spend": "final_outputs\\plots\\cluster_retention_vs_zero_spend.png",
+    "cluster_avg_future_spend": "final_outputs\\plots\\cluster_avg_future_spend.png",
+    "cluster_profile_heatmap": "final_outputs\\plots\\cluster_profile_heatmap.png",
+    "weekly_revenue_trend": "final_outputs\\plots\\weekly_revenue_trend.png",
+    "monthly_revenue_trend": "final_outputs\\plots\\monthly_revenue_trend.png",
+    "forecast_comparison": "final_outputs\\plots\\forecast_comparison.png",
+    "best_forecast": "final_outputs\\plots\\best_forecast.png",
+    "forecast_model_comparison": "final_outputs\\plots\\forecast_model_comparison.png",
+    "future_forecast": "final_outputs\\plots\\future_forecast.png"
+  },
+  "dataFiles": {
+    "clv_model_comparison": "final_outputs\\data\\clv_model_comparison.csv",
+    "clv_lift_table": "final_outputs\\data\\clv_lift_table.csv",
+    "clv_predicted_decile_calibration": "final_outputs\\data\\clv_predicted_decile_calibration.csv",
+    "clv_residual_diagnostics": "final_outputs\\data\\clv_residual_diagnostics.csv",
+    "clv_error_by_actual_decile": "final_outputs\\data\\clv_error_by_actual_decile.csv",
+    "clv_zero_spender_diagnostics": "final_outputs\\data\\clv_zero_spender_diagnostics.csv",
+    "clustering_model_comparison": "final_outputs\\data\\clustering_model_comparison.csv",
+    "kmeans_cluster_profiles": "final_outputs\\data\\kmeans_cluster_profiles.csv",
+    "clustered_customers": "final_outputs\\data\\clustered_customers.csv",
+    "pca_cluster_coordinates": "final_outputs\\data\\pca_cluster_coordinates.csv",
+    "segment_cards": "final_outputs\\data\\segment_cards.csv",
+    "segment_cards_json": "final_outputs\\frontend\\segment_cards_json.json",
+    "clustering_chart_registry": "final_outputs\\frontend\\clustering_chart_registry.json",
+    "forecast_model_comparison": "final_outputs\\data\\forecast_model_comparison.csv",
+    "weekly_forecast_results": "final_outputs\\data\\weekly_forecast_results.csv",
+    "future_12_week_forecast": "final_outputs\\data\\future_12_week_forecast.csv",
+    "weekly_revenue_series": "final_outputs\\data\\weekly_revenue_series.csv",
+    "monthly_revenue_series": "final_outputs\\data\\monthly_revenue_series.csv",
+    "time_series_summary": "final_outputs\\frontend\\time_series_summary.json"
+  }
+}

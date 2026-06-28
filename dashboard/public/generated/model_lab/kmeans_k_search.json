@@ -1,0 +1,79 @@
+{
+  "status": "available",
+  "source": "src/clustering_outputs/kmeans_k_search_results.csv",
+  "reason": "",
+  "suggestedScriptToRun": "",
+  "rows": 9,
+  "columns": [
+    "K",
+    "Inertia",
+    "Silhouette_Score",
+    "Davies_Bouldin_Score",
+    "Calinski_Harabasz_Score"
+  ],
+  "data": [
+    {
+      "K": "2",
+      "Inertia": "49540.916852349255",
+      "Silhouette_Score": "0.33344124326265706",
+      "Davies_Bouldin_Score": "1.2455820321618711",
+      "Calinski_Harabasz_Score": "804.2676912223715"
+    },
+    {
+      "K": "3",
+      "Inertia": "40409.88811911546",
+      "Silhouette_Score": "0.24165211183010596",
+      "Davies_Bouldin_Score": "1.5005619098875205",
+      "Calinski_Harabasz_Score": "806.3432685266365"
+    },
+    {
+      "K": "4",
+      "Inertia": "37233.11366011211",
+      "Silhouette_Score": "0.19581988558036226",
+      "Davies_Bouldin_Score": "1.708888430712773",
+      "Calinski_Harabasz_Score": "662.1104301758448"
+    },
+    {
+      "K": "5",
+      "Inertia": "35052.10963674493",
+      "Silhouette_Score": "0.19921379756757784",
+      "Davies_Bouldin_Score": "1.6881352554899405",
+      "Calinski_Harabasz_Score": "570.4261655442917"
+    },
+    {
+      "K": "6",
+      "Inertia": "32964.70890699543",
+      "Silhouette_Score": "0.20894636793343874",
+      "Davies_Bouldin_Score": "1.6211318036366598",
+      "Calinski_Harabasz_Score": "520.1683724961669"
+    },
+    {
+      "K": "7",
+      "Inertia": "31166.517894410914",
+      "Silhouette_Score": "0.19327793609921",
+      "Davies_Bouldin_Score": "1.5477362866672733",
+      "Calinski_Harabasz_Score": "484.96409523958096"
+    },
+    {
+      "K": "8",
+      "Inertia": "29778.720062417524",
+      "Silhouette_Score": "0.1939848746998671",
+      "Davies_Bouldin_Score": "1.4948065290245967",
+      "Calinski_Harabasz_Score": "453.3406272716537"
+    },
+    {
+      "K": "9",
+      "Inertia": "28398.43406357556",
+      "Silhouette_Score": "0.18148202887961232",
+      "Davies_Bouldin_Score": "1.511136840085506",
+      "Calinski_Harabasz_Score": "432.62606424848815"
+    },
+    {
+      "K": "10",
+      "Inertia": "27141.77996980431",
+      "Silhouette_Score": "0.18459684031390963",
+      "Davies_Bouldin_Score": "1.496611992325087",
+      "Calinski_Harabasz_Score": "416.4557174165445"
+    }
+  ]
+}

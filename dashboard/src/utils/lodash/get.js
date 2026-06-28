@@ -1,0 +1,1 @@
+export default function get(object, path, fallback) { const parts = Array.isArray(path) ? path : String(path).split("."); let cur = object; for (const part of parts) { cur = cur?.[part]; if (cur === undefined) return fallback; } return cur; }

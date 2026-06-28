@@ -1,0 +1,11 @@
+section,title,value,description
+CLV Prediction,Final CLV Model,XGBoost_Tweedie,Selected model for predicting customer future spend.
+CLV Prediction,CLV R²,0.833,Explained variance for customer future spend prediction.
+CLV Prediction,CLV RMSE,1976.27,Average large-error scale for customer spend prediction.
+CLV Prediction,Top 10% Revenue Capture,57.1%,Share of actual future revenue captured by the top predicted CLV customers.
+Customer Segmentation,Final Segmentation Model,"KMeans, k = 4","Selected for balanced, interpretable, and frontend-friendly segments."
+Customer Segmentation,High-Value Segment Revenue Share,65.35%,Future revenue share contributed by the strongest customer segment.
+Customer Segmentation,High-Value Segment Customer Share,22.68%,Customer share represented by the strongest segment.
+Revenue Forecasting,Best Forecast Model,SARIMA,Best model on the 12-week test horizon.
+Revenue Forecasting,Forecast WAPE,18.29%,Weighted absolute percentage error for weekly revenue forecasting.
+Revenue Forecasting,Weekly Observations,106,Number of weekly time-series observations used.

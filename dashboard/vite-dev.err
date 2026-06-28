@@ -1,0 +1,100 @@
+[2m1:15:23 am[22m [31m[1m[vite][22m[39m Pre-transform error: Cannot find module 'caniuse-lite/dist/unpacker/agents'
+Require stack:
+- D:\online_retail\dashboard\node_modules\browserslist\index.js
+- D:\online_retail\dashboard\node_modules\@babel\helper-compilation-targets\lib\index.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\resolve-targets.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\config-descriptors.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\item.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\full.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\index.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\transform-file.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\files\module-types.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\files\configuration.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\files\index.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\index.js
+  Plugin: [35mvite:react-babel[39m
+  File: [36mD:/online_retail/dashboard/src/main.jsx[39m
+[2m1:15:34 am[22m [31m[1m[vite][22m[39m Pre-transform error: Cannot find module 'caniuse-lite/dist/unpacker/agents'
+Require stack:
+- D:\online_retail\dashboard\node_modules\browserslist\index.js
+- D:\online_retail\dashboard\node_modules\@babel\helper-compilation-targets\lib\index.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\resolve-targets.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\config-descriptors.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\item.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\full.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\index.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\transform-file.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\files\module-types.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\files\configuration.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\files\index.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\index.js
+  Plugin: [35mvite:react-babel[39m
+  File: [36mD:/online_retail/dashboard/src/main.jsx[39m
+[2m1:16:21 am[22m [31m[1m[vite][22m[39m [31mInternal server error: Cannot find module '../lib/statuses'
+Require stack:
+- D:\online_retail\dashboard\node_modules\caniuse-lite\dist\unpacker\feature.js
+- D:\online_retail\dashboard\node_modules\browserslist\node.js
+- D:\online_retail\dashboard\node_modules\browserslist\index.js
+- D:\online_retail\dashboard\node_modules\@babel\helper-compilation-targets\lib\index.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\resolve-targets.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\config-descriptors.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\item.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\full.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\index.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\transform-file.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\files\module-types.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\files\configuration.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\config\files\index.js
+- D:\online_retail\dashboard\node_modules\@babel\core\lib\index.js[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mD:/online_retail/dashboard/src/main.jsx[39m
+      at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+      at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+      at Function._load (node:internal/modules/cjs/loader:1192:37)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+      at Module.require (node:internal/modules/cjs/loader:1463:12)
+      at require (node:internal/modules/helpers:147:16)
+      at Object.<anonymous> (D:\online_retail\dashboard\node_modules\caniuse-lite\dist\unpacker\feature.js:3:18)
+      at Module._compile (node:internal/modules/cjs/loader:1706:14)
+      at Object..js (node:internal/modules/cjs/loader:1839:10)
+      at Module.load (node:internal/modules/cjs/loader:1441:32)
+      at Function._load (node:internal/modules/cjs/loader:1263:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+      at Module.require (node:internal/modules/cjs/loader:1463:12)
+      at require (node:internal/modules/helpers:147:16)
+      at Object.<anonymous> (D:\online_retail\dashboard\node_modules\browserslist\node.js:1:15)
+      at Module._compile (node:internal/modules/cjs/loader:1706:14)
+      at Object..js (node:internal/modules/cjs/loader:1839:10)
+      at Module.load (node:internal/modules/cjs/loader:1441:32)
+      at Function._load (node:internal/modules/cjs/loader:1263:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+      at Module.require (node:internal/modules/cjs/loader:1463:12)
+      at require (node:internal/modules/helpers:147:16)
+      at Object.<anonymous> (D:\online_retail\dashboard\node_modules\browserslist\index.js:9:11)
+      at Module._compile (node:internal/modules/cjs/loader:1706:14)
+      at Object..js (node:internal/modules/cjs/loader:1839:10)
+      at Module.load (node:internal/modules/cjs/loader:1441:32)
+      at Function._load (node:internal/modules/cjs/loader:1263:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+      at Module.require (node:internal/modules/cjs/loader:1463:12)
+      at require (node:internal/modules/helpers:147:16)
+      at Object.<anonymous> (D:\online_retail\dashboard\node_modules\@babel\helper-compilation-targets\lib\index.js:44:21)
+      at Module._compile (node:internal/modules/cjs/loader:1706:14)
+      at Object..js (node:internal/modules/cjs/loader:1839:10)
+      at Module.load (node:internal/modules/cjs/loader:1441:32)
+      at Function._load (node:internal/modules/cjs/loader:1263:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+      at Module.require (node:internal/modules/cjs/loader:1463:12)
+      at require (node:internal/modules/helpers:147:16)
+      at _helperCompilationTargets (D:\online_retail\dashboard\node_modules\@babel\core\lib\config\resolve-targets.js:16:16)
+      at resolveTargets (D:\online_retail\dashboard\node_modules\@babel\core\lib\config\resolve-targets.js:52:14)
+      at loadPrivatePartialConfig (D:\online_retail\dashboard\node_modules\@babel\core\lib\config\partial.js:81:49)
+      at loadPrivatePartialConfig.next (<anonymous>)
+      at loadFullConfig (D:\online_retail\dashboard\node_modules\@babel\core\lib\config\full.js:36:46)
+      at loadFullConfig.next (<anonymous>)

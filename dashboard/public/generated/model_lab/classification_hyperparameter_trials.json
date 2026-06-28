@@ -1,0 +1,382 @@
+{
+  "status": "available",
+  "source": "classification_cv_results.pkl",
+  "reason": "",
+  "suggestedScriptToRun": "",
+  "rows": 48,
+  "columns": [
+    "model",
+    "metric",
+    "meanScore",
+    "stdScore",
+    "C"
+  ],
+  "data": [
+    {
+      "model": "LogisticRegression",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7745373018828021,
+      "stdScore": 0.010801948509631567,
+      "C": 0.001
+    },
+    {
+      "model": "LogisticRegression",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7783515801114185,
+      "stdScore": 0.009488790769435014,
+      "C": 0.01
+    },
+    {
+      "model": "LogisticRegression",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7758108018967314,
+      "stdScore": 0.011089817243294919,
+      "C": 0.1
+    },
+    {
+      "model": "LogisticRegression",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7722398765016218,
+      "stdScore": 0.011114315495979073,
+      "C": 1
+    },
+    {
+      "model": "LogisticRegression",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7704290837866027,
+      "stdScore": 0.010779001657334973,
+      "C": 10
+    },
+    {
+      "model": "LogisticRegression",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7706004700808319,
+      "stdScore": 0.012416309031281844,
+      "C": 100
+    },
+    {
+      "model": "KNN",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7234325458719236,
+      "stdScore": 0.012276039193640448,
+      "n_neighbors": 3
+    },
+    {
+      "model": "KNN",
+      "metric": "mean_cv_score",
+      "meanScore": 0.741182957644587,
+      "stdScore": 0.01148948420927971,
+      "n_neighbors": 5
+    },
+    {
+      "model": "KNN",
+      "metric": "mean_cv_score",
+      "meanScore": 0.740639299282919,
+      "stdScore": 0.009825177309068369,
+      "n_neighbors": 7
+    },
+    {
+      "model": "KNN",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7481799198305132,
+      "stdScore": 0.011205769158403007,
+      "n_neighbors": 9
+    },
+    {
+      "model": "KNN",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7506728592460444,
+      "stdScore": 0.015661823813048408,
+      "n_neighbors": 11
+    },
+    {
+      "model": "KNN",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7654467055559039,
+      "stdScore": 0.01324048646371622,
+      "n_neighbors": 15
+    },
+    {
+      "model": "KNN",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7686417096012017,
+      "stdScore": 0.012705518580873465,
+      "n_neighbors": 21
+    },
+    {
+      "model": "DecisionTree",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7434254920441085,
+      "stdScore": 0.01247923575371084,
+      "max_depth": 3
+    },
+    {
+      "model": "DecisionTree",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7615127285729926,
+      "stdScore": 0.018523933991732335,
+      "max_depth": 5
+    },
+    {
+      "model": "DecisionTree",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7070068343890059,
+      "stdScore": 0.017764976271090638,
+      "max_depth": 10
+    },
+    {
+      "model": "DecisionTree",
+      "metric": "mean_cv_score",
+      "meanScore": 0.6789633859045512,
+      "stdScore": 0.029875158692708393,
+      "max_depth": 15
+    },
+    {
+      "model": "DecisionTree",
+      "metric": "mean_cv_score",
+      "meanScore": 0.6884229986551686,
+      "stdScore": 0.016378586999389527,
+      "max_depth": 20
+    },
+    {
+      "model": "SVC",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7788050141151321,
+      "stdScore": 0.012140508287047937,
+      "C": 0.1,
+      "kernel": "rbf"
+    },
+    {
+      "model": "SVC",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7705628510336816,
+      "stdScore": 0.013719617051672838,
+      "C": 0.1,
+      "kernel": "linear"
+    },
+    {
+      "model": "SVC",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7807738453596045,
+      "stdScore": 0.009186479724836317,
+      "C": 1,
+      "kernel": "rbf"
+    },
+    {
+      "model": "SVC",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7725646812830476,
+      "stdScore": 0.012391512124871525,
+      "C": 1,
+      "kernel": "linear"
+    },
+    {
+      "model": "SVC",
+      "metric": "mean_cv_score",
+      "meanScore": 0.771689998209048,
+      "stdScore": 0.004697044892333495,
+      "C": 10,
+      "kernel": "rbf"
+    },
+    {
+      "model": "SVC",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7711678164311888,
+      "stdScore": 0.012048253442549856,
+      "C": 10,
+      "kernel": "linear"
+    },
+    {
+      "model": "RandomForest",
+      "metric": "mean_cv_score",
+      "meanScore": 0.770733127798674,
+      "stdScore": 0.016611529318207495,
+      "max_depth": 3,
+      "n_estimators": 50
+    },
+    {
+      "model": "RandomForest",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7710937500589126,
+      "stdScore": 0.01789891680722104,
+      "max_depth": 3,
+      "n_estimators": 100
+    },
+    {
+      "model": "RandomForest",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7740049842690564,
+      "stdScore": 0.017155489445723,
+      "max_depth": 3,
+      "n_estimators": 200
+    },
+    {
+      "model": "RandomForest",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7746075561315064,
+      "stdScore": 0.017308317112956658,
+      "max_depth": 3,
+      "n_estimators": 300
+    },
+    {
+      "model": "RandomForest",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7752862904789456,
+      "stdScore": 0.009338466599263961,
+      "max_depth": 5,
+      "n_estimators": 50
+    },
+    {
+      "model": "RandomForest",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7721616691299464,
+      "stdScore": 0.009372565276879444,
+      "max_depth": 5,
+      "n_estimators": 100
+    },
+    {
+      "model": "RandomForest",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7720659561908592,
+      "stdScore": 0.010574405441698785,
+      "max_depth": 5,
+      "n_estimators": 200
+    },
+    {
+      "model": "RandomForest",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7749304545901227,
+      "stdScore": 0.010562773928469266,
+      "max_depth": 5,
+      "n_estimators": 300
+    },
+    {
+      "model": "RandomForest",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7650785941728093,
+      "stdScore": 0.005640036010174382,
+      "max_depth": 10,
+      "n_estimators": 50
+    },
+    {
+      "model": "RandomForest",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7605702686972254,
+      "stdScore": 0.009537285898529613,
+      "max_depth": 10,
+      "n_estimators": 100
+    },
+    {
+      "model": "RandomForest",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7649234538803759,
+      "stdScore": 0.010169739421394408,
+      "max_depth": 10,
+      "n_estimators": 200
+    },
+    {
+      "model": "RandomForest",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7654111409654382,
+      "stdScore": 0.012074903720400725,
+      "max_depth": 10,
+      "n_estimators": 300
+    },
+    {
+      "model": "XGBoost",
+      "metric": "mean_cv_score",
+      "meanScore": 0.772970634351928,
+      "stdScore": 0.011362320756068323,
+      "learning_rate": 0.01,
+      "max_depth": 3
+    },
+    {
+      "model": "XGBoost",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7801958157827729,
+      "stdScore": 0.012541193877738782,
+      "learning_rate": 0.01,
+      "max_depth": 5
+    },
+    {
+      "model": "XGBoost",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7660800905483608,
+      "stdScore": 0.00947965656862785,
+      "learning_rate": 0.01,
+      "max_depth": 7
+    },
+    {
+      "model": "XGBoost",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7747988052819621,
+      "stdScore": 0.007987516848201275,
+      "learning_rate": 0.05,
+      "max_depth": 3
+    },
+    {
+      "model": "XGBoost",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7686431273732592,
+      "stdScore": 0.009715149757569534,
+      "learning_rate": 0.05,
+      "max_depth": 5
+    },
+    {
+      "model": "XGBoost",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7579438885111411,
+      "stdScore": 0.011004898331814119,
+      "learning_rate": 0.05,
+      "max_depth": 7
+    },
+    {
+      "model": "XGBoost",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7727749362771367,
+      "stdScore": 0.01195295799539714,
+      "learning_rate": 0.1,
+      "max_depth": 3
+    },
+    {
+      "model": "XGBoost",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7603151682143405,
+      "stdScore": 0.009699638979575454,
+      "learning_rate": 0.1,
+      "max_depth": 5
+    },
+    {
+      "model": "XGBoost",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7614830279695936,
+      "stdScore": 0.01402881516055848,
+      "learning_rate": 0.1,
+      "max_depth": 7
+    },
+    {
+      "model": "XGBoost",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7577802102557234,
+      "stdScore": 0.013765563263792161,
+      "learning_rate": 0.2,
+      "max_depth": 3
+    },
+    {
+      "model": "XGBoost",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7540978499962039,
+      "stdScore": 0.013323199495080033,
+      "learning_rate": 0.2,
+      "max_depth": 5
+    },
+    {
+      "model": "XGBoost",
+      "metric": "mean_cv_score",
+      "meanScore": 0.7404878318349346,
+      "stdScore": 0.015933059116914346,
+      "learning_rate": 0.2,
+      "max_depth": 7
+    }
+  ]
+}
